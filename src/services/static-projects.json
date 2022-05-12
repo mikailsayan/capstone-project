@@ -3,8 +3,8 @@
     "id": "1",
     "name": "Projekt 1",
     "notes": "Here are some notes for project 1",
-    "begin": "XX/XX/XXXX",
-    "end": "YY/YY/YYYY",
+    "begin": "01/01/2001",
+    "end": "02/01/2001",
     "icon": "https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg",
     "color": "blue"
   },
@@ -12,8 +12,8 @@
     "id": "2",
     "name": "Projekt 2",
     "notes": "Here are some notes for project 2",
-    "begin": "XX/XX/XXXX",
-    "end": "YY/YY/YYYY",
+    "begin": "01/02/2001",
+    "end": "02/02/2001",
     "icon": "https://www.skopos.de/wp-content/uploads/2021/04/Element-2.svg",
     "color": "green"
   }
