@@ -1,0 +1,14 @@
+[
+  {
+    "id": "11",
+    "name": "Feature 1",
+    "begin": "XX/XX/XXXX",
+    "end": "YY/YY/YYYY"
+  },
+  {
+    "id": "12",
+    "name": "Feature 2",
+    "begin": "XX/XX/XXXX",
+    "end": "YY/YY/YYYY"
+  }
+]
