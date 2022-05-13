@@ -1,5 +1,6 @@
 import useStore from '../hooks/useStore';
 import StyledDiv from './styled-components/StyledDiv';
+import Typography from './styled-components/Typography';
 
 export default function Stepbox() {
 	const step = useStore(state => state.step);
@@ -7,9 +8,9 @@ export default function Stepbox() {
 
 	return (
 		<StyledDiv variant="stepbox">
-			<p>
+			<Typography variant="p" weight="bold" size="1.4rem">
 				{step} / {maxStep}
-			</p>
+			</Typography>
 		</StyledDiv>
 	);
 }

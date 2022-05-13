@@ -67,4 +67,6 @@ const StyledH6 = styled.h6`
 `;
 const StyledP = styled.p`
 	font-size: ${({ size }) => size};
+	text-align: ${({ position }) => position};
+	font-weight: ${({ weight }) => weight};
 `;

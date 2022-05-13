@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import AddProject1 from '../src/components/AddProject1';
-import Stepbox from '../src/components/stepbox';
 
 export default function Home() {
 	return (
@@ -11,7 +10,6 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<Stepbox />
 				<AddProject1 />
 			</main>
 		</div>
