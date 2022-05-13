@@ -17,6 +17,7 @@ html {
   }
 
   :root {
+    --input-border: #CDCDCD;
     --grey-color: #F0F0F0;
     --purple-button: linear-gradient(#D274FE, #9180FF);
     --blue-button: linear-gradient(#75EEFF, #907EFF);

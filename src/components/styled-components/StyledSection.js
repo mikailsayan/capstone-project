@@ -8,6 +8,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
     `}
 
 	${({ variant }) =>
@@ -17,6 +18,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
     `}
 
     ${({ variant }) =>
@@ -26,6 +28,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
     `}
 
     ${({ variant }) =>
@@ -35,6 +38,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
     `}
 
 	${({ variant }) =>
@@ -44,6 +48,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 		`}
 
     ${({ variant }) =>
@@ -53,6 +58,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
     ${({ variant }) =>
@@ -62,6 +68,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
 	${({ variant }) =>
@@ -71,6 +78,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 		`}
 
     ${({ variant }) =>
@@ -80,6 +88,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
     ${({ variant }) =>
@@ -89,6 +98,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
 	${({ variant }) =>
@@ -98,6 +108,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 		`}
 
     ${({ variant }) =>
@@ -107,6 +118,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
     ${({ variant }) =>
 		variant === 'big-red' &&
@@ -115,6 +127,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
 	${({ variant }) =>
@@ -124,6 +137,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 		`}
 
     ${({ variant }) =>
@@ -133,6 +147,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
     ${({ variant }) =>
 		variant === 'big-red' &&
@@ -141,6 +156,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
 	${({ variant }) =>
@@ -150,6 +166,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 		`}
 
     ${({ variant }) =>
@@ -159,6 +176,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
     ${({ variant }) =>
@@ -168,6 +186,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 50.5rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 
 	${({ variant }) =>
@@ -177,6 +196,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 34.1rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 		`}
 
     ${({ variant }) =>
@@ -186,6 +206,7 @@ const StyledSection = styled.section`
         width: 34.5rem;
         height: 24.6rem;
         border-radius: 4rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
         `}
 `;
 
