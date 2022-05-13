@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import StyledSection from './styled-components/StyledSection';
 import StyledForm from './styled-components/StyledForm';
 import StyledLabel from './styled-components/StyledLabel';
 import StyledInput from './styled-components/StyledInput';
 import StyledTextarea from './styled-components/StyledTextarea';
 import StyledDiv from './styled-components/StyledDiv';
+import StyledImage from './styled-components/StyledImage';
 
 export default function AddProject1() {
 	return (
@@ -30,14 +30,26 @@ export default function AddProject1() {
 					</StyledLabel>
 					<StyledDiv variant="dateinput">
 						<StyledInput variant="date" id="begindate" name="begindate" type="date" />
-						<Image src="/calender.svg" alt="calender-svg" width={29} height={29} />
+						<StyledImage
+							variant="calender"
+							src="/calender.svg"
+							alt="calender-svg"
+							width={29}
+							height={29}
+						/>
 					</StyledDiv>
 					<StyledLabel variant="default" htmlFor="enddate">
 						Enddatum:
 					</StyledLabel>
 					<StyledDiv variant="dateinput">
 						<StyledInput variant="date" id="enddate" name="enddate" type="date" />
-						<Image src="/calender.svg" alt="calender-svg" width={29} height={29} />
+						<StyledImage
+							variant="calender"
+							src="/calender.svg"
+							alt="calender-svg"
+							width={29}
+							height={29}
+						/>
 					</StyledDiv>
 				</StyledForm>
 			</article>
