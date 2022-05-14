@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledLabel = styled.label`
 	font-size: 2rem;
+	font-family: Questrial;
 
 	${({ variant }) =>
 		variant === 'toplabel' &&
