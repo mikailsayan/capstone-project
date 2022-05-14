@@ -9,11 +9,6 @@ const StyledImage = styled(Image)`
 		height: 2.9rem;
         margin: 1rem 2.1rem 1.4rem 2.5rem;
     `}
-
-	${({ variant }) =>
-		variant === 'placeholder' &&
-		`
-    `}
 `;
 
 export default StyledImage;
