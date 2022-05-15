@@ -9,6 +9,11 @@ const StyledButton = styled.button`
 	cursor: pointer;
 	font-family: Questrial;
 	font-size: 2rem;
+	transition: 200ms;
+
+	&:hover {
+		transform: scale(1.03, 1.03);
+	}
 
 	${({ variant }) =>
 		variant === 'mainbutton' &&
