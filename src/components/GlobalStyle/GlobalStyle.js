@@ -20,6 +20,7 @@ html {
     --input-border: #CDCDCD;
     --grey-color: #F0F0F0;
     --dark-grey: #C4C4C4;
+    --status-border: #909090;
     --purple-button: linear-gradient(45deg, #D274FE, #9180FF);
     --blue-button: linear-gradient(#75EEFF, #907EFF);
     --green-button: linear-gradient(#8CF373, #AFCCA8);

@@ -27,6 +27,15 @@ const StyledDiv = styled.div`
 		gap: 2rem;
 		margin: 1rem;
     `}
+
+	${({ variant }) =>
+		variant === 'statusbox' &&
+		`
+		border: 0.3rem solid var(--status-border);
+		border-radius: 4rem;
+		padding: 0.3rem 2rem 0.3rem 2rem;
+		margin-left: 4rem;
+`}
 `;
 
 export default StyledDiv;

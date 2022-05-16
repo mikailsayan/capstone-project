@@ -18,6 +18,9 @@ export default function ProjectCardHome() {
 					height={36}
 				/>
 				<Typography variant="h2">Projektname</Typography>
+				<StyledDiv variant="statusbox">
+					<p>Status</p>
+				</StyledDiv>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
 				{features.map(feature => {
