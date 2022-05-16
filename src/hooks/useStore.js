@@ -5,7 +5,7 @@ const useStore = create(set => {
 		//Add Project Step 1-3
 		isActive: true,
 		step: 1,
-		maxStep: 3,
+		maxStep: 2,
 		formAnswers: {},
 		nextStep: () => {
 			set(state => {

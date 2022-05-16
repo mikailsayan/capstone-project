@@ -1,6 +1,6 @@
-import StyledFooter from './styled-components/StyledFooter';
-import StyledImage from './styled-components/StyledImage';
-import StyledUL from './styled-components/StyledUL';
+import StyledFooter from '../styled-components/StyledFooter';
+import StyledImage from '../styled-components/StyledImage';
+import StyledUL from '../styled-components/StyledUL';
 
 export default function AddProject1() {
 	return (
