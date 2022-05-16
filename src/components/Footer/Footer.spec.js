@@ -8,7 +8,9 @@ describe('Footer', () => {
 
 		//Wir testen, ob drei Listenelemente gerendert werden
 		const listitems = screen.getAllByRole('listitem');
+		const icons = screen.getAllByRole('img');
 
 		expect(listitems.length).toBe(3);
+		expect(icons.length).toBe(3);
 	});
 });

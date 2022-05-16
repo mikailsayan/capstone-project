@@ -4,11 +4,21 @@ const StyledUL = styled.ul`
 	list-style-type: none;
 
 	${({ variant }) =>
+		variant === 'list-in-card' &&
+		`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 3rem 0 1rem 0;
+    `}
+
+	${({ variant }) =>
 		variant === 'footer' &&
 		`
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 6rem;
     `}
 `;

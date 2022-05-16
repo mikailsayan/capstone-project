@@ -4,6 +4,7 @@ const StyledSection = styled.section`
 	width: 34.5rem;
 	border-radius: 4rem;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+	padding: 1rem;
 
 	${({ variant }) =>
 		variant === 'big-grey' &&

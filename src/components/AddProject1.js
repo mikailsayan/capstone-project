@@ -30,7 +30,7 @@ export default function AddProject1() {
 						<StyledLabel variant="default" htmlFor="begindate">
 							Startdatum:
 						</StyledLabel>
-						<StyledDiv>
+						<StyledDiv variant="center">
 							<StyledInput
 								variant="date"
 								id="begindate"
@@ -48,7 +48,7 @@ export default function AddProject1() {
 						<StyledLabel variant="default" htmlFor="enddate">
 							Enddatum:
 						</StyledLabel>
-						<StyledDiv>
+						<StyledDiv variant="center">
 							<StyledInput variant="date" id="enddate" name="enddate" type="date" />
 							<StyledImage
 								variant="calender"
