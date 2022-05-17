@@ -1,39 +1,37 @@
 import StyledSection from '../styled-components/StyledSection';
-import StyledImage from '../styled-components/StyledImage';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
+import StyledInput from '../styled-components/StyledInput';
 import Typography from '../styled-components/Typography';
-import features from '../../services/static-features.json';
+import todos from '../../services/static-todos.json';
 
-export default function ProjectCardHome(name) {
+export default function FeatureCardSmall() {
 	return (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
-				<StyledImage
-					variant="projecticon"
-					src="/projecticon.svg"
-					alt="Project Icon"
-					width={36}
-					height={36}
+				<StyledInput
+					variant="featurecheckbox"
+					id="featurecheckbox"
+					name="featurecheckbox"
+					type="checkbox"
 				/>
-				<Typography variant="h2">{name}</Typography>
+				<Typography variant="h2">Featurename</Typography>
 				<StyledDiv variant="statusbox">
 					<Typography variant="p">Status</Typography>
 				</StyledDiv>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
-				{features.slice(0, 3).map(feature => {
+				{todos.slice(0, 3).map(todo => {
 					return (
-						<StyledList key={feature.id} variant="featurelist-small">
-							<StyledImage
-								variant="bulletpoint"
-								src="/bulletpoint.svg"
-								alt="Bullet Point"
-								width={20}
-								height={20}
+						<StyledList key={todo.id} variant="featurelist-small">
+							<StyledInput
+								variant="todocheckbox"
+								id="todocheckbox"
+								name="todocheckbox"
+								type="checkbox"
 							/>
-							{feature.name}
+							{todo.name}
 						</StyledList>
 					);
 				})}
