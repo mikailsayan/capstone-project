@@ -2,7 +2,7 @@ import StyledFooter from '../styled-components/StyledFooter';
 import StyledImage from '../styled-components/StyledImage';
 import StyledUL from '../styled-components/StyledUL';
 
-export default function AddProject1() {
+export default function Footer() {
 	return (
 		<StyledFooter>
 			<StyledUL variant="footer">
