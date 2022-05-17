@@ -1,11 +1,11 @@
 import AddProject1 from '../src/components/AddProject1';
-import ProjectCardHome from '../src/components/Projectcard Home/ProjectCardHome';
+import ProjectCardGridHome from '../src/components/Projectcard Grid Home/ProjectCardGridHome';
 
 export default function Home() {
 	return (
 		<div>
 			<main>
-				<ProjectCardHome />
+				<ProjectCardGridHome />
 				<AddProject1 />
 			</main>
 		</div>

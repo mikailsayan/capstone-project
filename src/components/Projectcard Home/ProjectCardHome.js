@@ -6,7 +6,7 @@ import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
 import features from '../../services/static-features.json';
 
-export default function ProjectCardHome() {
+export default function ProjectCardHome(name) {
 	return (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
@@ -17,7 +17,7 @@ export default function ProjectCardHome() {
 					width={36}
 					height={36}
 				/>
-				<Typography variant="h2">Projektname</Typography>
+				<Typography variant="h2">{name}</Typography>
 				<StyledDiv variant="statusbox">
 					<p>Status</p>
 				</StyledDiv>
