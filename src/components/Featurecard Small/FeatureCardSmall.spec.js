@@ -1,17 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import ProjectCardHome from './ProjectCardHome';
+import FeatureCardSmall from './FeatureCardSmall';
 
-describe('project card', () => {
-	it('renders the project card', () => {
-		render(
-			<ProjectCardHome
-				project={{
-					name: 'Projekt 1',
-				}}
-			/>
-		);
+describe('feature card', () => {
+	it('renders the feature card', () => {
+		render(<FeatureCardSmall />);
 
+		//Wir testen, ob drei Listenelemente gerendert werden
 		const listitems = screen.getAllByRole('listitem');
 		const headline = screen.getByRole('heading');
 
