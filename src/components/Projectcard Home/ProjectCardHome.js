@@ -3,10 +3,9 @@ import StyledImage from '../styled-components/StyledImage';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
-import Typography from '../styled-components/Typography';
 import features from '../../services/static-features.json';
 
-export default function ProjectCardHome(name) {
+export default function ProjectCardHome({ project }) {
 	return (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
@@ -17,7 +16,7 @@ export default function ProjectCardHome(name) {
 					width={36}
 					height={36}
 				/>
-				<Typography variant="h2">{name}</Typography>
+				<h2>{project.name}</h2>
 				<StyledDiv variant="statusbox">
 					<p>Status</p>
 				</StyledDiv>

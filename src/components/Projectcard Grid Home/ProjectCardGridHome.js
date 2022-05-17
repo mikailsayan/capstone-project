@@ -5,9 +5,11 @@ export default function ProjectCardGridHome() {
 	return (
 		<ul>
 			{projects.map(project => {
-				<li>
-					<ProjectCardHome name={project.name} />
-				</li>;
+				return (
+					<li key={project.id}>
+						<ProjectCardHome project={project} />
+					</li>
+				);
 			})}
 		</ul>
 	);

@@ -34,7 +34,7 @@ const StyledDiv = styled.div`
 		border: 0.3rem solid var(--status-border);
 		border-radius: 4rem;
 		padding: 0.3rem 2rem 0.3rem 2rem;
-		margin-left: 4rem;
+		right: 1rem;
 `}
 `;
 
