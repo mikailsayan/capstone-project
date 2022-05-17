@@ -4,7 +4,7 @@ import StyledLabel from './styled-components/StyledLabel';
 import StyledInput from './styled-components/StyledInput';
 import StyledTextarea from './styled-components/StyledTextarea';
 import StyledDiv from './styled-components/StyledDiv';
-import StyledImage from './styled-components/StyledImage';
+import MySVG from './MySVG';
 import StyledButton from './styled-components/StyledButton';
 
 export default function AddProject1() {
@@ -37,26 +37,14 @@ export default function AddProject1() {
 								name="begindate"
 								type="date"
 							/>
-							<StyledImage
-								variant="calender"
-								src="/calender.svg"
-								alt="calender-svg"
-								width={29}
-								height={29}
-							/>
+							<MySVG variant="calender" size="2.9rem" />
 						</StyledDiv>
 						<StyledLabel variant="default" htmlFor="enddate">
 							Enddatum:
 						</StyledLabel>
 						<StyledDiv variant="center">
 							<StyledInput variant="date" id="enddate" name="enddate" type="date" />
-							<StyledImage
-								variant="calender"
-								src="/calender.svg"
-								alt="calender-svg"
-								width={29}
-								height={29}
-							/>
+							<MySVG variant="calender" size="2.9rem" />
 						</StyledDiv>
 					</StyledForm>
 				</article>

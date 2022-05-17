@@ -1,23 +1,30 @@
 import StyledSection from '../styled-components/StyledSection';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledInput from '../styled-components/StyledInput';
-import StyledImage from '../styled-components/StyledImage';
 import StyledList from '../styled-components/StyledList';
 import StyledUL from '../styled-components/StyledUL';
 import StyledButton from '../styled-components/StyledButton';
 import features from '../../services/static-features.json';
 import todos from '../../services/static-todos.json';
+import MySVG from '../MySVG';
 
 export default function FeatureView() {
 	return (
 		<>
 			<StyledSection variant="big-grey">
-				<StyledImage
-					variant="right-top"
-					src="/cancel.svg"
-					alt="cancel-icon"
-					width={26}
-					height={26}
+				<MySVG
+					variant="edit"
+					position="absolute"
+					size="2.6rem"
+					top="-3.5rem"
+					right="4rem"
+				/>
+				<MySVG
+					variant="cancel"
+					position="absolute"
+					size="2.6rem"
+					top="-3.5rem"
+					right="0.5rem"
 				/>
 				<StyledDiv variant="cardtitle">
 					<StyledInput
@@ -32,7 +39,7 @@ export default function FeatureView() {
 					</StyledDiv>
 				</StyledDiv>
 				<StyledDiv variant="cardtitle">
-					<StyledImage src="/calender.svg" alt="calender-icon" width={13} height={13} />
+					<MySVG variant="calender" size="1.3rem" />
 					<p>
 						{features[0].begin} - {features[0].end}
 					</p>
