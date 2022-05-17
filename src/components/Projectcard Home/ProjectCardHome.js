@@ -23,7 +23,7 @@ export default function ProjectCardHome() {
 				</StyledDiv>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
-				{features.map(feature => {
+				{features.slice(0, 3).map(feature => {
 					return (
 						<StyledList key={feature.id} variant="featurelist-small">
 							<StyledImage
