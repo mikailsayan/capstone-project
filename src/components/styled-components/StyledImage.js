@@ -39,6 +39,14 @@ const StyledImage = styled(Image)`
 		width: 5.7rem;
 		height: 5.7rem;
     `}
+
+	${({ variant }) =>
+		variant === 'right-top' &&
+		`
+		position: absolute;
+		right: 0.5rem;
+		top: -1rem;
+    `}
 `;
 
 export default StyledImage;

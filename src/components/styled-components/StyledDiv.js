@@ -24,8 +24,8 @@ const StyledDiv = styled.div`
 		variant === 'cardtitle' &&
 		`
 		align-items: center;
-		gap: 2rem;
-		margin: 1rem;
+		gap: 1rem;
+		margin: 1rem 1rem 2rem 1rem;
     `}
 
 	${({ variant }) =>
@@ -34,8 +34,19 @@ const StyledDiv = styled.div`
 		border: 0.3rem solid var(--status-border);
 		border-radius: 4rem;
 		padding: 0.3rem 2rem 0.3rem 2rem;
+	`}
+
+	${({ variant }) =>
+		variant === 'complexity' &&
+		`
+		position: absolute;
 		right: 1rem;
-`}
+		width: 2rem;
+		height: 2rem;
+		border: 0.2rem solid white;
+		border-radius: 50%;
+		background-color: var(--yellow-complex);
+	`}
 `;
 
 export default StyledDiv;

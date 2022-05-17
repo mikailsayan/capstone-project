@@ -21,6 +21,7 @@ const StyledButton = styled.button`
 		width: 34.5rem;
         height: 5.1rem;
         background: var(--purple-button);
+		margin-bottom: 4rem;
     `}
 `;
 
