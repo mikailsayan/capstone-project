@@ -2,7 +2,7 @@ import create from 'zustand';
 
 const useStore = create(set => {
 	return {
-		//Add Project Step 1-3
+		//Add Project Step 1-2
 		isActive: true,
 		step: 1,
 		maxStep: 2,
