@@ -5,13 +5,14 @@ const StyledSection = styled.section`
 	border-radius: 4rem;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 	padding: 1rem;
+	position: relative;
 
 	${({ variant }) =>
 		variant === 'big-grey' &&
 		`
         background-color: var(--grey-color);
-        width: 34.5rem;
         height: 50.5rem;
+        margin-top: 4rem;
     `}
 
 	${({ variant }) =>
@@ -19,6 +20,7 @@ const StyledSection = styled.section`
 		`
         background-color: var(--grey-color);
         height: 34.1rem;
+        margin-bottom: 4rem;
     `}
 
     ${({ variant }) =>
