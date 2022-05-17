@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
 	display: flex;
-	align-items: center;
 
 	${({ variant }) =>
 		variant === 'stepbox' &&
@@ -13,6 +12,30 @@ const StyledDiv = styled.div`
 		border: 0.3rem solid #4B4B4B;
 		border-radius: 4rem;
     `}
+
+	${({ variant }) =>
+		variant === 'center' &&
+		`
+		align-items: center;
+		justify-content: center;
+    `}
+
+	${({ variant }) =>
+		variant === 'cardtitle' &&
+		`
+		align-items: center;
+		gap: 2rem;
+		margin: 1rem;
+    `}
+
+	${({ variant }) =>
+		variant === 'statusbox' &&
+		`
+		border: 0.3rem solid var(--status-border);
+		border-radius: 4rem;
+		padding: 0.3rem 2rem 0.3rem 2rem;
+		margin-left: 4rem;
+`}
 `;
 
 export default StyledDiv;
