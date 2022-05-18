@@ -5,6 +5,7 @@ import StyledInput from '../styled-components/StyledInput';
 import StyledList from '../styled-components/StyledList';
 import StyledUL from '../styled-components/StyledUL';
 import StyledButton from '../styled-components/StyledButton';
+import StyledParagraph from '../styled-components/StyledParagraph';
 import features from '../../services/static-features.json';
 //import todos from '../../services/static-todos.json';
 import useStore from '../../hooks/useStore';
@@ -12,6 +13,7 @@ import MySVG from '../MySVG';
 
 export default function FeatureView() {
 	const openNote = useStore(state => state.openNote);
+	const checkTodo = useStore(state => state.checkTodo);
 	const todoszustand = useStore(state => state.todoszustand);
 	const featureszustand = useStore(state => state.featureszustand);
 
@@ -61,11 +63,20 @@ export default function FeatureView() {
 								<section key={todo.id}>
 									<StyledList
 										variant="todolist-small"
+										style={{
+											border: todo.isChecked && '2px solid green',
+										}}
 										onClick={() => {
 											openNote(index);
 										}}
 									>
-										<input id="todocheck" name="todocheck" type="checkbox" />
+										<input
+											id="todocheck"
+											name="todocheck"
+											type="checkbox"
+											checked={todo.isChecked}
+											onChange={() => checkTodo(index)}
+										/>
 										{todo.name}
 										{todo.complexity === 'easy' ? (
 											<StyledDiv variant="complexity-easy"> </StyledDiv>
@@ -84,7 +95,11 @@ export default function FeatureView() {
 										)}
 									</StyledList>
 									{todo.isOpen ? (
-										<StyledDiv variant="todonotes">{todo.note}</StyledDiv>
+										<StyledDiv variant="todonotes">
+											<StyledParagraph variant="todo-notes">
+												{todo.note}
+											</StyledParagraph>
+										</StyledDiv>
 									) : (
 										''
 									)}

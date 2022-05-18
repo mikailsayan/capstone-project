@@ -34,6 +34,7 @@ const useStore = create(
 				complexity: 'easy',
 				begin: '01/03/2022',
 				end: '03/03/2022',
+				isChecked: false,
 				edit: false,
 				isOpen: false,
 			},
@@ -44,6 +45,7 @@ const useStore = create(
 				complexity: 'middle',
 				begin: '01/03/2022',
 				end: '03/03/2022',
+				isChecked: false,
 				edit: false,
 				isOpen: false,
 			},
@@ -54,6 +56,40 @@ const useStore = create(
 				complexity: 'hard',
 				begin: '01/03/2022',
 				end: '03/03/2022',
+				isChecked: false,
+				edit: false,
+				isOpen: false,
+			},
+			{
+				id: nanoid(),
+				name: 'Todoname 4',
+				note: 'Here are some notes for Todo 4',
+				complexity: 'middle',
+				begin: '01/03/2022',
+				end: '03/03/2022',
+				isChecked: false,
+				edit: false,
+				isOpen: false,
+			},
+			{
+				id: nanoid(),
+				name: 'Todoname 5',
+				note: 'Here are some notes for Todo 5',
+				complexity: 'hard',
+				begin: '01/03/2022',
+				end: '03/03/2022',
+				isChecked: false,
+				edit: false,
+				isOpen: false,
+			},
+			{
+				id: nanoid(),
+				name: 'Todoname 6',
+				note: 'Here are some notes for Todo 6',
+				complexity: 'easy',
+				begin: '01/03/2022',
+				end: '03/03/2022',
+				isChecked: false,
 				edit: false,
 				isOpen: false,
 			},
@@ -62,6 +98,13 @@ const useStore = create(
 			set(
 				produce(draft => {
 					draft.todoszustand[index].isOpen = !draft.todoszustand[index].isOpen;
+				})
+			);
+		},
+		checkTodo: index => {
+			set(
+				produce(draft => {
+					draft.todoszustand[index].isChecked = !draft.todoszustand[index].isChecked;
 				})
 			);
 		},
