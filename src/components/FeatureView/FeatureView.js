@@ -5,10 +5,14 @@ import StyledList from '../styled-components/StyledList';
 import StyledUL from '../styled-components/StyledUL';
 import StyledButton from '../styled-components/StyledButton';
 import features from '../../services/static-features.json';
-import todos from '../../services/static-todos.json';
+//import todos from '../../services/static-todos.json';
+import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 
 export default function FeatureView() {
+	const openNote = useStore(state => state.openNote);
+	const todoszustand = useStore(state => state.todoszustand);
+
 	return (
 		<>
 			<StyledSection variant="big-grey">
@@ -45,12 +49,25 @@ export default function FeatureView() {
 					</p>
 				</StyledDiv>
 				<StyledUL variant="list-in-card">
-					{todos.map(todo => {
+					{todoszustand.map(todo => {
+						const index = todoszustand.findIndex(todoIndex => todoIndex.id === todo.id);
+
 						return (
-							<StyledList key={todo.id} variant="todolist-small">
+							<StyledList
+								key={todo.id}
+								variant="todolist-small"
+								onClick={() => {
+									openNote(index);
+								}}
+							>
 								<input id="todocheck" name="todocheck" type="checkbox" />
 								{todo.name}
 								<StyledDiv variant="complexity"> </StyledDiv>
+								{todo.isOpen ? (
+									<StyledDiv variant="todonotes">Notes</StyledDiv>
+								) : (
+									''
+								)}
 							</StyledList>
 						);
 					})}

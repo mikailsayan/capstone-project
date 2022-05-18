@@ -47,6 +47,16 @@ const StyledDiv = styled.div`
 		border-radius: 50%;
 		background-color: var(--yellow-complex);
 	`}
+
+	${({ variant }) =>
+		variant === 'todonotes' &&
+		`
+		width: 1rem;
+		height: 1rem;
+		background-color: yellow;
+		border: 0.3rem solid var(--status-border);
+		padding: 0.3rem 2rem 0.3rem 2rem;
+	`}
 `;
 
 export default StyledDiv;
