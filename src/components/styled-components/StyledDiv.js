@@ -31,6 +31,8 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'statusbox' &&
 		`
+		position: absolute;
+		right: 3rem;
 		border: 0.3rem solid var(--status-border);
 		border-radius: 4rem;
 		padding: 0.3rem 2rem 0.3rem 2rem;

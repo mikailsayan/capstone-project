@@ -141,12 +141,12 @@ const StyledSection = styled.section`
         height: 50.5rem;
         `}
 
-	${({ variant }) =>
+	  ${({ variant }) =>
 		variant === 'middle-green' &&
 		`
         background-color: var(--green-project);
         height: 34.1rem;
-		`}
+		    `}
 
     ${({ variant }) =>
 		variant === 'small-green' &&
