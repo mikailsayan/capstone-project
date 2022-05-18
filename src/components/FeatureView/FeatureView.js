@@ -53,22 +53,23 @@ export default function FeatureView() {
 						const index = todoszustand.findIndex(todoIndex => todoIndex.id === todo.id);
 
 						return (
-							<StyledList
-								key={todo.id}
-								variant="todolist-small"
-								onClick={() => {
-									openNote(index);
-								}}
-							>
-								<input id="todocheck" name="todocheck" type="checkbox" />
-								{todo.name}
-								<StyledDiv variant="complexity"> </StyledDiv>
+							<section key={todo.id}>
+								<StyledList
+									variant="todolist-small"
+									onClick={() => {
+										openNote(index);
+									}}
+								>
+									<input id="todocheck" name="todocheck" type="checkbox" />
+									{todo.name}
+									<StyledDiv variant="complexity"> </StyledDiv>
+								</StyledList>
 								{todo.isOpen ? (
-									<StyledDiv variant="todonotes">Notes</StyledDiv>
+									<StyledDiv variant="todonotes">{todo.note}</StyledDiv>
 								) : (
 									''
 								)}
-							</StyledList>
+							</section>
 						);
 					})}
 				</StyledUL>

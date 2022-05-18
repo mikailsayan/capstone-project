@@ -51,11 +51,12 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'todonotes' &&
 		`
-		width: 1rem;
-		height: 1rem;
-		background-color: yellow;
-		border: 0.3rem solid var(--status-border);
+		width: 30.3rem;
+		min-height: 17.3rem;
+		background-color: var(--todo-note);
 		padding: 0.3rem 2rem 0.3rem 2rem;
+		margin: 1rem 0.5rem 1rem 0.5rem;
+		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 	`}
 `;
 

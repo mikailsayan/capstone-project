@@ -30,6 +30,7 @@ const useStore = create(
 			{
 				id: nanoid(),
 				name: 'Todoname 1',
+				note: 'Here are some notes for Todo 1',
 				begin: '01/03/2022',
 				end: '03/03/2022',
 				edit: false,
@@ -38,6 +39,7 @@ const useStore = create(
 			{
 				id: nanoid(),
 				name: 'Todoname 2',
+				note: 'Here are some notes for Todo 2',
 				begin: '01/03/2022',
 				end: '03/03/2022',
 				edit: false,
@@ -46,6 +48,7 @@ const useStore = create(
 			{
 				id: nanoid(),
 				name: 'Todoname 3',
+				note: 'Here are some notes for Todo 3',
 				begin: '01/03/2022',
 				end: '03/03/2022',
 				edit: false,
@@ -55,7 +58,7 @@ const useStore = create(
 		openNote: index => {
 			set(
 				produce(draft => {
-					draft.todos[index].isOpen = !draft.todos[index].isOpen;
+					draft.todoszustand[index].isOpen = !draft.todoszustand[index].isOpen;
 				})
 			);
 		},
