@@ -23,6 +23,7 @@ const useStore = create(
 				name: 'Featurename 1',
 				begin: '01/01/2001',
 				end: '02/01/2001',
+				isChecked: false,
 				edit: false,
 			},
 		],
@@ -98,6 +99,14 @@ const useStore = create(
 			set(
 				produce(draft => {
 					draft.todoszustand[index].isOpen = !draft.todoszustand[index].isOpen;
+				})
+			);
+		},
+		checkFeature: index => {
+			set(
+				produce(draft => {
+					draft.featureszustand[index].isChecked =
+						!draft.featureszustand[index].isChecked;
 				})
 			);
 		},

@@ -15,7 +15,9 @@ export default function FeatureView() {
 	const openNote = useStore(state => state.openNote);
 	const checkTodo = useStore(state => state.checkTodo);
 	const todoszustand = useStore(state => state.todoszustand);
+	const length = todoszustand.filter(todo => !todo.isChecked).length;
 	const featureszustand = useStore(state => state.featureszustand);
+	/*const projectszustand = useStore(state => state.projectszustand);*/
 
 	return (
 		<>
@@ -43,7 +45,7 @@ export default function FeatureView() {
 					/>
 					<h2>{featureszustand[0].name}</h2>
 					<StyledDiv variant="statusbox">
-						<p>Status</p>
+						<p>Übrig: {length}</p>
 					</StyledDiv>
 				</StyledDiv>
 				<StyledDiv variant="cardtitle">
