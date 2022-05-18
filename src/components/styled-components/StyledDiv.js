@@ -37,7 +37,19 @@ const StyledDiv = styled.div`
 	`}
 
 	${({ variant }) =>
-		variant === 'complexity' &&
+		variant === 'complexity-easy' &&
+		`
+		position: absolute;
+		right: 1rem;
+		width: 2rem;
+		height: 2rem;
+		border: 0.2rem solid white;
+		border-radius: 50%;
+		background-color: var(--green-complex);
+	`}
+
+	${({ variant }) =>
+		variant === 'complexity-middle' &&
 		`
 		position: absolute;
 		right: 1rem;
@@ -46,6 +58,18 @@ const StyledDiv = styled.div`
 		border: 0.2rem solid white;
 		border-radius: 50%;
 		background-color: var(--yellow-complex);
+	`}
+
+	${({ variant }) =>
+		variant === 'complexity-hard' &&
+		`
+		position: absolute;
+		right: 1rem;
+		width: 2rem;
+		height: 2rem;
+		border: 0.2rem solid white;
+		border-radius: 50%;
+		background-color: var(--red-complex);
 	`}
 
 	${({ variant }) =>

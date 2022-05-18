@@ -62,7 +62,21 @@ export default function FeatureView() {
 								>
 									<input id="todocheck" name="todocheck" type="checkbox" />
 									{todo.name}
-									<StyledDiv variant="complexity"> </StyledDiv>
+									{todo.complexity === 'easy' ? (
+										<StyledDiv variant="complexity-easy"> </StyledDiv>
+									) : (
+										''
+									)}
+									{todo.complexity === 'middle' ? (
+										<StyledDiv variant="complexity-middle"> </StyledDiv>
+									) : (
+										''
+									)}
+									{todo.complexity === 'hard' ? (
+										<StyledDiv variant="complexity-hard"> </StyledDiv>
+									) : (
+										''
+									)}
 								</StyledList>
 								{todo.isOpen ? (
 									<StyledDiv variant="todonotes">{todo.note}</StyledDiv>
