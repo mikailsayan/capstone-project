@@ -66,7 +66,7 @@ export default function FeatureView() {
 									<StyledList
 										variant="todolist-small"
 										style={{
-											border: todo.isChecked && '2px solid green',
+											border: todo.isChecked && '2px solid #5EDC5C',
 										}}
 										onClick={() => {
 											openNote(index);
