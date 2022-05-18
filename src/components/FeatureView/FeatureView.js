@@ -11,7 +11,7 @@ import features from '../../services/static-features.json';
 import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 
-export default function FeatureView() {
+export default function FeatureViewCard() {
 	const openNote = useStore(state => state.openNote);
 	const checkTodo = useStore(state => state.checkTodo);
 	const todoszustand = useStore(state => state.todoszustand);
