@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledTextarea = styled.textarea`
-	width: 30.3rem;
+	width: 29rem;
 	height: 10.9rem;
 	border-radius: 1.5rem;
 	border: 0.3rem solid var(--input-border);

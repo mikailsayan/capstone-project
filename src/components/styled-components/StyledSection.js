@@ -4,7 +4,7 @@ const StyledSection = styled.section`
 	width: 34.5rem;
 	border-radius: 4rem;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
-	padding: 1rem;
+	padding: 1rem 1rem 1rem 0.5rem;
 	position: relative;
 
 	${({ variant }) =>
@@ -34,6 +34,7 @@ const StyledSection = styled.section`
         background-color: var(--grey-color);
         height: 34.1rem;
         margin-bottom: 4rem;
+        margin-top: 6rem;
     `}
 
     ${({ variant }) =>
