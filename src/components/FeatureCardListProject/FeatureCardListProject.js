@@ -10,9 +10,12 @@ export default function FeatureCardListProject() {
 		<StyledSection variant="overflow">
 			<StyledUL>
 				{featureszustand.map(feature => {
+					const index = featureszustand.findIndex(
+						featureIndex => featureIndex.id === feature.id
+					);
 					return (
 						<li key={feature.id}>
-							<FeatureCardSmall feature={feature} />
+							<FeatureCardSmall index={index} feature={feature} />
 						</li>
 					);
 				})}

@@ -129,6 +129,15 @@ const useStore = create(
 			);
 		},
 		//End AddFeatureProject Functions
+		//FeatureCardSmall Functions
+		deleteFeature: index => {
+			set(
+				produce(draft => {
+					draft.featureszustand.splice(index, 1);
+				})
+			);
+		},
+		//End FeatureCardSmall Functions
 		//Feature View Functions
 		openNote: index => {
 			set(

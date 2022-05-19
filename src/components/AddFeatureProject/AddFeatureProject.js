@@ -19,8 +19,8 @@ export default function AddFeatureProject() {
 		<StyledForm
 			onSubmit={event => {
 				event.preventDefault();
-				setFeaturenameInputValue('');
 				addFeature(featurenameInputValue, beginInputValue, endInputValue);
+				setFeaturenameInputValue('');
 			}}
 		>
 			<StyledSection variant="middle-grey">
