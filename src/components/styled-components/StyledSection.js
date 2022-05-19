@@ -8,6 +8,19 @@ const StyledSection = styled.section`
 	position: relative;
 
 	${({ variant }) =>
+		variant === 'overflow' &&
+		` 
+        display: flex;
+        justify-content: center;
+        width: 39rem;
+        height: 57rem;
+        border-radius: 0rem;
+        box-shadow: none;
+        overflow: scroll;
+        margin: 3rem 0 3rem 0;
+    `}
+
+	${({ variant }) =>
 		variant === 'big-grey' &&
 		`
         background-color: var(--grey-color);

@@ -6,7 +6,7 @@ import StyledInput from '../styled-components/StyledInput';
 import Typography from '../styled-components/Typography';
 import todos from '../../services/static-todos.json';
 
-export default function FeatureCardSmall() {
+export default function FeatureCardSmall({ feature }) {
 	return (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
@@ -17,7 +17,7 @@ export default function FeatureCardSmall() {
 					type="checkbox"
 				/>
 				<Typography variant="h3" component="h3" size="1.7rem">
-					Featurename
+					{feature.name}
 				</Typography>
 				<StyledDiv variant="statusbox">
 					<Typography variant="p">Status</Typography>
