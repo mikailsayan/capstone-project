@@ -16,6 +16,16 @@ const useStore = create(
 				color: 'blue',
 				edit: false,
 			},
+			{
+				id: nanoid(),
+				name: 'Projektname 2',
+				notes: 'Hier sind ein paar Notizen',
+				begin: '01/02/2001',
+				end: '02/02/2001',
+				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
+				color: 'green',
+				edit: false,
+			},
 		],
 		featureszustand: [
 			{
@@ -23,6 +33,14 @@ const useStore = create(
 				name: 'Featurename 1',
 				begin: '01/01/2001',
 				end: '02/01/2001',
+				isChecked: false,
+				edit: false,
+			},
+			{
+				id: nanoid(),
+				name: 'Featurename 2',
+				begin: '01/02/2001',
+				end: '02/02/2001',
 				isChecked: false,
 				edit: false,
 			},
