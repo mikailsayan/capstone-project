@@ -113,6 +113,23 @@ const useStore = create(
 				isOpen: false,
 			},
 		],
+		//AddFeature Project Functions
+		addFeature: (name, begin, end) => {
+			set(
+				produce(draft => {
+					draft.todos.push({
+						name,
+						begin,
+						end,
+						id: nanoid(),
+						isChecked: false,
+						edit: false,
+					});
+				})
+			);
+		},
+		//End AddFeatureProject Functions
+		//Feature View Functions
 		openNote: index => {
 			set(
 				produce(draft => {
@@ -135,6 +152,7 @@ const useStore = create(
 				})
 			);
 		},
+		//End Feature View Functions
 	}))
 );
 
