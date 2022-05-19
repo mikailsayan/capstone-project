@@ -1,6 +1,6 @@
 import AddProject1 from '../src/components/AddProject1';
 import FeatureViewCard from '../src/components/FeatureView/FeatureView';
-import ProjectCardGridHome from '../src/components/Projectcard Grid Home/ProjectCardGridHome';
+import ProjectCardListHome from '../src/components/ProjectCardListHome/ProjectCardListHome';
 import FeatureCardSmall from '../src/components/Featurecard Small/FeatureCardSmall';
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
 			<main>
 				<FeatureViewCard />
 				<FeatureCardSmall />
-				<ProjectCardGridHome />
+				<ProjectCardListHome />
 				<AddProject1 />
 			</main>
 		</div>

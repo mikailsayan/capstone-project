@@ -1,7 +1,7 @@
 import projects from '../../services/static-projects.json';
-import ProjectCardHome from '../Projectcard Home/ProjectCardHome';
+import ProjectCardHome from '../ProjectCardHome/ProjectCardHome';
 
-export default function ProjectCardGridHome() {
+export default function ProjectCardListHome() {
 	return (
 		<ul>
 			{projects.map(project => {

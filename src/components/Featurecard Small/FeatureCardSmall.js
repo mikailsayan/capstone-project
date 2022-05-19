@@ -16,7 +16,9 @@ export default function FeatureCardSmall() {
 					name="featurecheckbox"
 					type="checkbox"
 				/>
-				<Typography variant="h2">Featurename</Typography>
+				<Typography variant="h3" component="h3" size="1.6rem">
+					Featurename
+				</Typography>
 				<StyledDiv variant="statusbox">
 					<Typography variant="p">Status</Typography>
 				</StyledDiv>

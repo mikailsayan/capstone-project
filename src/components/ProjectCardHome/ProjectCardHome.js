@@ -4,6 +4,7 @@ import StyledUL from '../styled-components/StyledUL';
 import StyledImage from '../styled-components/StyledImage';
 import StyledList from '../styled-components/StyledList';
 import features from '../../services/static-features.json';
+import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
 
 export default function ProjectCardHome({ project }) {
@@ -11,7 +12,9 @@ export default function ProjectCardHome({ project }) {
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
 				<MySVG variant="projecticon" size="3.6rem" />
-				<h2>{project.name}</h2>
+				<Typography variant="h3" component="h3" size="1.6rem">
+					{project.name}
+				</Typography>
 				<StyledDiv variant="statusbox">
 					<p>Status</p>
 				</StyledDiv>
