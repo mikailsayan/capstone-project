@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 		`
         background-color: var(--grey-color);
         height: 50.5rem;
-        margin-top: 4rem;
+        margin-top: 6rem;
     `}
 
 	${({ variant }) =>

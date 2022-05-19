@@ -6,6 +6,7 @@ import StyledList from '../styled-components/StyledList';
 import StyledUL from '../styled-components/StyledUL';
 import StyledButton from '../styled-components/StyledButton';
 import StyledParagraph from '../styled-components/StyledParagraph';
+import StyledHeadline from '../styled-components/StyledHeadline';
 import features from '../../services/static-features.json';
 //import todos from '../../services/static-todos.json';
 import useStore from '../../hooks/useStore';
@@ -22,6 +23,7 @@ export default function FeatureViewCard() {
 	return (
 		<>
 			<StyledSection variant="big-grey">
+				<StyledHeadline variant="projectname">Projektname</StyledHeadline>
 				<MySVG
 					variant="edit"
 					position="absolute"
