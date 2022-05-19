@@ -47,7 +47,9 @@ export default function FeatureViewCard() {
 						name="featurecheckbox"
 						type="checkbox"
 					/>
-					<h2>{featureszustand[0].name}</h2>
+					<Typography variant="h3" component="h3" size="1.7rem">
+						{featureszustand[0].name}
+					</Typography>
 					<StyledDiv variant="statusbox">
 						<p>Übrig: {length}</p>
 					</StyledDiv>

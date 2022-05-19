@@ -12,11 +12,11 @@ export default function ProjectCardHome({ project }) {
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
 				<MySVG variant="projecticon" size="3.6rem" />
-				<Typography variant="h3" component="h3" size="1.6rem">
+				<Typography variant="h3" component="h3" size="1.7rem">
 					{project.name}
 				</Typography>
 				<StyledDiv variant="statusbox">
-					<p>Status</p>
+					<Typography variant="p">Status</Typography>
 				</StyledDiv>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">

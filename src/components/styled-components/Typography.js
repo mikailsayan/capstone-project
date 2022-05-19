@@ -58,6 +58,7 @@ const StyledH2 = styled.h2`
 `;
 const StyledH3 = styled.h3`
 	font-size: ${({ size }) => size};
+	font-family: Questrial;
 `;
 const StyledH4 = styled.h4`
 	font-size: ${({ size }) => size};
@@ -72,4 +73,5 @@ const StyledP = styled.p`
 	font-size: ${({ size }) => size};
 	text-align: ${({ position }) => position};
 	font-weight: ${({ weight }) => weight};
+	font-family: Questrial;
 `;
