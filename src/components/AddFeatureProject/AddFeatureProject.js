@@ -16,7 +16,14 @@ export default function AddFeatureProject() {
 	const addFeature = useStore(state => state.addFeature);
 
 	return (
-		<StyledForm>
+		<StyledForm
+			onSubmit={event => {
+				event.preventDefault();
+				setFeaturenameInputValue('');
+				addFeature(featurenameInputValue, beginInputValue, endInputValue);
+				console.log('test');
+			}}
+		>
 			<StyledSection variant="middle-grey">
 				<Typography variant="h2" component="h2">
 					Projektname
@@ -76,16 +83,7 @@ export default function AddFeatureProject() {
 					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>
 			</StyledSection>
-			<StyledButton
-				variant="donebutton"
-				type="submit"
-				onSubmit={event => {
-					event.preventDefault();
-					setFeaturenameInputValue('');
-					addFeature(featurenameInputValue, beginInputValue, endInputValue);
-					console.log('test');
-				}}
-			>
+			<StyledButton variant="donebutton" type="submit">
 				Hinzufügen
 			</StyledButton>
 		</StyledForm>
