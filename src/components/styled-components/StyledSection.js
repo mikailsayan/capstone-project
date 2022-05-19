@@ -31,6 +31,8 @@ const StyledSection = styled.section`
 	${({ variant }) =>
 		variant === 'middle-grey' &&
 		`
+        display: flex;
+        flex-direction: column;
         background-color: var(--grey-color);
         height: 34.1rem;
         margin-bottom: 4rem;

@@ -32,7 +32,7 @@ const useStore = create(
 				id: nanoid(),
 				name: 'Featurename 1',
 				begin: '01/01/2001',
-				end: '02/01/2001',
+				end: '02-01-2001',
 				isChecked: false,
 				edit: false,
 			},
@@ -40,7 +40,7 @@ const useStore = create(
 				id: nanoid(),
 				name: 'Featurename 2',
 				begin: '01/02/2001',
-				end: '02/02/2001',
+				end: '02-02-2001',
 				isChecked: false,
 				edit: false,
 			},
@@ -117,7 +117,7 @@ const useStore = create(
 		addFeature: (name, begin, end) => {
 			set(
 				produce(draft => {
-					draft.todos.push({
+					draft.featureszustand.push({
 						name,
 						begin,
 						end,

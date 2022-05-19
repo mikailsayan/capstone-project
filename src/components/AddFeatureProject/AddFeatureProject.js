@@ -6,10 +6,17 @@ import StyledDiv from '../styled-components/StyledDiv';
 import MySVG from '../MySVG';
 import Typography from '../styled-components/Typography';
 import StyledButton from '../styled-components/StyledButton';
+import { useState, React } from 'react';
+import useStore from '../../hooks/useStore';
 
 export default function AddFeatureProject() {
+	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
+	const [beginInputValue, setBeginInputValue] = useState('');
+	const [endInputValue, setEndInputValue] = useState('');
+	const addFeature = useStore(state => state.addFeature);
+
 	return (
-		<>
+		<StyledForm>
 			<StyledSection variant="middle-grey">
 				<Typography variant="h2" component="h2">
 					Projektname
@@ -21,43 +28,66 @@ export default function AddFeatureProject() {
 					top="-3.5rem"
 					right="0.5rem"
 				/>
-				<article>
-					<StyledForm>
-						<StyledLabel variant="default" htmlFor="featurename">
-							Featurename
-						</StyledLabel>
-						<StyledInput
-							required
-							variant="full"
-							id="featurename"
-							name="featurename"
-							type="text"
-						/>
-						<StyledLabel variant="default" htmlFor="begindate">
-							Startdatum:
-						</StyledLabel>
-						<StyledDiv variant="center">
-							<StyledInput
-								variant="date"
-								id="begindate"
-								name="begindate"
-								type="date"
-							/>
-							<MySVG variant="calender" size="2.9rem" />
-						</StyledDiv>
-						<StyledLabel variant="default" htmlFor="enddate">
-							Enddatum:
-						</StyledLabel>
-						<StyledDiv variant="center">
-							<StyledInput variant="date" id="enddate" name="enddate" type="date" />
-							<MySVG variant="calender" size="2.9rem" />
-						</StyledDiv>
-					</StyledForm>
-				</article>
+
+				<StyledLabel variant="default" htmlFor="featurename">
+					Featurename
+				</StyledLabel>
+				<StyledInput
+					required
+					variant="full"
+					id="featurename"
+					name="featurename"
+					type="text"
+					value={featurenameInputValue}
+					onChange={event => {
+						setFeaturenameInputValue(event.target.value);
+					}}
+				/>
+				<StyledLabel variant="default" htmlFor="begindate">
+					Startdatum:
+				</StyledLabel>
+				<StyledDiv variant="center">
+					<StyledInput
+						variant="date"
+						id="begindate"
+						name="begindate"
+						type="date"
+						value={beginInputValue}
+						onChange={event => {
+							setBeginInputValue(event.target.value);
+						}}
+					/>
+					<MySVG variant="calender" size="2.9rem" />
+				</StyledDiv>
+				<StyledLabel variant="default" htmlFor="enddate">
+					Enddatum:
+				</StyledLabel>
+				<StyledDiv variant="center">
+					<StyledInput
+						variant="date"
+						id="enddate"
+						name="enddate"
+						type="date"
+						value={endInputValue}
+						onChange={event => {
+							setEndInputValue(event.target.value);
+						}}
+					/>
+					<MySVG variant="calender" size="2.9rem" />
+				</StyledDiv>
 			</StyledSection>
-			<StyledButton variant="mainbutton" type="submit">
-				Fertig
+			<StyledButton
+				variant="donebutton"
+				type="submit"
+				onSubmit={event => {
+					event.preventDefault();
+					setFeaturenameInputValue('');
+					addFeature(featurenameInputValue, beginInputValue, endInputValue);
+					console.log('test');
+				}}
+			>
+				Hinzufügen
 			</StyledButton>
-		</>
+		</StyledForm>
 	);
 }
