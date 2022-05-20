@@ -8,7 +8,7 @@ const useStore = create(
 		projectszustand: [
 			{
 				id: nanoid(),
-				name: 'Projektname 1',
+				name: 'Projektname 1 Zustand',
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01/01/2001',
 				end: '02/01/2001',
@@ -18,7 +18,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Projektname 2',
+				name: 'Projektname 2 Zustand',
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01/02/2001',
 				end: '02/02/2001',
@@ -30,7 +30,7 @@ const useStore = create(
 		featureszustand: [
 			{
 				id: nanoid(),
-				name: 'Featurename 1',
+				name: 'Featurename 1 Zustand',
 				begin: '01/01/2001',
 				end: '02-01-2001',
 				isChecked: false,
@@ -38,7 +38,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Featurename 2',
+				name: 'Featurename 2 Zustand',
 				begin: '01/02/2001',
 				end: '02-02-2001',
 				isChecked: false,
@@ -48,7 +48,7 @@ const useStore = create(
 		todoszustand: [
 			{
 				id: nanoid(),
-				name: 'Todoname 1',
+				name: 'Todoname 1 Zustand',
 				note: 'Here are some notes for Todo 1',
 				complexity: 'easy',
 				begin: '01/03/2022',
@@ -59,7 +59,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 2',
+				name: 'Todoname 2 Zustand',
 				note: 'Here are some notes for Todo 2',
 				complexity: 'middle',
 				begin: '01/03/2022',
@@ -70,7 +70,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 3',
+				name: 'Todoname 3 Zustand',
 				note: 'Here are some notes for Todo 3',
 				complexity: 'hard',
 				begin: '01/03/2022',
@@ -81,7 +81,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 4',
+				name: 'Todoname 4 Zustand',
 				note: 'Here are some notes for Todo 4',
 				complexity: 'middle',
 				begin: '01/03/2022',
@@ -92,7 +92,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 5',
+				name: 'Todoname 5 Zustand',
 				note: 'Here are some notes for Todo 5',
 				complexity: 'hard',
 				begin: '01/03/2022',
@@ -103,7 +103,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 6',
+				name: 'Todoname 6 Zustand',
 				note: 'Here are some notes for Todo 6',
 				complexity: 'easy',
 				begin: '01/03/2022',
