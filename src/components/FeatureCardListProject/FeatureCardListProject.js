@@ -1,6 +1,7 @@
 import FeatureCardSmall from '../FeatureCardSmall/FeatureCardSmall';
 import StyledSection from '../styled-components/StyledSection';
 import StyledUL from '../styled-components/StyledUL';
+import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
 
 export default function FeatureCardListProject() {
@@ -8,6 +9,9 @@ export default function FeatureCardListProject() {
 
 	return (
 		<StyledSection variant="overflow">
+			<Typography variant="h2" component="h2">
+				Projektname
+			</Typography>
 			<StyledUL>
 				{featureszustand.map(feature => {
 					const index = featureszustand.findIndex(

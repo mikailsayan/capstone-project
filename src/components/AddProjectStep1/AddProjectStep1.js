@@ -1,13 +1,13 @@
-import StyledSection from './styled-components/StyledSection';
-import StyledForm from './styled-components/StyledForm';
-import StyledLabel from './styled-components/StyledLabel';
-import StyledInput from './styled-components/StyledInput';
-import StyledTextarea from './styled-components/StyledTextarea';
-import StyledDiv from './styled-components/StyledDiv';
-import MySVG from './MySVG';
-import StyledButton from './styled-components/StyledButton';
+import StyledSection from '../styled-components/StyledSection';
+import StyledForm from '../styled-components/StyledForm';
+import StyledLabel from '../styled-components/StyledLabel';
+import StyledInput from '../styled-components/StyledInput';
+import StyledTextarea from '../styled-components/StyledTextarea';
+import StyledDiv from '../styled-components/StyledDiv';
+import MySVG from '../MySVG';
+import StyledButton from '../styled-components/StyledButton';
 
-export default function AddProject1() {
+export default function AddProjectStep1() {
 	return (
 		<>
 			<StyledSection variant="big-grey">

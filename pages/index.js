@@ -1,4 +1,4 @@
-import AddProject1 from '../src/components/AddProject1';
+import AddProjectStep1 from '../src/components/AddProjectStep1/AddProjectStep1';
 import FeatureViewCard from '../src/components/FeatureView/FeatureView';
 import ProjectCardListHome from '../src/components/ProjectCardListHome/ProjectCardListHome';
 import FeatureCardListProject from '../src/components/FeatureCardListProject/FeatureCardListProject';
@@ -14,7 +14,7 @@ export default function Home() {
 				<FeatureViewCard />
 				<FeatureCardListProject />
 				<ProjectCardListHome />
-				<AddProject1 />
+				<AddProjectStep1 />
 			</main>
 		</div>
 	);
