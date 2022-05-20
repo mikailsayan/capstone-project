@@ -19,6 +19,7 @@ const StyledDiv = styled.div`
 		left: 1rem;
 		z-index: 12;
     `}
+	
 	${({ variant }) =>
 		variant === 'dropdown' &&
 		`
@@ -60,9 +61,8 @@ const StyledDiv = styled.div`
 		align-items: center;
 		position: relative;
 		width: 39rem;
-        height: 57rem;
+		height: 57rem;
 		margin-top: 7rem;
-		z-index: 2;
    `}
 
    ${({ variant }) =>

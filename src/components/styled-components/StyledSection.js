@@ -8,7 +8,6 @@ const StyledSection = styled.section`
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 	padding: 1rem 1rem 1rem 0.5rem;
 	position: relative;
-	border: 1px solid black;
 	z-index: 9;
 
 	${({ variant }) =>
