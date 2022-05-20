@@ -23,9 +23,6 @@ export default function FeatureCardSmall({ feature, index }) {
 				<Typography variant="h3" component="h3" size="1.7rem">
 					{feature.name}
 				</Typography>
-				<StyledDiv variant="statusbox">
-					<Typography variant="p">Status</Typography>
-				</StyledDiv>
 				<div
 					onClick={() => {
 						deleteFeature(index);
