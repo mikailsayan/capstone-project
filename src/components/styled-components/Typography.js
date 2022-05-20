@@ -53,7 +53,7 @@ const StyledH1 = styled.h1`
 const StyledH2 = styled.h2`
 	position: absolute;
 	top: -4rem;
-	left: 1rem;
+	left: 0.5rem;
 	font-size: 2.2rem;
 `;
 const StyledH3 = styled.h3`

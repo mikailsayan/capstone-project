@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const StyledList = styled.li`
+	z-index: 9;
 	${({ variant }) =>
 		variant === 'featurelist-small' &&
 		`

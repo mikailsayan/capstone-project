@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledUL = styled.ul`
 	list-style-type: none;
+	z-index: 9;
 
 	${({ variant }) =>
 		variant === 'list-in-card' &&

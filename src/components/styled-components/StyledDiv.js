@@ -1,40 +1,86 @@
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-	display: flex;
-
 	${({ variant }) =>
 		variant === 'stepbox' &&
 		`
+		display: flex;
 		justify-content: center;
 		width: 8.9rem;
 		height: 3.1rem;
 		border: 0.3rem solid #4B4B4B;
 		border-radius: 4rem;
     `}
+	${({ variant }) =>
+		variant === 'dropdown-absolute' &&
+		`
+		position: absolute;
+		top: -4rem;
+		left: 1rem;
+		z-index: 12;
+    `}
+	${({ variant }) =>
+		variant === 'dropdown' &&
+		`
+		display: inline-block;
+		cursor: pointer;
+    `}
+
+	${({ variant }) =>
+		variant === 'dropdown-menu' &&
+		`
+		width: 25rem;
+		height: 15rem;
+		border-radius: 2rem;
+		box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+		z-index: 15;
+    `}
+
+	${({ variant }) =>
+		variant === 'dropdown-content' &&
+		`
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem 1rem 0.5rem 1rem;
+		width: 25rem;
+		height: 5rem;
+		z-index: 12;
+		background-color: #dedede;
+		border: 1px solid white;
+		
+   `}
 
 	${({ variant }) =>
 		variant === 'list' &&
 		`
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		position: relative;
 		width: 39rem;
         height: 57rem;
 		margin-top: 7rem;
+		z-index: 2;
    `}
 
    ${({ variant }) =>
 		variant === 'overflow' &&
 		`
+		display: flex;
 		width: 31rem;
 		max-height: 15rem;
 		margin: 1rem 1rem 0 1rem;
 		padding-top: 1rem;
 		overflow: auto;
    `}
+   
+   
 
 	${({ variant }) =>
 		variant === 'center' &&
 		`
+		display: flex;
 		align-items: center;
 		justify-content: center;
     `}
@@ -42,6 +88,7 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'cardtitle' &&
 		`
+		display: flex;
 		align-items: center;
 		gap: 1rem;
 		margin: 1rem 1rem 2rem 1rem;
@@ -50,6 +97,7 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'statusbox' &&
 		`
+		display: flex;
 		position: absolute;
 		right: 6rem;
 		border: 0.3rem solid var(--status-border);
@@ -60,6 +108,7 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'complexity-easy' &&
 		`
+		display: flex;
 		position: absolute;
 		right: 1rem;
 		width: 2rem;
@@ -72,6 +121,7 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'complexity-middle' &&
 		`
+		display: flex;
 		position: absolute;
 		right: 1rem;
 		width: 2rem;
@@ -84,6 +134,7 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'complexity-hard' &&
 		`
+		display: flex;
 		position: absolute;
 		right: 1rem;
 		width: 2rem;
@@ -96,6 +147,7 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'todonotes' &&
 		`
+		display: flex;
 		width: 30.3rem;
 		min-height: 17.3rem;
 		background-color: var(--todo-note);

@@ -9,12 +9,14 @@ const StyledSection = styled.section`
 	padding: 1rem 1rem 1rem 0.5rem;
 	position: relative;
 	border: 1px solid black;
+	z-index: 9;
 
 	${({ variant }) =>
 		variant === 'overflow' &&
 		` 
         display: flex;
         justify-content: center;
+        align-items: center;
         width: 39rem;
         height: 57rem;
         border-radius: 0rem;
@@ -22,6 +24,7 @@ const StyledSection = styled.section`
         overflow: auto;
         margin: 3rem 0 3rem 0;
         padding-top: 7rem;
+        z-index: 9;
     `}
 
 	${({ variant }) =>
@@ -47,6 +50,7 @@ const StyledSection = styled.section`
         background-color: var(--grey-color);
         height: 24.6rem;
         margin-bottom: 4rem;
+        z-index: 9;
     `}
 
     ${({ variant }) =>

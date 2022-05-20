@@ -113,6 +113,16 @@ const useStore = create(
 				isOpen: false,
 			},
 		],
+		dropdown: [{ isClicked: false }],
+		//Dropdown Functions
+		isClicked: () => {
+			set(
+				produce(draft => {
+					draft.dropdown[0].isClicked = !draft.dropdown[0].isClicked;
+				})
+			);
+		},
+		//End Dropdown Functions
 		//AddFeature Project Functions
 		addFeature: (name, begin, end) => {
 			set(
