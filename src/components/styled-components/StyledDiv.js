@@ -30,7 +30,7 @@ const StyledDiv = styled.div`
 		variant === 'dropdown-menu' &&
 		`
 		width: 25rem;
-		height: 15rem;
+		min-height: 2rem;
 		border-radius: 2rem;
 		box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
 		z-index: 15;
@@ -48,6 +48,7 @@ const StyledDiv = styled.div`
 		z-index: 12;
 		background-color: #dedede;
 		border: 1px solid white;
+		margin: 0;
 		
    `}
 

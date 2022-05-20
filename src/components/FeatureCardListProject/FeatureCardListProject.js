@@ -7,6 +7,7 @@ import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
 
 export default function FeatureCardListProject() {
+	const projectszustand = useStore(state => state.projectszustand);
 	const featureszustand = useStore(state => state.featureszustand);
 	const dropdown = useStore(state => state.dropdown);
 	const isClicked = useStore(state => state.isClicked);
@@ -25,21 +26,15 @@ export default function FeatureCardListProject() {
 					</Typography>
 					{dropdown[0].isClicked ? (
 						<StyledDiv variant="dropdown-menu">
-							<StyledDiv variant="dropdown-content">
-								<StyledParagraph variant="dropdown-content">
-									Project 1 Dropdown
-								</StyledParagraph>
-							</StyledDiv>
-							<StyledDiv variant="dropdown-content">
-								<StyledParagraph variant="dropdown-content">
-									Project 2 Dropdown
-								</StyledParagraph>
-							</StyledDiv>
-							<StyledDiv variant="dropdown-content">
-								<StyledParagraph variant="dropdown-content">
-									Project 3 Dropdown
-								</StyledParagraph>
-							</StyledDiv>
+							{projectszustand.map(project => {
+								return (
+									<StyledDiv key={project.id} variant="dropdown-content">
+										<StyledParagraph variant="dropdown-content">
+											{project.name}
+										</StyledParagraph>
+									</StyledDiv>
+								);
+							})}
 						</StyledDiv>
 					) : (
 						''
