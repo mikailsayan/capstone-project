@@ -23,6 +23,15 @@ const StyledButton = styled.button`
         background: var(--purple-button);
 		margin-bottom: 4rem;
     `}
+
+	${({ variant }) =>
+		variant === 'donebutton' &&
+		`
+		width: 34.5rem;
+        height: 5.1rem;
+        background: var(--blue-button);
+		margin-bottom: 4rem;
+    `}
 `;
 
 export default StyledButton;

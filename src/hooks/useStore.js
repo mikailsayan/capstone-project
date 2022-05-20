@@ -8,7 +8,7 @@ const useStore = create(
 		projectszustand: [
 			{
 				id: nanoid(),
-				name: 'Projektname 1',
+				name: 'Projektname 1 Zustand',
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01/01/2001',
 				end: '02/01/2001',
@@ -16,13 +16,31 @@ const useStore = create(
 				color: 'blue',
 				edit: false,
 			},
+			{
+				id: nanoid(),
+				name: 'Projektname 2 Zustand',
+				notes: 'Hier sind ein paar Notizen',
+				begin: '01/02/2001',
+				end: '02/02/2001',
+				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
+				color: 'green',
+				edit: false,
+			},
 		],
 		featureszustand: [
 			{
 				id: nanoid(),
-				name: 'Featurename 1',
+				name: 'Featurename 1 Zustand',
 				begin: '01/01/2001',
-				end: '02/01/2001',
+				end: '02-01-2001',
+				isChecked: false,
+				edit: false,
+			},
+			{
+				id: nanoid(),
+				name: 'Featurename 2 Zustand',
+				begin: '01/02/2001',
+				end: '02-02-2001',
 				isChecked: false,
 				edit: false,
 			},
@@ -30,7 +48,7 @@ const useStore = create(
 		todoszustand: [
 			{
 				id: nanoid(),
-				name: 'Todoname 1',
+				name: 'Todoname 1 Zustand',
 				note: 'Here are some notes for Todo 1',
 				complexity: 'easy',
 				begin: '01/03/2022',
@@ -41,7 +59,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 2',
+				name: 'Todoname 2 Zustand',
 				note: 'Here are some notes for Todo 2',
 				complexity: 'middle',
 				begin: '01/03/2022',
@@ -52,7 +70,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 3',
+				name: 'Todoname 3 Zustand',
 				note: 'Here are some notes for Todo 3',
 				complexity: 'hard',
 				begin: '01/03/2022',
@@ -63,7 +81,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 4',
+				name: 'Todoname 4 Zustand',
 				note: 'Here are some notes for Todo 4',
 				complexity: 'middle',
 				begin: '01/03/2022',
@@ -74,7 +92,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 5',
+				name: 'Todoname 5 Zustand',
 				note: 'Here are some notes for Todo 5',
 				complexity: 'hard',
 				begin: '01/03/2022',
@@ -85,7 +103,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Todoname 6',
+				name: 'Todoname 6 Zustand',
 				note: 'Here are some notes for Todo 6',
 				complexity: 'easy',
 				begin: '01/03/2022',
@@ -95,6 +113,32 @@ const useStore = create(
 				isOpen: false,
 			},
 		],
+		//AddFeature Project Functions
+		addFeature: (name, begin, end) => {
+			set(
+				produce(draft => {
+					draft.featureszustand.push({
+						name,
+						begin,
+						end,
+						id: nanoid(),
+						isChecked: false,
+						edit: false,
+					});
+				})
+			);
+		},
+		//End AddFeatureProject Functions
+		//FeatureCardSmall Functions
+		deleteFeature: index => {
+			set(
+				produce(draft => {
+					draft.featureszustand.splice(index, 1);
+				})
+			);
+		},
+		//End FeatureCardSmall Functions
+		//Feature View Functions
 		openNote: index => {
 			set(
 				produce(draft => {
@@ -117,6 +161,7 @@ const useStore = create(
 				})
 			);
 		},
+		//End Feature View Functions
 	}))
 );
 

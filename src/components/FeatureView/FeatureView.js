@@ -8,7 +8,6 @@ import StyledButton from '../styled-components/StyledButton';
 import StyledParagraph from '../styled-components/StyledParagraph';
 import features from '../../services/static-features.json';
 import Typography from '../styled-components/Typography';
-//import todos from '../../services/static-todos.json';
 import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 

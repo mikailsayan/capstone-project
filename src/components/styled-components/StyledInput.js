@@ -7,7 +7,7 @@ const StyledInput = styled.input`
 	${({ variant }) =>
 		variant === 'full' &&
 		`
-        width: 30.3rem;
+        width: 29rem;
 		margin: 0 2.1rem 1rem 2.1rem;
 		height: 4.1rem;
     `}

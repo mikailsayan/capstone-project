@@ -4,9 +4,13 @@ import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import StyledInput from '../styled-components/StyledInput';
 import Typography from '../styled-components/Typography';
-import todos from '../../services/static-todos.json';
+import MySVG from '../MySVG';
+import useStore from '../../hooks/useStore';
 
-export default function FeatureCardSmall({ feature }) {
+export default function FeatureCardSmall({ feature, index }) {
+	const deleteFeature = useStore(state => state.deleteFeature);
+	const todoszustand = useStore(state => state.todoszustand);
+
 	return (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
@@ -19,12 +23,22 @@ export default function FeatureCardSmall({ feature }) {
 				<Typography variant="h3" component="h3" size="1.7rem">
 					{feature.name}
 				</Typography>
-				<StyledDiv variant="statusbox">
-					<Typography variant="p">Status</Typography>
-				</StyledDiv>
+				<div
+					onClick={() => {
+						deleteFeature(index);
+					}}
+				>
+					<MySVG
+						variant="cancel"
+						position="absolute"
+						size="2.6rem"
+						top="2.1rem"
+						right="2rem"
+					/>
+				</div>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
-				{todos.slice(0, 3).map(todo => {
+				{todoszustand.slice(0, 3).map(todo => {
 					return (
 						<StyledList key={todo.id} variant="featurelist-small">
 							<StyledInput
