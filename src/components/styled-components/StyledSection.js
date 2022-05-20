@@ -21,8 +21,7 @@ const StyledSection = styled.section`
         border-radius: 0rem;
         box-shadow: none;
         overflow: auto;
-        margin: 3rem 0 3rem 0;
-        padding-top: 7rem;
+        margin: 0 0 3rem 0;
         z-index: 9;
     `}
 

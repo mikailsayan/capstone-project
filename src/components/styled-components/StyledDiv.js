@@ -65,7 +65,6 @@ const StyledDiv = styled.div`
 		align-items: center;
 		position: relative;
 		width: 39rem;
-		height: 57rem;
 		margin-top: 7rem;
    `}
 
@@ -76,7 +75,7 @@ const StyledDiv = styled.div`
 		width: 31rem;
 		max-height: 15rem;
 		margin: 1rem 1rem 0 1rem;
-		padding-top: 1rem;
+		padding-top: 11rem;
 		overflow: auto;
    `}
    
