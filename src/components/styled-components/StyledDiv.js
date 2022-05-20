@@ -14,6 +14,14 @@ const StyledDiv = styled.div`
     `}
 
 	${({ variant }) =>
+		variant === 'list' &&
+		`
+		position: relative;
+		width: 39rem;
+        height: 57rem;
+		margin-top: 7rem;
+   `}
+	${({ variant }) =>
 		variant === 'center' &&
 		`
 		align-items: center;
