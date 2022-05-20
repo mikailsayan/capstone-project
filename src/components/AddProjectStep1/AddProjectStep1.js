@@ -4,6 +4,7 @@ import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
+import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
 import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
@@ -28,6 +29,11 @@ export default function AddProjectStep1() {
 			}}
 		>
 			<StyledSection variant="big-grey">
+				<StyledDiv variant="stepbox">
+					<Typography variant="p" size="1.4rem">
+						1 / 2
+					</Typography>
+				</StyledDiv>
 				<StyledLabel variant="toplabel" htmlFor="projectname">
 					Projektname
 				</StyledLabel>

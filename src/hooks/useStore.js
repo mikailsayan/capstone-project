@@ -193,20 +193,20 @@ const useStore = create(
 
 export default useStore;
 
-/*return {
-	//Add Project Step 1-2
-	isActive: true,
-	step: 1,
-	maxStep: 2,
-	formAnswers: {},
-	nextStep: () => {
-		set(state => {
-			if (state.step < state.maxStep) {
-				return { step: state.step + 1 };
-			}
-		});
-	},
-	endFormFunction: () => {
-		set({ isActive: false });
-	},
-};*/
+/*//Stepbox Add Project
+		isActive: true,
+		step: 1,
+		maxStep: 2,
+		formAnswers: {},
+		nextStep: () => {
+			set(state => {
+				if (state.step < state.maxStep) {
+					return { step: state.step + 1 };
+				}
+			});
+		},
+		endFormFunction: () => {
+			set({ isActive: false });
+		},
+		//End Stepbox Add Project
+ */

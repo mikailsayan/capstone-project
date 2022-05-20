@@ -4,11 +4,15 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'stepbox' &&
 		`
+		position: absolute;
+		top: 1.5rem;
+		right: 2.5rem;
 		display: flex;
 		justify-content: center;
-		width: 8.9rem;
-		height: 3.1rem;
-		border: 0.3rem solid #4B4B4B;
+		align-items: center;
+		width: 7.8rem;
+		height: 2.6rem;
+		background-color: #b6b6b6;
 		border-radius: 4rem;
     `}
 	${({ variant }) =>
