@@ -21,6 +21,8 @@ export default function AddFeatureProject() {
 				event.preventDefault();
 				addFeature(featurenameInputValue, beginInputValue, endInputValue);
 				setFeaturenameInputValue('');
+				setBeginInputValue('');
+				setEndInputValue('');
 			}}
 		>
 			<StyledSection variant="middle-grey">

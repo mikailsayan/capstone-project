@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
+	display: flex;
+	flex-direction: column;
 	width: 34.5rem;
 	border-radius: 4rem;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
@@ -31,8 +33,6 @@ const StyledSection = styled.section`
 	${({ variant }) =>
 		variant === 'middle-grey' &&
 		`
-        display: flex;
-        flex-direction: column;
         background-color: var(--grey-color);
         height: 34.1rem;
         margin-bottom: 4rem;

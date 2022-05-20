@@ -4,13 +4,18 @@ import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledButton from '../styled-components/StyledButton';
+import StyledUL from '../styled-components/StyledUL';
+import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
+import useStore from '../../hooks/useStore';
 
 export default function EditFeatureProject() {
+	const todoszustand = useStore(state => state.todoszustand);
+
 	return (
 		<StyledForm>
-			<StyledSection variant="middle-grey">
+			<StyledSection variant="big-grey">
 				<Typography variant="h2" component="h2">
 					Projektname
 				</Typography>
@@ -46,6 +51,37 @@ export default function EditFeatureProject() {
 					<StyledInput variant="date" id="enddate" name="enddate" type="date" />
 					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>
+				<StyledUL variant="list-in-card">
+					{todoszustand.slice(0, 3).map(todo => {
+						return (
+							<StyledList key={todo.id} variant="todo-edit-feature">
+								<MySVG
+									variant="edit"
+									position="absolute"
+									size="2.3rem"
+									left="1rem"
+									top="0.8rem"
+								/>
+								{todo.name}
+								{todo.complexity === 'easy' ? (
+									<StyledDiv variant="complexity-easy"> </StyledDiv>
+								) : (
+									''
+								)}
+								{todo.complexity === 'middle' ? (
+									<StyledDiv variant="complexity-middle"> </StyledDiv>
+								) : (
+									''
+								)}
+								{todo.complexity === 'hard' ? (
+									<StyledDiv variant="complexity-hard"> </StyledDiv>
+								) : (
+									''
+								)}
+							</StyledList>
+						);
+					})}
+				</StyledUL>
 			</StyledSection>
 			<StyledButton variant="donebutton" type="submit">
 				Speichern
