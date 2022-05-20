@@ -21,7 +21,7 @@ const StyledSection = styled.section`
         box-shadow: none;
         overflow: auto;
         margin: 3rem 0 3rem 0;
-        padding: 7.5rem 1rem 1rem 1rem;
+        padding-top: 6rem;
     `}
 
 	${({ variant }) =>

@@ -21,6 +21,17 @@ const StyledDiv = styled.div`
         height: 57rem;
 		margin-top: 7rem;
    `}
+
+   ${({ variant }) =>
+		variant === 'overflow' &&
+		`
+		width: 31rem;
+		max-height: 15rem;
+		margin: 1rem 1rem 0 1rem;
+		padding-top: 1rem;
+		overflow: auto;
+   `}
+
 	${({ variant }) =>
 		variant === 'center' &&
 		`

@@ -21,7 +21,7 @@ const StyledList = styled.li`
 		`
         position: relative;
         width: 30.3rem;
-        height: 3.6rem;
+        min-height: 3.6rem;
         background-color: var(--dark-grey);
         border: none;
         border-radius: 4rem;
