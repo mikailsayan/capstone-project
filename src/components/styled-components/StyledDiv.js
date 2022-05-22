@@ -15,6 +15,7 @@ const StyledDiv = styled.div`
 		background-color: #b6b6b6;
 		border-radius: 4rem;
     `}
+
 	${({ variant }) =>
 		variant === 'dropdown-absolute' &&
 		`
@@ -22,6 +23,15 @@ const StyledDiv = styled.div`
 		top: -4rem;
 		left: 1rem;
 		z-index: 12;
+    `}
+
+	${({ variant }) =>
+		variant === 'open-todonote' &&
+		`
+		display: flex;
+		align-items: center;
+		width: 23rem;
+		height: 3.6rem;
     `}
 	
 	${({ variant }) =>

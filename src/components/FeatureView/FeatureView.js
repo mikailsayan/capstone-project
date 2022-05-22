@@ -73,9 +73,6 @@ export default function FeatureViewCard() {
 										style={{
 											border: todo.isChecked && '2px solid #5EDC5C',
 										}}
-										onClick={() => {
-											openNote(index);
-										}}
 									>
 										<input
 											id="todocheck"
@@ -84,7 +81,14 @@ export default function FeatureViewCard() {
 											checked={todo.isChecked}
 											onChange={() => checkTodo(index)}
 										/>
-										{todo.name}
+										<StyledDiv
+											variant="open-todonote"
+											onClick={() => {
+												openNote(index);
+											}}
+										>
+											{todo.name}
+										</StyledDiv>
 										{todo.complexity === 'easy' ? (
 											<StyledDiv variant="complexity-easy"> </StyledDiv>
 										) : (
