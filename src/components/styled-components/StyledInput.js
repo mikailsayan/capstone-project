@@ -45,7 +45,22 @@ const StyledInput = styled.input`
 		height: 2.7rem;
 		margin-left: 1rem;
 	
-`}
+	`}
+
+	${({ variant }) =>
+		variant === 'complexity' &&
+		`
+		display: none;
+
+		&:checked + label {
+			width: 4rem;
+			height: 4rem;
+			border: 0.4rem solid white;
+			border-radius: 50%;
+			z-index: 10;
+		}}}
+	
+	`}
 `;
 
 export default StyledInput;

@@ -18,13 +18,40 @@ export default function AddTodoProject() {
 				<StyledArticle variant="flexcenter">
 					<StyledTextarea variant="addtodonote" />
 				</StyledArticle>
-				<StyledLabel variant="default" htmlFor="complexity">
+				<StyledLabel variant="toplabel" htmlFor="complexity">
 					Schwierigkeit
 				</StyledLabel>
 				<StyledArticle variant="flexcenter">
-					<StyledDiv variant="green-complex"> </StyledDiv>
-					<StyledDiv variant="yellow-complex"> </StyledDiv>
-					<StyledDiv variant="red-complex"> </StyledDiv>
+					<StyledInput
+						variant="complexity"
+						type="radio"
+						name="complexity"
+						id="easy"
+						value="easy"
+					/>
+					<StyledLabel variant="complexity" htmlFor="easy">
+						<StyledDiv variant="green-complex" />
+					</StyledLabel>
+					<StyledInput
+						variant="complexity"
+						type="radio"
+						name="complexity"
+						id="middle"
+						value="middle"
+					/>
+					<StyledLabel variant="complexity" htmlFor="middle">
+						<StyledDiv variant="yellow-complex" />
+					</StyledLabel>
+					<StyledInput
+						variant="complexity"
+						type="radio"
+						name="complexity"
+						id="hard"
+						value="hard"
+					/>
+					<StyledLabel variant="complexity" htmlFor="hard">
+						<StyledDiv variant="red-complex" />
+					</StyledLabel>
 				</StyledArticle>
 			</StyledSection>
 			<StyledButton variant="donebutton" type="submit">
