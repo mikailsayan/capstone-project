@@ -4,11 +4,13 @@ import ProjectCardListHome from '../src/components/ProjectCardListHome/ProjectCa
 import FeatureCardListProject from '../src/components/FeatureCardListProject/FeatureCardListProject';
 import EditFeatureProject from '../src/components/EditFeatureProject/EditFeatureProject';
 import AddFeatureProject from '../src/components/AddFeatureProject/AddFeatureProject';
+import AddTodoProject from '../src/components/AddTodoProject/AddTodoProject';
 
 export default function Home() {
 	return (
 		<div>
 			<main>
+				<AddTodoProject />
 				<EditFeatureProject />
 				<AddFeatureProject />
 				<FeatureViewCard />

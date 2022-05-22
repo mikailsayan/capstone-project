@@ -169,6 +169,33 @@ const StyledDiv = styled.div`
 		margin: 1rem 0.5rem 1rem 0.5rem;
 		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 	`}
+
+	${({ variant }) =>
+		variant === 'green-complex' &&
+		`
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background-color: var(--green-complex);
+	`}
+
+	${({ variant }) =>
+		variant === 'yellow-complex' &&
+		`
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background-color: var(--yellow-complex);
+	`}
+
+	${({ variant }) =>
+		variant === 'red-complex' &&
+		`
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background-color: var(--red-complex);
+	`}
 `;
 
 export default StyledDiv;

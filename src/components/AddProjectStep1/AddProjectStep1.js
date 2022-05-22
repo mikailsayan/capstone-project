@@ -53,6 +53,7 @@ export default function AddProjectStep1() {
 				</StyledLabel>
 				<StyledTextarea
 					required
+					variant="addproject"
 					id="notes"
 					name="notes"
 					rows="5"
