@@ -6,17 +6,48 @@ import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledArticle from '../styled-components/StyledArticle';
 import StyledDiv from '../styled-components/StyledDiv';
+import { useState } from 'react';
+import useStore from '../../hooks/useStore';
 
 export default function AddTodoProject() {
+	const [todonameValue, setTodonameValue] = useState('');
+	const [todonoteValue, setTodonoteValue] = useState('');
+	const [radio, setRadio] = useState('');
+	const addTodo = useStore(state => state.addTodo);
+
 	return (
-		<StyledForm>
+		<StyledForm
+			onSubmit={event => {
+				event.preventDefault();
+				addTodo(todonameValue, todonoteValue, radio);
+				setTodonameValue('');
+				setTodonoteValue('');
+				setRadio('');
+			}}
+		>
 			<StyledSection variant="big-grey">
 				<StyledLabel variant="default" htmlFor="todoname">
 					Todoname
 				</StyledLabel>
-				<StyledInput required variant="full" id="todoname" name="todoname" type="text" />
+				<StyledInput
+					required
+					variant="full"
+					id="todoname"
+					name="todoname"
+					type="text"
+					value={todonameValue}
+					onChange={event => {
+						setTodonameValue(event.target.value);
+					}}
+				/>
 				<StyledArticle variant="flexcenter">
-					<StyledTextarea variant="addtodonote" />
+					<StyledTextarea
+						variant="addtodonote"
+						value={todonoteValue}
+						onChange={event => {
+							setTodonoteValue(event.target.value);
+						}}
+					/>
 				</StyledArticle>
 				<StyledLabel variant="toplabel" htmlFor="complexity">
 					Schwierigkeit
@@ -28,6 +59,10 @@ export default function AddTodoProject() {
 						name="complexity"
 						id="easy"
 						value="easy"
+						checked={radio === 'easy'}
+						onChange={event => {
+							setRadio(event.target.value);
+						}}
 					/>
 					<StyledLabel variant="complexity" htmlFor="easy">
 						<StyledDiv variant="green-complex" />
@@ -38,6 +73,10 @@ export default function AddTodoProject() {
 						name="complexity"
 						id="middle"
 						value="middle"
+						checked={radio === 'middle'}
+						onChange={event => {
+							setRadio(event.target.value);
+						}}
 					/>
 					<StyledLabel variant="complexity" htmlFor="middle">
 						<StyledDiv variant="yellow-complex" />
@@ -48,6 +87,10 @@ export default function AddTodoProject() {
 						name="complexity"
 						id="hard"
 						value="hard"
+						checked={radio === 'hard'}
+						onChange={event => {
+							setRadio(event.target.value);
+						}}
 					/>
 					<StyledLabel variant="complexity" htmlFor="hard">
 						<StyledDiv variant="red-complex" />

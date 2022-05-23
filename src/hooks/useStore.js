@@ -51,8 +51,6 @@ const useStore = create(
 				name: 'Todo 1',
 				note: 'Here are some notes for Todo 1',
 				complexity: 'easy',
-				begin: '01/03/2022',
-				end: '03/03/2022',
 				isChecked: false,
 				edit: false,
 				isOpen: false,
@@ -62,8 +60,6 @@ const useStore = create(
 				name: 'Todo 2',
 				note: 'Here are some notes for Todo 2',
 				complexity: 'middle',
-				begin: '01/03/2022',
-				end: '03/03/2022',
 				isChecked: false,
 				edit: false,
 				isOpen: false,
@@ -73,8 +69,6 @@ const useStore = create(
 				name: 'Todo 3',
 				note: 'Here are some notes for Todo 3',
 				complexity: 'hard',
-				begin: '01/03/2022',
-				end: '03/03/2022',
 				isChecked: false,
 				edit: false,
 				isOpen: false,
@@ -84,8 +78,6 @@ const useStore = create(
 				name: 'Todo 4',
 				note: 'Here are some notes for Todo 4',
 				complexity: 'middle',
-				begin: '01/03/2022',
-				end: '03/03/2022',
 				isChecked: false,
 				edit: false,
 				isOpen: false,
@@ -95,8 +87,6 @@ const useStore = create(
 				name: 'Todo 5',
 				note: 'Here are some notes for Todo 5',
 				complexity: 'hard',
-				begin: '01/03/2022',
-				end: '03/03/2022',
 				isChecked: false,
 				edit: false,
 				isOpen: false,
@@ -106,8 +96,6 @@ const useStore = create(
 				name: 'Todo 6',
 				note: 'Here are some notes for Todo 6',
 				complexity: 'easy',
-				begin: '01/03/2022',
-				end: '03/03/2022',
 				isChecked: false,
 				edit: false,
 				isOpen: false,
@@ -138,6 +126,21 @@ const useStore = create(
 			);
 		},
 		//End AddFeatureProject Functions
+		//AddTodoProject Functions
+		addTodo: (name, note, complexity) => {
+			set(
+				produce(draft => {
+					draft.todoszustand.push({
+						name,
+						note,
+						complexity,
+						id: nanoid(),
+						edit: false,
+					});
+				})
+			);
+		},
+		//End AddTodoProject Functions
 		//AddProjectStep1 Functions
 		addProject: (name, notes, begin, end) => {
 			set(
