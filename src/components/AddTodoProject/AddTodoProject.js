@@ -6,6 +6,7 @@ import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledArticle from '../styled-components/StyledArticle';
 import StyledDiv from '../styled-components/StyledDiv';
+import MySVG from '../MySVG';
 import { useState } from 'react';
 import useStore from '../../hooks/useStore';
 
@@ -26,6 +27,13 @@ export default function AddTodoProject() {
 			}}
 		>
 			<StyledSection variant="big-grey">
+				<MySVG
+					variant="cancel"
+					position="absolute"
+					size="2.6rem"
+					top="-3.5rem"
+					right="0.5rem"
+				/>
 				<StyledLabel variant="default" htmlFor="todoname">
 					Todoname
 				</StyledLabel>
