@@ -13,9 +13,7 @@ const StyledSection = styled.section`
 	${({ variant }) =>
 		variant === 'overflow' &&
 		` 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+       
         width: 39rem;
         height: 57rem;
         border-radius: 0rem;

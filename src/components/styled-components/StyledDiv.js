@@ -70,9 +70,6 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'list' &&
 		`
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		position: relative;
 		width: 39rem;
 		margin-top: 7rem;

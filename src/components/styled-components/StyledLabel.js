@@ -22,7 +22,7 @@ const StyledLabel = styled.label`
   		width: 4rem;
   		height: 4rem;
   		cursor: pointer;
-		z-index: 9;
+		z-index: 10;
     `}
 `;
 
