@@ -170,23 +170,19 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'green-complex' &&
 		`
-		display: block;
 		width: 4rem;
 		height: 4rem;
 		border-radius: 50%;
 		background-color: var(--green-complex);
-		z-index: 9;
 	`}
 
 	${({ variant }) =>
 		variant === 'yellow-complex' &&
 		`
-		display: block;
 		width: 4rem;
 		height: 4rem;
 		border-radius: 50%;
 		background-color: var(--yellow-complex);
-		z-index: 9;
 	`}
 
 	${({ variant }) =>
@@ -196,7 +192,6 @@ const StyledDiv = styled.div`
 		height: 4rem;
 		border-radius: 50%;
 		background-color: var(--red-complex);
-		z-index: 9;
 	`}
 `;
 
