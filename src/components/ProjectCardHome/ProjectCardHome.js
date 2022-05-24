@@ -5,11 +5,8 @@ import StyledImage from '../styled-components/StyledImage';
 import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
-import useStore from '../../hooks/useStore';
 
 export default function ProjectCardHome({ project }) {
-	const featureszustand = useStore(state => state.featureszustand);
-
 	return (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">
@@ -19,7 +16,7 @@ export default function ProjectCardHome({ project }) {
 				</Typography>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
-				{featureszustand.slice(0, 3).map(feature => {
+				{project.feature.slice(0, 3).map(feature => {
 					return (
 						<StyledList key={feature.id} variant="featurelist-small">
 							<StyledImage
