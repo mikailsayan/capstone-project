@@ -15,6 +15,7 @@ const useStore = create(
 				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
 				color: 'blue',
 				edit: false,
+				selected: false,
 				feature: [
 					{
 						id: nanoid(),
@@ -92,6 +93,7 @@ const useStore = create(
 				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
 				color: 'green',
 				edit: false,
+				selected: false,
 				feature: [
 					{
 						id: nanoid(),
@@ -285,6 +287,7 @@ const useStore = create(
 						begin,
 						end,
 						id: nanoid(),
+						selected: false,
 						isChecked: false,
 						edit: false,
 					});
@@ -301,6 +304,15 @@ const useStore = create(
 			);
 		},
 		//End FeatureCardSmall Functions
+		//FeatureCardListProject Function
+		dropSelect: index => {
+			set(
+				produce(draft => {
+					draft.projectszustand[index].selected = !draft.projectszustand[index].selected;
+				})
+			);
+		},
+		//End FeatureCardListProject Function
 		//Feature View Functions
 		openNote: index => {
 			set(
@@ -329,21 +341,3 @@ const useStore = create(
 );
 
 export default useStore;
-
-/*//Stepbox Add Project
-		isActive: true,
-		step: 1,
-		maxStep: 2,
-		formAnswers: {},
-		nextStep: () => {
-			set(state => {
-				if (state.step < state.maxStep) {
-					return { step: state.step + 1 };
-				}
-			});
-		},
-		endFormFunction: () => {
-			set({ isActive: false });
-		},
-		//End Stepbox Add Project
- */

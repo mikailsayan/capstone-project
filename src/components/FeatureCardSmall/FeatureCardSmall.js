@@ -9,7 +9,7 @@ import useStore from '../../hooks/useStore';
 
 export default function FeatureCardSmall({ feature, index }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
-	const todoszustand = useStore(state => state.todoszustand);
+	const projectszustand = useStore(state => state.projectszustand);
 
 	return (
 		<StyledSection variant="small-grey">
@@ -38,18 +38,22 @@ export default function FeatureCardSmall({ feature, index }) {
 				</div>
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
-				{todoszustand.slice(0, 3).map(todo => {
-					return (
-						<StyledList key={todo.id} variant="featurelist-small">
-							<StyledInput
-								variant="todocheckbox"
-								id="todocheckbox"
-								name="todocheckbox"
-								type="checkbox"
-							/>
-							{todo.name}
-						</StyledList>
-					);
+				{projectszustand.map(project => {
+					return project.feature.map(feature => {
+						return feature.todo.map(todo => {
+							return (
+								<StyledList key={todo.id} variant="featurelist-small">
+									<StyledInput
+										variant="todocheckbox"
+										id="todocheckbox"
+										name="todocheckbox"
+										type="checkbox"
+									/>
+									{todo.name}
+								</StyledList>
+							);
+						});
+					});
 				})}
 			</StyledUL>
 		</StyledSection>

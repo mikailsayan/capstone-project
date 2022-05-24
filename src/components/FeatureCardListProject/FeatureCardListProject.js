@@ -10,6 +10,7 @@ export default function FeatureCardListProject() {
 	const projectszustand = useStore(state => state.projectszustand);
 	const dropdown = useStore(state => state.dropdown);
 	const isClicked = useStore(state => state.isClicked);
+	const dropSelect = useStore(state => state.dropSelect);
 
 	return (
 		<StyledDiv variant="list">
@@ -26,8 +27,17 @@ export default function FeatureCardListProject() {
 					{dropdown[0].isClicked ? (
 						<StyledDiv variant="dropdown-menu">
 							{projectszustand.map(project => {
+								const index = projectszustand.findIndex(
+									projectIndex => projectIndex.id === project.id
+								);
 								return (
-									<StyledDiv key={project.id} variant="dropdown-content">
+									<StyledDiv
+										key={project.id}
+										variant="dropdown-content"
+										onClick={() => {
+											dropSelect(index);
+										}}
+									>
 										<StyledParagraph variant="dropdown-content">
 											{project.name}
 										</StyledParagraph>
@@ -40,22 +50,28 @@ export default function FeatureCardListProject() {
 					)}
 				</StyledDiv>
 			</StyledDiv>
-			<StyledSection variant="overflow">
-				<StyledUL>
-					{projectszustand.map(project => {
-						return project.feature.map(feature => {
-							const index = project.feature.findIndex(
-								featureIndex => featureIndex.id === feature.id
-							);
-							return (
-								<li key={feature.id}>
-									<FeatureCardSmall index={index} feature={feature} />
-								</li>
-							);
-						});
-					})}
-				</StyledUL>
-			</StyledSection>
+			{projectszustand.map(project => {
+				return (
+					project.selected && (
+						<StyledSection key={project.id} variant="overflow">
+							<StyledUL>
+								{projectszustand.map(project2 => {
+									return project2.feature.map(feature => {
+										const index = project2.feature.findIndex(
+											featureIndex => featureIndex.id === feature.id
+										);
+										return (
+											<li key={feature.id}>
+												<FeatureCardSmall index={index} feature={feature} />
+											</li>
+										);
+									});
+								})}
+							</StyledUL>
+						</StyledSection>
+					)
+				);
+			})}
 		</StyledDiv>
 	);
 }
