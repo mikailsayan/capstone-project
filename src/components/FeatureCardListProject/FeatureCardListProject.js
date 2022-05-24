@@ -8,7 +8,6 @@ import useStore from '../../hooks/useStore';
 
 export default function FeatureCardListProject() {
 	const projectszustand = useStore(state => state.projectszustand);
-	const featureszustand = useStore(state => state.featureszustand);
 	const dropdown = useStore(state => state.dropdown);
 	const isClicked = useStore(state => state.isClicked);
 
@@ -43,15 +42,17 @@ export default function FeatureCardListProject() {
 			</StyledDiv>
 			<StyledSection variant="overflow">
 				<StyledUL>
-					{featureszustand.map(feature => {
-						const index = featureszustand.findIndex(
-							featureIndex => featureIndex.id === feature.id
-						);
-						return (
-							<li key={feature.id}>
-								<FeatureCardSmall index={index} feature={feature} />
-							</li>
-						);
+					{projectszustand.map(project => {
+						return project.feature.map(feature => {
+							const index = project.feature.findIndex(
+								featureIndex => featureIndex.id === feature.id
+							);
+							return (
+								<li key={feature.id}>
+									<FeatureCardSmall index={index} feature={feature} />
+								</li>
+							);
+						});
 					})}
 				</StyledUL>
 			</StyledSection>
