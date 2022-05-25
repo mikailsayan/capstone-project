@@ -55,17 +55,15 @@ export default function FeatureCardListProject() {
 					project.selected && (
 						<StyledSection key={project.id} variant="overflow">
 							<StyledUL>
-								{projectszustand.map(project2 => {
-									return project2.feature.map(feature => {
-										const index = project2.feature.findIndex(
-											featureIndex => featureIndex.id === feature.id
-										);
-										return (
-											<li key={feature.id}>
-												<FeatureCardSmall index={index} feature={feature} />
-											</li>
-										);
-									});
+								{project.feature.map(feature => {
+									const index = project.feature.findIndex(
+										featureIndex => featureIndex.id === feature.id
+									);
+									return (
+										<li key={feature.id}>
+											<FeatureCardSmall feature={feature} index={index} />
+										</li>
+									);
 								})}
 							</StyledUL>
 						</StyledSection>
