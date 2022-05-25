@@ -9,6 +9,8 @@ import useStore from '../../hooks/useStore';
 
 export default function FeatureCardSmall({ feature, index }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
+	const appState = useStore(state => state.appState);
+	const stateToFeatureView = useStore(state => state.stateToFeatureView);
 	//const projectszustand = useStore(state => state.projectszustand);
 
 	return (
@@ -20,7 +22,15 @@ export default function FeatureCardSmall({ feature, index }) {
 					name="featurecheckbox"
 					type="checkbox"
 				/>
-				<Typography variant="h3" component="h3" size="1.7rem">
+				<Typography
+					variant="h3"
+					component="h3"
+					size="1.7rem"
+					onClick={() => {
+						stateToFeatureView();
+						console.log(appState);
+					}}
+				>
 					{feature.name}
 				</Typography>
 				<div

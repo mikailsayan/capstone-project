@@ -11,7 +11,7 @@ import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function EditFeatureProject() {
-	const todoszustand = useStore(state => state.todoszustand);
+	const projectszustand = useStore(state => state.projectszustand);
 
 	return (
 		<StyledForm>
@@ -53,34 +53,38 @@ export default function EditFeatureProject() {
 				</StyledDiv>
 				<StyledDiv variant="overflow">
 					<StyledUL variant="list-in-card">
-						{todoszustand.map(todo => {
-							return (
-								<StyledList key={todo.id} variant="todo-edit-feature">
-									<MySVG
-										variant="edit"
-										position="absolute"
-										size="2.3rem"
-										left="1rem"
-										top="0.8rem"
-									/>
-									{todo.name}
-									{todo.complexity === 'easy' ? (
-										<StyledDiv variant="complexity-easy"> </StyledDiv>
-									) : (
-										''
-									)}
-									{todo.complexity === 'middle' ? (
-										<StyledDiv variant="complexity-middle"> </StyledDiv>
-									) : (
-										''
-									)}
-									{todo.complexity === 'hard' ? (
-										<StyledDiv variant="complexity-hard"> </StyledDiv>
-									) : (
-										''
-									)}
-								</StyledList>
-							);
+						{projectszustand.map(project => {
+							return project.feature.map(feature => {
+								return feature.todo.map(todo => {
+									return (
+										<StyledList key={todo.id} variant="todo-edit-feature">
+											<MySVG
+												variant="edit"
+												position="absolute"
+												size="2.3rem"
+												left="1rem"
+												top="0.8rem"
+											/>
+											{todo.name}
+											{todo.complexity === 'easy' ? (
+												<StyledDiv variant="complexity-easy"> </StyledDiv>
+											) : (
+												''
+											)}
+											{todo.complexity === 'middle' ? (
+												<StyledDiv variant="complexity-middle"> </StyledDiv>
+											) : (
+												''
+											)}
+											{todo.complexity === 'hard' ? (
+												<StyledDiv variant="complexity-hard"> </StyledDiv>
+											) : (
+												''
+											)}
+										</StyledList>
+									);
+								});
+							});
 						})}
 					</StyledUL>
 				</StyledDiv>

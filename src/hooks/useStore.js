@@ -21,7 +21,7 @@ const useStore = create(
 						id: nanoid(),
 						name: 'Feature Final 1',
 						begin: '01/01/2001',
-						end: '02-01-2001',
+						end: '02/01/2001',
 						isChecked: false,
 						edit: false,
 						todo: [
@@ -58,7 +58,7 @@ const useStore = create(
 						id: nanoid(),
 						name: 'Feature Final 2',
 						begin: '01/02/2001',
-						end: '02-02-2001',
+						end: '02/02/2001',
 						isChecked: false,
 						edit: false,
 						todo: [
@@ -99,7 +99,7 @@ const useStore = create(
 						id: nanoid(),
 						name: 'Feature Final 3',
 						begin: '01/01/2001',
-						end: '02-01-2001',
+						end: '02/01/2001',
 						isChecked: false,
 						edit: false,
 						todo: [
@@ -136,7 +136,7 @@ const useStore = create(
 						id: nanoid(),
 						name: 'Feature Final 4',
 						begin: '01/02/2001',
-						end: '02-02-2001',
+						end: '02/02/2001',
 						isChecked: false,
 						edit: false,
 						todo: [
@@ -163,82 +163,15 @@ const useStore = create(
 				],
 			},
 		],
-		featureszustand: [
-			{
-				id: nanoid(),
-				name: 'Feature 1',
-				begin: '01/01/2001',
-				end: '02-01-2001',
-				isChecked: false,
-				edit: false,
-			},
-			{
-				id: nanoid(),
-				name: 'Feature 2',
-				begin: '01/02/2001',
-				end: '02-02-2001',
-				isChecked: false,
-				edit: false,
-			},
-		],
-		todoszustand: [
-			{
-				id: nanoid(),
-				name: 'Todo 1',
-				note: 'Here are some notes for Todo 1',
-				complexity: 'easy',
-				isChecked: false,
-				edit: false,
-				isOpen: false,
-			},
-			{
-				id: nanoid(),
-				name: 'Todo 2',
-				note: 'Here are some notes for Todo 2',
-				complexity: 'middle',
-				isChecked: false,
-				edit: false,
-				isOpen: false,
-			},
-			{
-				id: nanoid(),
-				name: 'Todo 3',
-				note: 'Here are some notes for Todo 3',
-				complexity: 'hard',
-				isChecked: false,
-				edit: false,
-				isOpen: false,
-			},
-			{
-				id: nanoid(),
-				name: 'Todo 4',
-				note: 'Here are some notes for Todo 4',
-				complexity: 'middle',
-				isChecked: false,
-				edit: false,
-				isOpen: false,
-			},
-			{
-				id: nanoid(),
-				name: 'Todo 5',
-				note: 'Here are some notes for Todo 5',
-				complexity: 'hard',
-				isChecked: false,
-				edit: false,
-				isOpen: false,
-			},
-			{
-				id: nanoid(),
-				name: 'Todo 6',
-				note: 'Here are some notes for Todo 6',
-				complexity: 'easy',
-				isChecked: false,
-				edit: false,
-				isOpen: false,
-			},
-		],
 		dropdown: [{ isClicked: false }],
-		appState: 'projects',
+		appState: 'projectview',
+		stateToFeatureView: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'featureview';
+				})
+			);
+		},
 		//Dropdown Functions
 		isClicked: () => {
 			set(

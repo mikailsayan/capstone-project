@@ -8,14 +8,14 @@ import StyledButton from '../styled-components/StyledButton';
 import StyledParagraph from '../styled-components/StyledParagraph';
 import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
-//import { useState, React } from 'react';
+//import { useState, React } from 'react';s
 import MySVG from '../MySVG';
 
 export default function FeatureViewCard() {
 	const openNote = useStore(state => state.openNote);
 	const checkTodo = useStore(state => state.checkTodo);
-	const todoszustand = useStore(state => state.todoszustand);
-	const length = todoszustand.filter(todo => !todo.isChecked).length;
+	//const todoszustand = useStore(state => state.todoszustand);
+	//const length = todoszustand.filter(todo => !todo.isChecked).length;
 	const projectszustand = useStore(state => state.projectszustand);
 
 	return (
@@ -49,7 +49,7 @@ export default function FeatureViewCard() {
 						Sollte Featurename stehen
 					</Typography>
 					<StyledDiv variant="statusbox">
-						<p>Übrig: {length}</p>
+						<p>Übrig: </p>
 					</StyledDiv>
 				</StyledDiv>
 				<StyledDiv variant="cardtitle">
