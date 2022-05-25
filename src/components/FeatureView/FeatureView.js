@@ -16,8 +16,8 @@ export default function FeatureViewCard() {
 	const checkTodo = useStore(state => state.checkTodo);
 	const todoszustand = useStore(state => state.todoszustand);
 	const length = todoszustand.filter(todo => !todo.isChecked).length;
-	const featureszustand = useStore(state => state.featureszustand);
-	/*const projectszustand = useStore(state => state.projectszustand);*/
+	//const featureszustand = useStore(state => state.featureszustand);
+	const projectszustand = useStore(state => state.projectszustand);
 
 	return (
 		<>
@@ -47,7 +47,7 @@ export default function FeatureViewCard() {
 						type="checkbox"
 					/>
 					<Typography variant="h3" component="h3" size="1.7rem">
-						{featureszustand[0].name}
+						Sollte Featurename stehen
 					</Typography>
 					<StyledDiv variant="statusbox">
 						<p>Übrig: {length}</p>
@@ -61,61 +61,71 @@ export default function FeatureViewCard() {
 				</StyledDiv>
 				<StyledSectionRaw variant="overflow">
 					<StyledUL variant="list-in-card">
-						{todoszustand.map(todo => {
-							const index = todoszustand.findIndex(
-								todoIndex => todoIndex.id === todo.id
-							);
+						{projectszustand.map(project => {
+							project.feature.map(feature => {
+								feature.todo.map(todo => {
+									const index = feature.todo.findIndex(
+										todoIndex => todoIndex.id === todo.id
+									);
 
-							return (
-								<section key={todo.id}>
-									<StyledList
-										variant="todolist-small"
-										style={{
-											border: todo.isChecked && '2px solid #5EDC5C',
-										}}
-									>
-										<input
-											id="todocheck"
-											name="todocheck"
-											type="checkbox"
-											checked={todo.isChecked}
-											onChange={() => checkTodo(index)}
-										/>
-										<StyledDiv
-											variant="open-todonote"
-											onClick={() => {
-												openNote(index);
-											}}
-										>
-											{todo.name}
-										</StyledDiv>
-										{todo.complexity === 'easy' ? (
-											<StyledDiv variant="complexity-easy"> </StyledDiv>
-										) : (
-											''
-										)}
-										{todo.complexity === 'middle' ? (
-											<StyledDiv variant="complexity-middle"> </StyledDiv>
-										) : (
-											''
-										)}
-										{todo.complexity === 'hard' ? (
-											<StyledDiv variant="complexity-hard"> </StyledDiv>
-										) : (
-											''
-										)}
-									</StyledList>
-									{todo.isOpen ? (
-										<StyledDiv variant="todonotes">
-											<StyledParagraph variant="todo-notes">
-												{todo.note}
-											</StyledParagraph>
-										</StyledDiv>
-									) : (
-										''
-									)}
-								</section>
-							);
+									return (
+										<section key={todo.id}>
+											<StyledList
+												variant="todolist-small"
+												style={{
+													border: todo.isChecked && '2px solid #5EDC5C',
+												}}
+											>
+												<input
+													id="todocheck"
+													name="todocheck"
+													type="checkbox"
+													checked={todo.isChecked}
+													onChange={() => checkTodo(index)}
+												/>
+												<StyledDiv
+													variant="open-todonote"
+													onClick={() => {
+														openNote(index);
+													}}
+												>
+													{todo.name}
+												</StyledDiv>
+												{todo.complexity === 'easy' ? (
+													<StyledDiv variant="complexity-easy">
+														{' '}
+													</StyledDiv>
+												) : (
+													''
+												)}
+												{todo.complexity === 'middle' ? (
+													<StyledDiv variant="complexity-middle">
+														{' '}
+													</StyledDiv>
+												) : (
+													''
+												)}
+												{todo.complexity === 'hard' ? (
+													<StyledDiv variant="complexity-hard">
+														{' '}
+													</StyledDiv>
+												) : (
+													''
+												)}
+											</StyledList>
+											{todo.isOpen ? (
+												<StyledDiv variant="todonotes">
+													<StyledParagraph variant="todo-notes">
+														{todo.note}
+													</StyledParagraph>
+												</StyledDiv>
+											) : (
+												''
+											)}
+										</section>
+									);
+								});
+							});
 						})}
 					</StyledUL>
 				</StyledSectionRaw>
