@@ -63,7 +63,11 @@ export default function FeatureCardListProject() {
 									);
 									return (
 										<li key={feature.id}>
-											<FeatureCardSmall feature={feature} index={index} />
+											<FeatureCardSmall
+												project={project}
+												feature={feature}
+												index={index}
+											/>
 										</li>
 									);
 								})}

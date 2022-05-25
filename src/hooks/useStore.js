@@ -238,6 +238,7 @@ const useStore = create(
 			},
 		],
 		dropdown: [{ isClicked: false }],
+		appState: 'projects',
 		//Dropdown Functions
 		isClicked: () => {
 			set(
@@ -299,7 +300,7 @@ const useStore = create(
 		deleteFeature: index => {
 			set(
 				produce(draft => {
-					draft.featureszustand.splice(index, 1);
+					draft.projectszustand[index].feature.splice(index, 1);
 				})
 			);
 		},

@@ -6,9 +6,9 @@ import StyledList from '../styled-components/StyledList';
 import StyledUL from '../styled-components/StyledUL';
 import StyledButton from '../styled-components/StyledButton';
 import StyledParagraph from '../styled-components/StyledParagraph';
-import features from '../../services/static-features.json';
 import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
+//import { useState, React } from 'react';
 import MySVG from '../MySVG';
 
 export default function FeatureViewCard() {
@@ -16,7 +16,6 @@ export default function FeatureViewCard() {
 	const checkTodo = useStore(state => state.checkTodo);
 	const todoszustand = useStore(state => state.todoszustand);
 	const length = todoszustand.filter(todo => !todo.isChecked).length;
-	//const featureszustand = useStore(state => state.featureszustand);
 	const projectszustand = useStore(state => state.projectszustand);
 
 	return (
@@ -55,9 +54,7 @@ export default function FeatureViewCard() {
 				</StyledDiv>
 				<StyledDiv variant="cardtitle">
 					<MySVG variant="calender" size="1.3rem" />
-					<p>
-						{features[0].begin} - {features[0].end}
-					</p>
+					<p>Startdatum - Enddatum</p>
 				</StyledDiv>
 				<StyledSectionRaw variant="overflow">
 					<StyledUL variant="list-in-card">

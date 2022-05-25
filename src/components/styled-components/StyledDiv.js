@@ -78,11 +78,9 @@ const StyledDiv = styled.div`
    ${({ variant }) =>
 		variant === 'overflow' &&
 		`
-		display: flex;
 		width: 31rem;
 		max-height: 15rem;
 		margin: 1rem 1rem 0 1rem;
-		padding-top: 11rem;
 		overflow: auto;
    `}
    
