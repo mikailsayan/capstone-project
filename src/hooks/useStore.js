@@ -308,6 +308,9 @@ const useStore = create(
 		dropSelect: index => {
 			set(
 				produce(draft => {
+					draft.projectszustand.forEach(element => {
+						element.selected = false;
+					});
 					draft.projectszustand[index].selected = !draft.projectszustand[index].selected;
 				})
 			);
