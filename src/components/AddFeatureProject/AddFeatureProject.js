@@ -15,6 +15,7 @@ export default function AddFeatureProject() {
 	const [endInputValue, setEndInputValue] = useState('');
 	const addFeature = useStore(state => state.addFeature);
 	const appState = useStore(state => state.appState);
+	const stateToFeatureList = useStore(state => state.stateToFeatureList);
 
 	return (
 		appState === 'addfeature' && (
@@ -31,13 +32,19 @@ export default function AddFeatureProject() {
 					<Typography variant="h2" component="h2">
 						Projektname
 					</Typography>
-					<MySVG
-						variant="cancel"
-						position="absolute"
-						size="2.6rem"
-						top="-3.5rem"
-						right="0.5rem"
-					/>
+					<div
+						onClick={() => {
+							stateToFeatureList();
+						}}
+					>
+						<MySVG
+							variant="cancel"
+							position="absolute"
+							size="2.6rem"
+							top="-3.5rem"
+							right="0.5rem"
+						/>
+					</div>
 
 					<StyledLabel variant="default" htmlFor="featurename">
 						Featurename
@@ -86,7 +93,13 @@ export default function AddFeatureProject() {
 						<MySVG variant="calender" size="2.9rem" />
 					</StyledDiv>
 				</StyledSection>
-				<StyledButton variant="donebutton" type="submit">
+				<StyledButton
+					variant="donebutton"
+					type="submit"
+					onClick={() => {
+						stateToFeatureList();
+					}}
+				>
 					Hinzufügen
 				</StyledButton>
 			</StyledForm>

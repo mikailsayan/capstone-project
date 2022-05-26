@@ -210,10 +210,10 @@ const useStore = create(
 		},
 		//End Dropdown Functions
 		//AddFeature Project Functions
-		addFeature: (name, begin, end) => {
+		addFeature: (index, name, begin, end) => {
 			set(
 				produce(draft => {
-					draft.featureszustand.push({
+					draft.projectszustand[index].feature.push({
 						name,
 						begin,
 						end,
