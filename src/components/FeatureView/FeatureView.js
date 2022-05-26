@@ -17,119 +17,144 @@ export default function FeatureViewCard() {
 	//const todoszustand = useStore(state => state.todoszustand);
 	//const length = todoszustand.filter(todo => !todo.isChecked).length;
 	const projectszustand = useStore(state => state.projectszustand);
+	const appState = useStore(state => state.appState);
+	const stateToFeatureList = useStore(state => state.stateToFeatureList);
+	const stateToAddTodo = useStore(state => state.stateToAddTodo);
+	const stateToEditFeature = useStore(state => state.stateToEditFeature);
 
 	return (
-		<>
-			<StyledSection variant="big-grey">
-				<Typography variant="h2" component="h2">
-					Projektname
-				</Typography>
-				<MySVG
-					variant="edit"
-					position="absolute"
-					size="2.6rem"
-					top="-3.5rem"
-					right="4rem"
-				/>
-				<MySVG
-					variant="cancel"
-					position="absolute"
-					size="2.6rem"
-					top="-3.5rem"
-					right="0.5rem"
-				/>
-				<StyledDiv variant="cardtitle">
-					<StyledInput
-						variant="featurecheckbox"
-						id="featurecheckbox"
-						name="featurecheckbox"
-						type="checkbox"
-					/>
-					<Typography variant="h3" component="h3" size="1.7rem">
-						Sollte Featurename stehen
+		appState === 'featureview' && (
+			<>
+				<StyledSection variant="big-grey">
+					<Typography variant="h2" component="h2">
+						Projektname
 					</Typography>
-					<StyledDiv variant="statusbox">
-						<p>Übrig: </p>
+					<div
+						onClick={() => {
+							stateToEditFeature();
+						}}
+					>
+						<MySVG
+							variant="edit"
+							position="absolute"
+							size="2.6rem"
+							top="-3.5rem"
+							right="4rem"
+						/>
+					</div>
+					<div
+						onClick={() => {
+							stateToFeatureList();
+						}}
+					>
+						<MySVG
+							variant="cancel"
+							position="absolute"
+							size="2.6rem"
+							top="-3.5rem"
+							right="0.5rem"
+						/>
+					</div>
+					<StyledDiv variant="cardtitle">
+						<StyledInput
+							variant="featurecheckbox"
+							id="featurecheckbox"
+							name="featurecheckbox"
+							type="checkbox"
+						/>
+						<Typography variant="h3" component="h3" size="1.7rem">
+							Featurename
+						</Typography>
+						<StyledDiv variant="statusbox">
+							<p>Übrig: </p>
+						</StyledDiv>
 					</StyledDiv>
-				</StyledDiv>
-				<StyledDiv variant="cardtitle">
-					<MySVG variant="calender" size="1.3rem" />
-					<p>Startdatum - Enddatum</p>
-				</StyledDiv>
-				<StyledSectionRaw variant="overflow">
-					<StyledUL variant="list-in-card">
-						{projectszustand.map(project => {
-							project.feature.map(feature => {
-								feature.todo.map(todo => {
-									const index = feature.todo.findIndex(
-										todoIndex => todoIndex.id === todo.id
-									);
+					<StyledDiv variant="cardtitle">
+						<MySVG variant="calender" size="1.3rem" />
+						<p>Startdatum - Enddatum</p>
+					</StyledDiv>
+					<StyledSectionRaw variant="overflow">
+						<StyledUL variant="list-in-card">
+							{projectszustand.map(project => {
+								project.feature.map(feature => {
+									feature.todo.map(todo => {
+										const index = feature.todo.findIndex(
+											todoIndex => todoIndex.id === todo.id
+										);
 
-									return (
-										<section key={todo.id}>
-											<StyledList
-												variant="todolist-small"
-												style={{
-													border: todo.isChecked && '2px solid #5EDC5C',
-												}}
-											>
-												<input
-													id="todocheck"
-													name="todocheck"
-													type="checkbox"
-													checked={todo.isChecked}
-													onChange={() => checkTodo(index)}
-												/>
-												<StyledDiv
-													variant="open-todonote"
-													onClick={() => {
-														openNote(index);
+										return (
+											<section key={todo.id}>
+												<StyledList
+													variant="todolist-small"
+													style={{
+														border:
+															todo.isChecked && '2px solid #5EDC5C',
 													}}
 												>
-													{todo.name}
-												</StyledDiv>
-												{todo.complexity === 'easy' ? (
-													<StyledDiv variant="complexity-easy">
-														{' '}
+													<input
+														id="todocheck"
+														name="todocheck"
+														type="checkbox"
+														checked={todo.isChecked}
+														onChange={() => checkTodo(index)}
+													/>
+													<StyledDiv
+														variant="open-todonote"
+														onClick={() => {
+															openNote(index);
+														}}
+													>
+														{todo.name}
+													</StyledDiv>
+													{todo.complexity === 'easy' ? (
+														<StyledDiv variant="complexity-easy">
+															{' '}
+														</StyledDiv>
+													) : (
+														''
+													)}
+													{todo.complexity === 'middle' ? (
+														<StyledDiv variant="complexity-middle">
+															{' '}
+														</StyledDiv>
+													) : (
+														''
+													)}
+													{todo.complexity === 'hard' ? (
+														<StyledDiv variant="complexity-hard">
+															{' '}
+														</StyledDiv>
+													) : (
+														''
+													)}
+												</StyledList>
+												{todo.isOpen ? (
+													<StyledDiv variant="todonotes">
+														<StyledParagraph variant="todo-notes">
+															{todo.note}
+														</StyledParagraph>
 													</StyledDiv>
 												) : (
 													''
 												)}
-												{todo.complexity === 'middle' ? (
-													<StyledDiv variant="complexity-middle">
-														{' '}
-													</StyledDiv>
-												) : (
-													''
-												)}
-												{todo.complexity === 'hard' ? (
-													<StyledDiv variant="complexity-hard">
-														{' '}
-													</StyledDiv>
-												) : (
-													''
-												)}
-											</StyledList>
-											{todo.isOpen ? (
-												<StyledDiv variant="todonotes">
-													<StyledParagraph variant="todo-notes">
-														{todo.note}
-													</StyledParagraph>
-												</StyledDiv>
-											) : (
-												''
-											)}
-										</section>
-									);
+											</section>
+										);
+									});
 								});
-							});
-						})}
-					</StyledUL>
-				</StyledSectionRaw>
-			</StyledSection>
-			<StyledButton variant="mainbutton" type="button">
-				Todo hinzufügen
-			</StyledButton>
-		</>
+							})}
+						</StyledUL>
+					</StyledSectionRaw>
+				</StyledSection>
+				<StyledButton
+					variant="mainbutton"
+					type="button"
+					onClick={() => {
+						stateToAddTodo();
+					}}
+				>
+					Todo hinzufügen
+				</StyledButton>
+			</>
+		)
 	);
 }

@@ -14,79 +14,82 @@ export default function AddFeatureProject() {
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
 	const addFeature = useStore(state => state.addFeature);
+	const appState = useStore(state => state.appState);
 
 	return (
-		<StyledForm
-			onSubmit={event => {
-				event.preventDefault();
-				addFeature(featurenameInputValue, beginInputValue, endInputValue);
-				setFeaturenameInputValue('');
-				setBeginInputValue('');
-				setEndInputValue('');
-			}}
-		>
-			<StyledSection variant="middle-grey">
-				<Typography variant="h2" component="h2">
-					Projektname
-				</Typography>
-				<MySVG
-					variant="cancel"
-					position="absolute"
-					size="2.6rem"
-					top="-3.5rem"
-					right="0.5rem"
-				/>
+		appState === 'addfeature' && (
+			<StyledForm
+				onSubmit={event => {
+					event.preventDefault();
+					addFeature(featurenameInputValue, beginInputValue, endInputValue);
+					setFeaturenameInputValue('');
+					setBeginInputValue('');
+					setEndInputValue('');
+				}}
+			>
+				<StyledSection variant="middle-grey">
+					<Typography variant="h2" component="h2">
+						Projektname
+					</Typography>
+					<MySVG
+						variant="cancel"
+						position="absolute"
+						size="2.6rem"
+						top="-3.5rem"
+						right="0.5rem"
+					/>
 
-				<StyledLabel variant="default" htmlFor="featurename">
-					Featurename
-				</StyledLabel>
-				<StyledInput
-					required
-					variant="full"
-					id="featurename"
-					name="featurename"
-					type="text"
-					value={featurenameInputValue}
-					onChange={event => {
-						setFeaturenameInputValue(event.target.value);
-					}}
-				/>
-				<StyledLabel variant="default" htmlFor="begindate">
-					Startdatum:
-				</StyledLabel>
-				<StyledDiv variant="center">
+					<StyledLabel variant="default" htmlFor="featurename">
+						Featurename
+					</StyledLabel>
 					<StyledInput
-						variant="date"
-						id="begindate"
-						name="begindate"
-						type="date"
-						value={beginInputValue}
+						required
+						variant="full"
+						id="featurename"
+						name="featurename"
+						type="text"
+						value={featurenameInputValue}
 						onChange={event => {
-							setBeginInputValue(event.target.value);
+							setFeaturenameInputValue(event.target.value);
 						}}
 					/>
-					<MySVG variant="calender" size="2.9rem" />
-				</StyledDiv>
-				<StyledLabel variant="default" htmlFor="enddate">
-					Enddatum:
-				</StyledLabel>
-				<StyledDiv variant="center">
-					<StyledInput
-						variant="date"
-						id="enddate"
-						name="enddate"
-						type="date"
-						value={endInputValue}
-						onChange={event => {
-							setEndInputValue(event.target.value);
-						}}
-					/>
-					<MySVG variant="calender" size="2.9rem" />
-				</StyledDiv>
-			</StyledSection>
-			<StyledButton variant="donebutton" type="submit">
-				Hinzufügen
-			</StyledButton>
-		</StyledForm>
+					<StyledLabel variant="default" htmlFor="begindate">
+						Startdatum:
+					</StyledLabel>
+					<StyledDiv variant="center">
+						<StyledInput
+							variant="date"
+							id="begindate"
+							name="begindate"
+							type="date"
+							value={beginInputValue}
+							onChange={event => {
+								setBeginInputValue(event.target.value);
+							}}
+						/>
+						<MySVG variant="calender" size="2.9rem" />
+					</StyledDiv>
+					<StyledLabel variant="default" htmlFor="enddate">
+						Enddatum:
+					</StyledLabel>
+					<StyledDiv variant="center">
+						<StyledInput
+							variant="date"
+							id="enddate"
+							name="enddate"
+							type="date"
+							value={endInputValue}
+							onChange={event => {
+								setEndInputValue(event.target.value);
+							}}
+						/>
+						<MySVG variant="calender" size="2.9rem" />
+					</StyledDiv>
+				</StyledSection>
+				<StyledButton variant="donebutton" type="submit">
+					Hinzufügen
+				</StyledButton>
+			</StyledForm>
+		)
 	);
 }

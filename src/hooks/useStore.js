@@ -15,7 +15,7 @@ const useStore = create(
 				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
 				color: 'blue',
 				edit: false,
-				selected: false,
+				selected: true,
 				feature: [
 					{
 						id: nanoid(),
@@ -164,11 +164,39 @@ const useStore = create(
 			},
 		],
 		dropdown: [{ isClicked: false }],
-		appState: 'projectview',
+		appState: 'featurelist',
 		stateToFeatureView: () => {
 			set(
 				produce(draft => {
 					draft.appState = 'featureview';
+				})
+			);
+		},
+		stateToFeatureList: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'featurelist';
+				})
+			);
+		},
+		stateToEditFeature: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'editfeature';
+				})
+			);
+		},
+		stateToAddTodo: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'addtodo';
+				})
+			);
+		},
+		stateToAddFeature: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'addfeature';
 				})
 			);
 		},

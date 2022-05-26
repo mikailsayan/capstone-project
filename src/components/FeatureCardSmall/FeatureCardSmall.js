@@ -9,9 +9,7 @@ import useStore from '../../hooks/useStore';
 
 export default function FeatureCardSmall({ feature, index }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
-	const appState = useStore(state => state.appState);
 	const stateToFeatureView = useStore(state => state.stateToFeatureView);
-	//const projectszustand = useStore(state => state.projectszustand);
 
 	return (
 		<StyledSection variant="small-grey">
@@ -28,7 +26,6 @@ export default function FeatureCardSmall({ feature, index }) {
 					size="1.7rem"
 					onClick={() => {
 						stateToFeatureView();
-						console.log(appState);
 					}}
 				>
 					{feature.name}

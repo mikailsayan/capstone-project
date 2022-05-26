@@ -15,99 +15,115 @@ export default function AddTodoProject() {
 	const [todonoteValue, setTodonoteValue] = useState('');
 	const [radio, setRadio] = useState('');
 	const addTodo = useStore(state => state.addTodo);
+	const appState = useStore(state => state.appState);
+	const stateToFeatureView = useStore(state => state.stateToFeatureView);
 
 	return (
-		<StyledForm
-			onSubmit={event => {
-				event.preventDefault();
-				addTodo(todonameValue, todonoteValue, radio);
-				setTodonameValue('');
-				setTodonoteValue('');
-				setRadio('');
-			}}
-		>
-			<StyledSection variant="big-grey">
-				<MySVG
-					variant="cancel"
-					position="absolute"
-					size="2.6rem"
-					top="-3.5rem"
-					right="0.5rem"
-				/>
-				<StyledLabel variant="default" htmlFor="todoname">
-					Todoname
-				</StyledLabel>
-				<StyledInput
-					required
-					variant="full"
-					id="todoname"
-					name="todoname"
-					type="text"
-					value={todonameValue}
-					onChange={event => {
-						setTodonameValue(event.target.value);
+		appState === 'addtodo' && (
+			<StyledForm
+				onSubmit={event => {
+					event.preventDefault();
+					addTodo(todonameValue, todonoteValue, radio);
+					setTodonameValue('');
+					setTodonoteValue('');
+					setRadio('');
+				}}
+			>
+				<StyledSection variant="big-grey">
+					<div
+						onClick={() => {
+							stateToFeatureView();
+						}}
+					>
+						<MySVG
+							variant="cancel"
+							position="absolute"
+							size="2.6rem"
+							top="-3.5rem"
+							right="0.5rem"
+						/>
+					</div>
+					<StyledLabel variant="default" htmlFor="todoname">
+						Todoname
+					</StyledLabel>
+					<StyledInput
+						required
+						variant="full"
+						id="todoname"
+						name="todoname"
+						type="text"
+						value={todonameValue}
+						onChange={event => {
+							setTodonameValue(event.target.value);
+						}}
+					/>
+					<StyledArticle variant="flexcenter">
+						<StyledTextarea
+							variant="addtodonote"
+							value={todonoteValue}
+							onChange={event => {
+								setTodonoteValue(event.target.value);
+							}}
+						/>
+					</StyledArticle>
+					<StyledLabel variant="toplabel" htmlFor="complexity">
+						Schwierigkeit
+					</StyledLabel>
+					<StyledArticle variant="flexcenter">
+						<StyledInput
+							variant="complexity"
+							type="radio"
+							name="complexity"
+							id="easy"
+							value="easy"
+							checked={radio === 'easy'}
+							onChange={event => {
+								setRadio(event.target.value);
+							}}
+						/>
+						<StyledLabel variant="complexity" htmlFor="easy">
+							<StyledDiv variant="green-complex" />
+						</StyledLabel>
+						<StyledInput
+							variant="complexity"
+							type="radio"
+							name="complexity"
+							id="middle"
+							value="middle"
+							checked={radio === 'middle'}
+							onChange={event => {
+								setRadio(event.target.value);
+							}}
+						/>
+						<StyledLabel variant="complexity" htmlFor="middle">
+							<StyledDiv variant="yellow-complex" />
+						</StyledLabel>
+						<StyledInput
+							variant="complexity"
+							type="radio"
+							name="complexity"
+							id="hard"
+							value="hard"
+							checked={radio === 'hard'}
+							onChange={event => {
+								setRadio(event.target.value);
+							}}
+						/>
+						<StyledLabel variant="complexity" htmlFor="hard">
+							<StyledDiv variant="red-complex" />
+						</StyledLabel>
+					</StyledArticle>
+				</StyledSection>
+				<StyledButton
+					variant="donebutton"
+					type="submit"
+					onClick={() => {
+						stateToFeatureView();
 					}}
-				/>
-				<StyledArticle variant="flexcenter">
-					<StyledTextarea
-						variant="addtodonote"
-						value={todonoteValue}
-						onChange={event => {
-							setTodonoteValue(event.target.value);
-						}}
-					/>
-				</StyledArticle>
-				<StyledLabel variant="toplabel" htmlFor="complexity">
-					Schwierigkeit
-				</StyledLabel>
-				<StyledArticle variant="flexcenter">
-					<StyledInput
-						variant="complexity"
-						type="radio"
-						name="complexity"
-						id="easy"
-						value="easy"
-						checked={radio === 'easy'}
-						onChange={event => {
-							setRadio(event.target.value);
-						}}
-					/>
-					<StyledLabel variant="complexity" htmlFor="easy">
-						<StyledDiv variant="green-complex" />
-					</StyledLabel>
-					<StyledInput
-						variant="complexity"
-						type="radio"
-						name="complexity"
-						id="middle"
-						value="middle"
-						checked={radio === 'middle'}
-						onChange={event => {
-							setRadio(event.target.value);
-						}}
-					/>
-					<StyledLabel variant="complexity" htmlFor="middle">
-						<StyledDiv variant="yellow-complex" />
-					</StyledLabel>
-					<StyledInput
-						variant="complexity"
-						type="radio"
-						name="complexity"
-						id="hard"
-						value="hard"
-						checked={radio === 'hard'}
-						onChange={event => {
-							setRadio(event.target.value);
-						}}
-					/>
-					<StyledLabel variant="complexity" htmlFor="hard">
-						<StyledDiv variant="red-complex" />
-					</StyledLabel>
-				</StyledArticle>
-			</StyledSection>
-			<StyledButton variant="donebutton" type="submit">
-				Speichern
-			</StyledButton>
-		</StyledForm>
+				>
+					Speichern
+				</StyledButton>
+			</StyledForm>
+		)
 	);
 }
