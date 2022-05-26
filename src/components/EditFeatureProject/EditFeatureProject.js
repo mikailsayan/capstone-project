@@ -17,7 +17,11 @@ export default function EditFeatureProject() {
 
 	return (
 		appState === 'editfeature' && (
-			<StyledForm>
+			<StyledForm
+				onSubmit={event => {
+					event.preventDefault();
+				}}
+			>
 				<StyledSection variant="big-grey">
 					<Typography variant="h2" component="h2">
 						Projektname

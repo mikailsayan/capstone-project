@@ -14,8 +14,8 @@ const StyledSection = styled.section`
 		variant === 'overflow' &&
 		` 
        
-        width: 39rem;
-        height: 57rem;
+        width: 35rem;
+        height: 50.5rem;
         border-radius: 0rem;
         box-shadow: none;
         overflow: auto;

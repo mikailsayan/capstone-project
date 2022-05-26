@@ -24,6 +24,7 @@ const useStore = create(
 						end: '02/01/2001',
 						isChecked: false,
 						edit: false,
+						selected: false,
 						todo: [
 							{
 								id: nanoid(),
@@ -33,6 +34,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 							{
 								id: nanoid(),
@@ -42,6 +44,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 							{
 								id: nanoid(),
@@ -51,6 +54,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 						],
 					},
@@ -61,6 +65,7 @@ const useStore = create(
 						end: '02/02/2001',
 						isChecked: false,
 						edit: false,
+						selected: false,
 						todo: [
 							{
 								id: nanoid(),
@@ -70,6 +75,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 							{
 								id: nanoid(),
@@ -79,6 +85,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 						],
 					},
@@ -102,6 +109,7 @@ const useStore = create(
 						end: '02/01/2001',
 						isChecked: false,
 						edit: false,
+						selected: false,
 						todo: [
 							{
 								id: nanoid(),
@@ -111,6 +119,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 							{
 								id: nanoid(),
@@ -120,6 +129,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 							{
 								id: nanoid(),
@@ -129,6 +139,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 						],
 					},
@@ -139,6 +150,7 @@ const useStore = create(
 						end: '02/02/2001',
 						isChecked: false,
 						edit: false,
+						selected: false,
 						todo: [
 							{
 								id: nanoid(),
@@ -148,6 +160,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 							{
 								id: nanoid(),
@@ -157,6 +170,7 @@ const useStore = create(
 								isChecked: false,
 								edit: false,
 								isOpen: false,
+								selected: false,
 							},
 						],
 					},
@@ -218,22 +232,26 @@ const useStore = create(
 						begin,
 						end,
 						id: nanoid(),
+						isChecked: false,
 						edit: false,
+						selected: false,
 					});
 				})
 			);
 		},
 		//End AddFeatureProject Functions
 		//AddTodoProject Functions
-		addTodo: (name, note, complexity) => {
+		addTodo: (index, name, note, complexity) => {
 			set(
 				produce(draft => {
-					draft.todoszustand.push({
+					draft.projectszustand[index].feature.todo.push({
 						name,
 						note,
 						complexity,
 						id: nanoid(),
+						isChecked: false,
 						edit: false,
+						selected: false,
 					});
 				})
 			);
@@ -282,22 +300,24 @@ const useStore = create(
 		openNote: index => {
 			set(
 				produce(draft => {
-					draft.todoszustand[index].isOpen = !draft.todoszustand[index].isOpen;
+					draft.projectszustand[index].feature.todo[index].isOpen =
+						!draft.projectszustand[index].feature.todo[index].isOpen;
 				})
 			);
 		},
 		checkFeature: index => {
 			set(
 				produce(draft => {
-					draft.featureszustand[index].isChecked =
-						!draft.featureszustand[index].isChecked;
+					draft.projectszustand[index].feature[index].isChecked =
+						!draft.projectszustand[index].feature[index].isChecked;
 				})
 			);
 		},
 		checkTodo: index => {
 			set(
 				produce(draft => {
-					draft.todoszustand[index].isChecked = !draft.todoszustand[index].isChecked;
+					draft.projectszustand[index].feature.todo[index].isChecked =
+						!draft.projectszustand[index].feature.todo[index].isChecked;
 				})
 			);
 		},
