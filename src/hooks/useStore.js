@@ -178,14 +178,8 @@ const useStore = create(
 			},
 		],
 		dropdown: [{ isClicked: false }],
+		//appState Functions
 		appState: 'featurelist',
-		stateToFeatureView: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'featureview';
-				})
-			);
-		},
 		stateToFeatureList: () => {
 			set(
 				produce(draft => {
@@ -214,6 +208,24 @@ const useStore = create(
 				})
 			);
 		},
+		//End AppState Functions
+		//FeatureCardState Functions
+		featureCardState: 'featurecardsmall',
+		stateToFeatureView: () => {
+			set(
+				produce(draft => {
+					draft.featureCardState = 'featureview';
+				})
+			);
+		},
+		stateToFeatureCardSmall: () => {
+			set(
+				produce(draft => {
+					draft.featureCardState = 'featurecardsmall';
+				})
+			);
+		},
+		//End FeatureCardState Functions
 		//Dropdown Functions
 		isClicked: () => {
 			set(

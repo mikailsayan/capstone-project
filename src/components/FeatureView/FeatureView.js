@@ -23,12 +23,9 @@ export default function FeatureViewCard() {
 	const stateToEditFeature = useStore(state => state.stateToEditFeature);
 
 	return (
-		appState === 'featureview' && (
+		appState === '' && (
 			<>
 				<StyledSection variant="big-grey">
-					<Typography variant="h2" component="h2">
-						Projektname
-					</Typography>
 					<div
 						onClick={() => {
 							stateToEditFeature();
@@ -38,8 +35,8 @@ export default function FeatureViewCard() {
 							variant="edit"
 							position="absolute"
 							size="2.6rem"
-							top="-3.5rem"
-							right="4rem"
+							top="1.8rem"
+							right="6rem"
 						/>
 					</div>
 					<div
@@ -51,8 +48,8 @@ export default function FeatureViewCard() {
 							variant="cancel"
 							position="absolute"
 							size="2.6rem"
-							top="-3.5rem"
-							right="0.5rem"
+							top="1.8rem"
+							right="2.5rem"
 						/>
 					</div>
 					<StyledDiv variant="cardtitle">
@@ -63,11 +60,8 @@ export default function FeatureViewCard() {
 							type="checkbox"
 						/>
 						<Typography variant="h3" component="h3" size="1.7rem">
-							Featurename
+							Ein Featurename
 						</Typography>
-						<StyledDiv variant="statusbox">
-							<p>Übrig: </p>
-						</StyledDiv>
 					</StyledDiv>
 					<StyledDiv variant="cardtitle">
 						<MySVG variant="calender" size="1.3rem" />

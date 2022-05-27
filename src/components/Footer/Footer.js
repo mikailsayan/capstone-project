@@ -1,8 +1,12 @@
 import StyledFooter from '../styled-components/StyledFooter';
 import StyledImage from '../styled-components/StyledImage';
 import StyledUL from '../styled-components/StyledUL';
+import useStore from '../../hooks/useStore';
 
 export default function Footer() {
+	const appState = useStore(state => state.appState);
+	const stateToFeatureList = useStore(state => state.stateToFeatureList);
+
 	return (
 		<StyledFooter>
 			<StyledUL variant="footer">
@@ -24,7 +28,12 @@ export default function Footer() {
 						height={57}
 					/>
 				</li>
-				<li>
+				<li
+					onClick={() => {
+						stateToFeatureList();
+						console.log(appState);
+					}}
+				>
 					<StyledImage
 						variant="footer"
 						src="/project.svg"
