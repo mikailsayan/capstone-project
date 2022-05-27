@@ -3,6 +3,7 @@ import FeatureViewCard from '../../src/components/FeatureView/FeatureView';
 import EditFeatureProject from '../../src/components/EditFeatureProject/EditFeatureProject';
 import AddFeatureProject from '../../src/components/AddFeatureProject/AddFeatureProject';
 import AddTodoProject from '../../src/components/AddTodoProject/AddTodoProject';
+import EditTodoProject from '../../src/components/EditTodoProject/EditTodoProject';
 
 export default function Home() {
 	return (
@@ -13,6 +14,7 @@ export default function Home() {
 				<EditFeatureProject />
 				<AddFeatureProject />
 				<AddTodoProject />
+				<EditTodoProject />
 			</main>
 		</div>
 	);
