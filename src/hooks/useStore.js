@@ -208,6 +208,13 @@ const useStore = create(
 				})
 			);
 		},
+		stateToFeatureView: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'featureview';
+				})
+			);
+		},
 		//End AppState Functions
 		//FeatureCardSmall Functions
 		selectFeature: (index1, index2) => {

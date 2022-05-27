@@ -54,12 +54,15 @@ export default function FeatureCardListProject() {
 						</StyledDiv>
 					</StyledDiv>
 					{projectszustand.map(project => {
+						const projectIndex = projectszustand.findIndex(
+							projectIndex => projectIndex.id === project.id
+						);
 						return (
 							project.selected && (
 								<StyledSection key={project.id} variant="overflow">
 									<StyledUL>
 										{project.feature.map(feature => {
-											const index = project.feature.findIndex(
+											const featureIndex = project.feature.findIndex(
 												featureIndex => featureIndex.id === feature.id
 											);
 											return (
@@ -67,7 +70,8 @@ export default function FeatureCardListProject() {
 													<FeatureCardSmall
 														project={project}
 														feature={feature}
-														index={index}
+														featureIndex={featureIndex}
+														projectIndex={projectIndex}
 													/>
 												</li>
 											);
