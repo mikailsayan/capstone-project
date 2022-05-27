@@ -6,6 +6,7 @@ import useStore from '../../hooks/useStore';
 export default function Footer() {
 	const appState = useStore(state => state.appState);
 	const stateToFeatureList = useStore(state => state.stateToFeatureList);
+	const stateToFeatureCardSmall = useStore(state => state.stateToFeatureCardSmall);
 
 	return (
 		<StyledFooter>
@@ -31,6 +32,7 @@ export default function Footer() {
 				<li
 					onClick={() => {
 						stateToFeatureList();
+						stateToFeatureCardSmall();
 						console.log(appState);
 					}}
 				>

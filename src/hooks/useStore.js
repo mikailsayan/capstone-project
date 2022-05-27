@@ -209,23 +209,26 @@ const useStore = create(
 			);
 		},
 		//End AppState Functions
-		//FeatureCardState Functions
-		featureCardState: 'featurecardsmall',
-		stateToFeatureView: () => {
+		//FeatureCardSmall Functions
+		selectFeature: index => {
 			set(
 				produce(draft => {
-					draft.featureCardState = 'featureview';
+					draft.projectszustand.feature.forEach(element => {
+						element.selected = false;
+					});
+					draft.projectszustand[index].feature[index].selected =
+						!draft.projectszustand[index].feature[index].selected;
 				})
 			);
 		},
-		stateToFeatureCardSmall: () => {
+		closeFeatureView: index => {
 			set(
 				produce(draft => {
-					draft.featureCardState = 'featurecardsmall';
+					draft.projectszustand[index].feature[index].selected = false;
 				})
 			);
 		},
-		//End FeatureCardState Functions
+		//End FeatureCardSmall Functions
 		//Dropdown Functions
 		isClicked: () => {
 			set(
