@@ -210,21 +210,21 @@ const useStore = create(
 		},
 		//End AppState Functions
 		//FeatureCardSmall Functions
-		selectFeature: index => {
+		selectFeature: (index1, index2) => {
 			set(
 				produce(draft => {
-					draft.projectszustand.feature.forEach(element => {
+					draft.projectszustand[index1].feature[index2].forEach(element => {
 						element.selected = false;
 					});
-					draft.projectszustand[index].feature[index].selected =
-						!draft.projectszustand[index].feature[index].selected;
+					draft.projectszustand[index1].feature[index2].selected =
+						!draft.projectszustand[index1].feature[index2].selected;
 				})
 			);
 		},
 		closeFeatureView: index => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index].selected = false;
+					draft.projectszustand[index].feature.selected = false;
 				})
 			);
 		},
