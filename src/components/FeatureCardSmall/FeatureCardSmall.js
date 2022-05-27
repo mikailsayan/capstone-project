@@ -38,7 +38,7 @@ export default function FeatureCardSmall({ feature, index }) {
 				</div>
 				<div
 					onClick={() => {
-						closeFeatureView();
+						closeFeatureView(0, 1);
 					}}
 				>
 					<MySVG
@@ -57,7 +57,7 @@ export default function FeatureCardSmall({ feature, index }) {
 						type="checkbox"
 					/>
 					<Typography variant="h3" component="h3" size="1.7rem">
-						Ein Featurename
+						{feature.selected && feature.name}
 					</Typography>
 				</StyledDiv>
 				<StyledDiv variant="cardtitle">
@@ -159,7 +159,7 @@ export default function FeatureCardSmall({ feature, index }) {
 					component="h3"
 					size="1.7rem"
 					onClick={() => {
-						selectFeature();
+						selectFeature(0, 1);
 					}}
 				>
 					{feature.name}

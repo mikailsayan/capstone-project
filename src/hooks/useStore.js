@@ -213,18 +213,19 @@ const useStore = create(
 		selectFeature: (index1, index2) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index1].feature[index2].forEach(element => {
+					draft.projectszustand[index1].feature.forEach(element => {
 						element.selected = false;
 					});
+					console.log(draft.projectszustand);
 					draft.projectszustand[index1].feature[index2].selected =
 						!draft.projectszustand[index1].feature[index2].selected;
 				})
 			);
 		},
-		closeFeatureView: index => {
+		closeFeatureView: (index1, index2) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.selected = false;
+					draft.projectszustand[index1].feature[index2].selected = false;
 				})
 			);
 		},
