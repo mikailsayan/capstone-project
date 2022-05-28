@@ -94,7 +94,9 @@ export default function FeatureCardSmall({ feature, featureIndex, projectIndex }
 										name="todocheck"
 										type="checkbox"
 										checked={todo.isChecked}
-										onChange={() => checkTodo(index)}
+										onChange={() => {
+											checkTodo(projectIndex, featureIndex, index);
+										}}
 									/>
 									<StyledDiv
 										variant="open-todonote"
@@ -156,7 +158,7 @@ export default function FeatureCardSmall({ feature, featureIndex, projectIndex }
 				</Typography>
 				<div
 					onClick={() => {
-						deleteFeature(featureIndex);
+						deleteFeature(projectIndex, featureIndex);
 					}}
 				>
 					<MySVG

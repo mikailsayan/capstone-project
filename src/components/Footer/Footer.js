@@ -1,9 +1,13 @@
 import StyledFooter from '../styled-components/StyledFooter';
 import StyledImage from '../styled-components/StyledImage';
 import StyledUL from '../styled-components/StyledUL';
+import useStore from '../../hooks/useStore';
 import Link from 'next/link';
 
 export default function Footer() {
+	const stateToProjects = useStore(state => state.stateToProjects);
+	const stateToFeatureList = useStore(state => state.stateToFeatureList);
+
 	return (
 		<StyledFooter>
 			<StyledUL variant="footer">
@@ -15,6 +19,9 @@ export default function Footer() {
 							alt="homepage-svg"
 							width={42}
 							height={42}
+							onClick={() => {
+								stateToProjects();
+							}}
 						/>
 					</Link>
 				</li>
@@ -37,6 +44,9 @@ export default function Footer() {
 							alt="project-svg"
 							width={42}
 							height={42}
+							onClick={() => {
+								stateToFeatureList();
+							}}
 						/>
 					</Link>
 				</li>

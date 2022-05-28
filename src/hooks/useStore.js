@@ -194,6 +194,13 @@ const useStore = create(
 				})
 			);
 		},
+		stateToProjects: () => {
+			set(
+				produce(draft => {
+					draft.appState = 'projects';
+				})
+			);
+		},
 		stateToAddTodo: () => {
 			set(
 				produce(draft => {
@@ -299,10 +306,10 @@ const useStore = create(
 		},
 		//End AddProjectStep1 Functions
 		//FeatureCardSmall Functions
-		deleteFeature: index => {
+		deleteFeature: (index, index2) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.splice(index, 1);
+					draft.projectszustand[index].feature.splice(index2, 1);
 				})
 			);
 		},
@@ -336,11 +343,11 @@ const useStore = create(
 				})
 			);
 		},
-		checkTodo: index => {
+		checkTodo: (index, index2, index3) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.todo[index].isChecked =
-						!draft.projectszustand[index].feature.todo[index].isChecked;
+					draft.projectszustand[index].feature[index2].todo[index3].isChecked =
+						!draft.projectszustand[index].feature[index2].todo[index3].isChecked;
 				})
 			);
 		},
