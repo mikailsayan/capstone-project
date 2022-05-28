@@ -8,6 +8,15 @@ const StyledArticle = styled.article`
         gap: 2rem;
         margin: 1.8rem 0 0 2rem;
     `}
+
+	${({ variant }) =>
+		variant === 'dropdown-title' &&
+		`
+        display: flex;
+		align-items: center;
+		gap: 1rem;
+        border: 3px solid black;
+    `}
 `;
 
 export default StyledArticle;

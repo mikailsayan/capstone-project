@@ -13,7 +13,7 @@ import useStore from '../../hooks/useStore';
 export default function EditFeatureProject() {
 	const projectszustand = useStore(state => state.projectszustand);
 	const appState = useStore(state => state.appState);
-	const stateToFeatureView = useStore(state => state.stateToFeatureView);
+	const stateToFeatureList = useStore(state => state.stateToFeatureList);
 
 	return (
 		appState === 'editfeature' && (
@@ -28,15 +28,15 @@ export default function EditFeatureProject() {
 					</Typography>
 					<div
 						onClick={() => {
-							stateToFeatureView();
+							stateToFeatureList();
 						}}
 					>
 						<MySVG
 							variant="cancel"
 							position="absolute"
 							size="2.6rem"
-							top="-3.5rem"
-							right="0.5rem"
+							top="1.8rem"
+							right="2.5rem"
 						/>
 					</div>
 

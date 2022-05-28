@@ -9,10 +9,8 @@ const StyledUL = styled.ul`
 		`
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 1rem;
-        margin: 0rem 0 1rem 0;
+        margin: 0rem 0 1rem 1rem;
     `}
 
 	${({ variant }) =>

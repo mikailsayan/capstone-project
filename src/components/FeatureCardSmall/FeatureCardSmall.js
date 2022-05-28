@@ -12,7 +12,6 @@ import useStore from '../../hooks/useStore';
 export default function FeatureCardSmall({ feature, featureIndex, projectIndex }) {
 	const openNote = useStore(state => state.openNote);
 	const checkTodo = useStore(state => state.checkTodo);
-	const projectszustand = useStore(state => state.projectszustand);
 	const deleteFeature = useStore(state => state.deleteFeature);
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const selectFeature = useStore(state => state.selectFeature);
@@ -73,69 +72,65 @@ export default function FeatureCardSmall({ feature, featureIndex, projectIndex }
 			</StyledDiv>
 			<StyledDiv variant="cardtitle">
 				<MySVG variant="calender" size="1.3rem" />
-				<p>Startdatum - Enddatum</p>
+				<p>
+					{feature.selected && feature.begin} - {feature.selected && feature.end}
+				</p>
 			</StyledDiv>
 			<StyledSectionRaw variant="overflow">
 				<StyledUL variant="list-in-card">
-					{projectszustand.map(project => {
-						project.feature.map(feature => {
-							feature.todo.map(todo => {
-								const index = feature.todo.findIndex(
-									todoIndex => todoIndex.id === todo.id
-								);
+					{feature.todo.map(todo => {
+						const index = feature.todo.findIndex(todoIndex => todoIndex.id === todo.id);
 
-								return (
-									<section key={todo.id}>
-										<StyledList
-											variant="todolist-small"
-											style={{
-												border: todo.isChecked && '2px solid #5EDC5C',
-											}}
-										>
-											<input
-												id="todocheck"
-												name="todocheck"
-												type="checkbox"
-												checked={todo.isChecked}
-												onChange={() => checkTodo(index)}
-											/>
-											<StyledDiv
-												variant="open-todonote"
-												onClick={() => {
-													openNote(index);
-												}}
-											>
-												{todo.name}
-											</StyledDiv>
-											{todo.complexity === 'easy' ? (
-												<StyledDiv variant="complexity-easy"> </StyledDiv>
-											) : (
-												''
-											)}
-											{todo.complexity === 'middle' ? (
-												<StyledDiv variant="complexity-middle"> </StyledDiv>
-											) : (
-												''
-											)}
-											{todo.complexity === 'hard' ? (
-												<StyledDiv variant="complexity-hard"> </StyledDiv>
-											) : (
-												''
-											)}
-										</StyledList>
-										{todo.isOpen ? (
-											<StyledDiv variant="todonotes">
-												<StyledParagraph variant="todo-notes">
-													{todo.note}
-												</StyledParagraph>
-											</StyledDiv>
-										) : (
-											''
-										)}
-									</section>
-								);
-							});
-						});
+						return (
+							<section key={todo.id}>
+								<StyledList
+									variant="todolist-small"
+									style={{
+										border: todo.isChecked && '2px solid #5EDC5C',
+									}}
+								>
+									<input
+										id="todocheck"
+										name="todocheck"
+										type="checkbox"
+										checked={todo.isChecked}
+										onChange={() => checkTodo(index)}
+									/>
+									<StyledDiv
+										variant="open-todonote"
+										onClick={() => {
+											openNote(index);
+										}}
+									>
+										{todo.name}
+									</StyledDiv>
+									{todo.complexity === 'easy' ? (
+										<StyledDiv variant="complexity-easy"> </StyledDiv>
+									) : (
+										''
+									)}
+									{todo.complexity === 'middle' ? (
+										<StyledDiv variant="complexity-middle"> </StyledDiv>
+									) : (
+										''
+									)}
+									{todo.complexity === 'hard' ? (
+										<StyledDiv variant="complexity-hard"> </StyledDiv>
+									) : (
+										''
+									)}
+								</StyledList>
+								{todo.isOpen ? (
+									<StyledDiv variant="todonotes">
+										<StyledParagraph variant="todo-notes">
+											{todo.note}
+										</StyledParagraph>
+									</StyledDiv>
+								) : (
+									''
+								)}
+							</section>
+						);
 					})}
 				</StyledUL>
 			</StyledSectionRaw>

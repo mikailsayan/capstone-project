@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledSection = styled.section`
 	display: flex;
 	flex-direction: column;
-	width: 34.5rem;
+	width: 34rem;
 	border-radius: 4rem;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 	padding: 1rem 1rem 1rem 0.5rem;
@@ -13,13 +13,13 @@ const StyledSection = styled.section`
 	${({ variant }) =>
 		variant === 'overflow' &&
 		` 
-       
-        width: 35rem;
-        height: 50.5rem;
+        align-items: center;
+        width: 39rem;
+        height: 51.8rem;
         border-radius: 0rem;
         box-shadow: none;
         overflow: auto;
-        margin: 0 0 3rem 0;
+        margin: 0 0 1rem 0;
         z-index: 9;
     `}
 
@@ -28,6 +28,7 @@ const StyledSection = styled.section`
 		`
         background-color: var(--grey-color);
         height: 50.5rem;
+        margin: 1rem 0 3rem 0;
     `}
 
 	${({ variant }) =>

@@ -37,7 +37,8 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'dropdown' &&
 		`
-		display: inline-block;
+		display: flex;
+		align-items: center;
 		cursor: pointer;
     `}
 
@@ -64,8 +65,16 @@ const StyledDiv = styled.div`
 		background-color: #dedede;
 		border: 1px solid white;
 		margin: 0;
-		
    `}
+
+   ${({ variant }) =>
+		variant === 'dropdown-title' &&
+		`
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	`}
+
 
 	${({ variant }) =>
 		variant === 'list' &&

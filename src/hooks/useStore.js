@@ -264,10 +264,10 @@ const useStore = create(
 		},
 		//End AddFeatureProject Functions
 		//AddTodoProject Functions
-		addTodo: (index, name, note, complexity) => {
+		addTodo: (index, index2, name, note, complexity) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.todo.push({
+					draft.projectszustand[index].feature[index2].todo.push({
 						name,
 						note,
 						complexity,
@@ -320,11 +320,11 @@ const useStore = create(
 		},
 		//End FeatureCardListProject Function
 		//Feature View Functions
-		openNote: index => {
+		openNote: (index, index2) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.todo[index].isOpen =
-						!draft.projectszustand[index].feature.todo[index].isOpen;
+					draft.projectszustand[index].feature.todo[index2].isOpen =
+						!draft.projectszustand[index].feature.todo[index2].isOpen;
 				})
 			);
 		},
