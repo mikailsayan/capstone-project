@@ -320,11 +320,11 @@ const useStore = create(
 		},
 		//End FeatureCardListProject Function
 		//Feature View Functions
-		openNote: (index, index2) => {
+		openNote: (index, index2, index3) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.todo[index2].isOpen =
-						!draft.projectszustand[index].feature.todo[index2].isOpen;
+					draft.projectszustand[index].feature[index2].todo[index3].isOpen =
+						!draft.projectszustand[index].feature[index2].todo[index3].isOpen;
 				})
 			);
 		},

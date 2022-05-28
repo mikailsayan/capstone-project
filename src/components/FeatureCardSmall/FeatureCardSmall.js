@@ -99,7 +99,7 @@ export default function FeatureCardSmall({ feature, featureIndex, projectIndex }
 									<StyledDiv
 										variant="open-todonote"
 										onClick={() => {
-											openNote(index);
+											openNote(projectIndex, featureIndex, index);
 										}}
 									>
 										{todo.name}
