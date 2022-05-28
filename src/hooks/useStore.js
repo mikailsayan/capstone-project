@@ -236,6 +236,14 @@ const useStore = create(
 				})
 			);
 		},
+		editFeature: (index1, index2) => {
+			set(
+				produce(draft => {
+					draft.projectszustand[index1].feature[index2].edit =
+						!draft.projectszustand[index1].feature[index2].edit;
+				})
+			);
+		},
 		closeFeatureView: (index1, index2) => {
 			set(
 				produce(draft => {

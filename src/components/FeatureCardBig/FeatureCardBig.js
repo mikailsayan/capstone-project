@@ -6,21 +6,28 @@ import StyledSectionRaw from '../styled-components/StyledSectionRaw';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
+import EditFeatureProject from '../EditFeatureProject/EditFeatureProject';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function FeatureCardBig({ projectIndex, featureIndex, feature }) {
-	const stateToEditFeature = useStore(state => state.stateToEditFeature);
 	const stateToAddTodo = useStore(state => state.stateToAddTodo);
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const checkTodo = useStore(state => state.checkTodo);
 	const openNote = useStore(state => state.openNote);
+	const editFeature = useStore(state => state.editFeature);
 
-	return (
+	return feature.edit ? (
+		<EditFeatureProject
+			feature={feature}
+			featureIndex={featureIndex}
+			projectIndex={projectIndex}
+		/>
+	) : (
 		<StyledSection variant="big-grey">
 			<div
 				onClick={() => {
-					stateToEditFeature();
+					editFeature(projectIndex, featureIndex);
 				}}
 			>
 				<MySVG

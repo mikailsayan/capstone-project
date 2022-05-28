@@ -1,5 +1,4 @@
 import FeatureCardListProject from '../../src/components/FeatureCardListProject/FeatureCardListProject';
-import EditFeatureProject from '../../src/components/EditFeatureProject/EditFeatureProject';
 import AddFeatureProject from '../../src/components/AddFeatureProject/AddFeatureProject';
 import AddTodoProject from '../../src/components/AddTodoProject/AddTodoProject';
 import EditTodoProject from '../../src/components/EditTodoProject/EditTodoProject';
@@ -10,7 +9,6 @@ export default function Home() {
 		<div>
 			<StyledMain>
 				<FeatureCardListProject />
-				<EditFeatureProject />
 				<AddFeatureProject />
 				<AddTodoProject />
 				<EditTodoProject />
