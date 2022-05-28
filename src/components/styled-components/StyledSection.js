@@ -44,9 +44,8 @@ const StyledSection = styled.section`
 		variant === 'small-grey' &&
 		`
         background-color: var(--grey-color);
-        min-height: 24.6rem;
-        margin-bottom: 4rem;
-        z-index: 9;
+        height: 24.6rem;
+        margin: 1rem 0 3rem 0;
     `}
 
     ${({ variant }) =>

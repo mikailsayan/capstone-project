@@ -26,6 +26,7 @@ export default function AddFeatureProject() {
 					setFeaturenameInputValue('');
 					setBeginInputValue('');
 					setEndInputValue('');
+					stateToFeatureList();
 				}}
 			>
 				<StyledSection variant="middle-grey">
@@ -93,13 +94,7 @@ export default function AddFeatureProject() {
 						<MySVG variant="calender" size="2.9rem" />
 					</StyledDiv>
 				</StyledSection>
-				<StyledButton
-					variant="donebutton"
-					type="submit"
-					onClick={() => {
-						stateToFeatureList();
-					}}
-				>
+				<StyledButton variant="donebutton" type="submit">
 					Hinzufügen
 				</StyledButton>
 			</StyledForm>

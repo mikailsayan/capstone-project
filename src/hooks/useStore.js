@@ -8,7 +8,7 @@ const useStore = create(
 		projectszustand: [
 			{
 				id: nanoid(),
-				name: 'Projekt Final 1',
+				name: 'Projekt 1',
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01/01/2001',
 				end: '02/01/2001',
@@ -19,7 +19,7 @@ const useStore = create(
 				feature: [
 					{
 						id: nanoid(),
-						name: 'Feature Final 1',
+						name: 'Feature 1',
 						begin: '01/01/2001',
 						end: '02/01/2001',
 						isChecked: false,
@@ -28,7 +28,7 @@ const useStore = create(
 						todo: [
 							{
 								id: nanoid(),
-								name: 'Todo Final 1',
+								name: 'Todo 1',
 								note: 'Here are some notes for Todo 1',
 								complexity: 'easy',
 								isChecked: false,
@@ -38,7 +38,7 @@ const useStore = create(
 							},
 							{
 								id: nanoid(),
-								name: 'Todo Final 2',
+								name: 'Todo 2',
 								note: 'Here are some notes for Todo 2',
 								complexity: 'middle',
 								isChecked: false,
@@ -48,7 +48,7 @@ const useStore = create(
 							},
 							{
 								id: nanoid(),
-								name: 'Todo Final 3',
+								name: 'Todo 3',
 								note: 'Here are some notes for Todo 3',
 								complexity: 'hard',
 								isChecked: false,
@@ -60,7 +60,7 @@ const useStore = create(
 					},
 					{
 						id: nanoid(),
-						name: 'Feature Final 2',
+						name: 'Feature 2',
 						begin: '01/02/2001',
 						end: '02/02/2001',
 						isChecked: false,
@@ -69,7 +69,7 @@ const useStore = create(
 						todo: [
 							{
 								id: nanoid(),
-								name: 'Todo Final 4',
+								name: 'Todo 4',
 								note: 'Here are some notes for Todo 4',
 								complexity: 'easy',
 								isChecked: false,
@@ -79,7 +79,7 @@ const useStore = create(
 							},
 							{
 								id: nanoid(),
-								name: 'Todo Final 5',
+								name: 'Todo 5',
 								note: 'Here are some notes for Todo 5',
 								complexity: 'hard',
 								isChecked: false,
@@ -93,7 +93,7 @@ const useStore = create(
 			},
 			{
 				id: nanoid(),
-				name: 'Projekt Final 2',
+				name: 'Projekt 2',
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01/02/2001',
 				end: '02/02/2001',
@@ -104,7 +104,7 @@ const useStore = create(
 				feature: [
 					{
 						id: nanoid(),
-						name: 'Feature Final 3',
+						name: 'Feature 3',
 						begin: '01/01/2001',
 						end: '02/01/2001',
 						isChecked: false,
@@ -113,7 +113,7 @@ const useStore = create(
 						todo: [
 							{
 								id: nanoid(),
-								name: 'Todo Final 6',
+								name: 'Todo 6',
 								note: 'Here are some notes for Todo 1',
 								complexity: 'easy',
 								isChecked: false,
@@ -123,7 +123,7 @@ const useStore = create(
 							},
 							{
 								id: nanoid(),
-								name: 'Todo Final 7',
+								name: 'Todo 7',
 								note: 'Here are some notes for Todo 2',
 								complexity: 'middle',
 								isChecked: false,
@@ -133,7 +133,7 @@ const useStore = create(
 							},
 							{
 								id: nanoid(),
-								name: 'Todo Final 8',
+								name: 'Todo 8',
 								note: 'Here are some notes for Todo 3',
 								complexity: 'hard',
 								isChecked: false,
@@ -145,7 +145,7 @@ const useStore = create(
 					},
 					{
 						id: nanoid(),
-						name: 'Feature Final 4',
+						name: 'Feature 4',
 						begin: '01/02/2001',
 						end: '02/02/2001',
 						isChecked: false,
@@ -154,7 +154,7 @@ const useStore = create(
 						todo: [
 							{
 								id: nanoid(),
-								name: 'Todo Final 9',
+								name: 'Todo 9',
 								note: 'Here are some notes for Todo 4',
 								complexity: 'easy',
 								isChecked: false,
@@ -164,7 +164,7 @@ const useStore = create(
 							},
 							{
 								id: nanoid(),
-								name: 'Todo Final 10',
+								name: 'Todo 10',
 								note: 'Here are some notes for Todo 5',
 								complexity: 'hard',
 								isChecked: false,
@@ -257,15 +257,16 @@ const useStore = create(
 		addFeature: (index, name, begin, end) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.push({
-						name,
-						begin,
-						end,
-						id: nanoid(),
-						isChecked: false,
-						edit: false,
-						selected: false,
-					});
+					draft.projectszustand[index].selected &&
+						draft.projectszustand[index].feature.push({
+							name,
+							begin,
+							end,
+							id: nanoid(),
+							isChecked: false,
+							edit: false,
+							selected: false,
+						});
 				})
 			);
 		},

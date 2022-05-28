@@ -21,7 +21,7 @@ const StyledList = styled.li`
 		variant === 'todo-edit-feature' &&
 		`
         position: relative;
-        width: 30.3rem;
+        width: 28rem;
         min-height: 3.6rem;
         background-color: var(--dark-grey);
         border: none;

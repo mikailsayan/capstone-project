@@ -10,6 +10,14 @@ const StyledSectionRaw = styled.section`
         `}
 
 	${({ variant }) =>
+		variant === 'overflow-todolist' &&
+		`
+			width: 32rem;
+			height: 37rem;
+            overflow: scroll;
+        `}
+
+	${({ variant }) =>
 		variant === 'list' &&
 		`
 		position: relative;
