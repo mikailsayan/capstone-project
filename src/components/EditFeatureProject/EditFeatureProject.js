@@ -10,7 +10,6 @@ import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function EditFeatureProject({ projectIndex, featureIndex, feature }) {
-	const projectszustand = useStore(state => state.projectszustand);
 	const editFeature = useStore(state => state.editFeature);
 
 	return feature.edit ? (
@@ -74,38 +73,34 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 				</StyledDiv>
 				<StyledDiv variant="overflow">
 					<StyledUL variant="list-in-card">
-						{projectszustand.map(project => {
-							return project.feature.map(feature => {
-								return feature.todo.map(todo => {
-									return (
-										<StyledList key={todo.id} variant="todo-edit-feature">
-											<MySVG
-												variant="edit"
-												position="absolute"
-												size="2.3rem"
-												left="1rem"
-												top="0.8rem"
-											/>
-											{todo.name}
-											{todo.complexity === 'easy' ? (
-												<StyledDiv variant="complexity-easy"> </StyledDiv>
-											) : (
-												''
-											)}
-											{todo.complexity === 'middle' ? (
-												<StyledDiv variant="complexity-middle"> </StyledDiv>
-											) : (
-												''
-											)}
-											{todo.complexity === 'hard' ? (
-												<StyledDiv variant="complexity-hard"> </StyledDiv>
-											) : (
-												''
-											)}
-										</StyledList>
-									);
-								});
-							});
+						{feature.todo.map(todo => {
+							return (
+								<StyledList key={todo.id} variant="todo-edit-feature">
+									<MySVG
+										variant="edit"
+										position="absolute"
+										size="2.3rem"
+										left="1rem"
+										top="0.8rem"
+									/>
+									{todo.name}
+									{todo.complexity === 'easy' ? (
+										<StyledDiv variant="complexity-easy"> </StyledDiv>
+									) : (
+										''
+									)}
+									{todo.complexity === 'middle' ? (
+										<StyledDiv variant="complexity-middle"> </StyledDiv>
+									) : (
+										''
+									)}
+									{todo.complexity === 'hard' ? (
+										<StyledDiv variant="complexity-hard"> </StyledDiv>
+									) : (
+										''
+									)}
+								</StyledList>
+							);
 						})}
 					</StyledUL>
 				</StyledDiv>
