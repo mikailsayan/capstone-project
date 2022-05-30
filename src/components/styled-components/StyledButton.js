@@ -29,6 +29,20 @@ const StyledButton = styled.button`
         height: 5.1rem;
         background: var(--blue-button);
     `}
+
+	${({ variant }) =>
+		variant === 'svgbutton' &&
+		`
+		border-radius: 50%;
+		border: none;
+		box-shadow: none;
+		cursor: pointer;
+		padding: 0;
+
+		&:hover {
+			transform: none;
+		}
+    `}
 `;
 
 export default StyledButton;

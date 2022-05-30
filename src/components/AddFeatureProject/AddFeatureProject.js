@@ -3,9 +3,9 @@ import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
+import StyledButton from '../styled-components/StyledButton';
 import MySVG from '../MySVG';
 import Typography from '../styled-components/Typography';
-import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
 
@@ -40,10 +40,20 @@ export default function AddFeatureProject({ projectIndex }) {
 						variant="cancel"
 						position="absolute"
 						size="2.6rem"
-						top="-3.5rem"
-						right="0.5rem"
+						top="1.8rem"
+						right="2.5rem"
 					/>
 				</div>
+				<StyledButton type="submit" variant="svgbutton">
+					<MySVG
+						variant="save2"
+						position="absolute"
+						color="#6ADD98"
+						size="2.6rem"
+						top="1.8rem"
+						right="6rem"
+					/>
+				</StyledButton>
 
 				<StyledLabel variant="default" htmlFor="featurename">
 					Featurename
@@ -92,9 +102,6 @@ export default function AddFeatureProject({ projectIndex }) {
 					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>
 			</StyledSection>
-			<StyledButton variant="donebutton" type="submit">
-				Hinzufügen
-			</StyledButton>
 		</StyledForm>
 	);
 }
