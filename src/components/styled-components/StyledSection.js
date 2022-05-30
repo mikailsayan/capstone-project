@@ -27,7 +27,7 @@ const StyledSection = styled.section`
 		variant === 'big-grey' &&
 		`
         background-color: var(--grey-color);
-        height: 50.5rem;
+        min-height: 38rem;
         margin: 1rem 0 3rem 0;
     `}
 

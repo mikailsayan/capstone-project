@@ -3,7 +3,6 @@ import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
-import StyledButton from '../styled-components/StyledButton';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import MySVG from '../MySVG';
@@ -117,15 +116,6 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 					</StyledUL>
 				</StyledDiv>
 			</StyledSection>
-			<StyledButton
-				variant="donebutton"
-				type="submit"
-				onClick={() => {
-					enableEdit(projectIndex, featureIndex);
-				}}
-			>
-				Speichern
-			</StyledButton>
 		</StyledForm>
 	) : (
 		''
