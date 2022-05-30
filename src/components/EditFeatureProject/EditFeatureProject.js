@@ -8,21 +8,35 @@ import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
+import { useState } from 'react';
 
 export default function EditFeatureProject({ projectIndex, featureIndex, feature }) {
+	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
+	const [beginInputValue, setBeginInputValue] = useState('');
+	const [endInputValue, setEndInputValue] = useState('');
 	const editFeature = useStore(state => state.editFeature);
+	const addFeature = useStore(state => state.addFeature);
 
 	return feature.edit ? (
 		<StyledForm
 			onSubmit={event => {
 				event.preventDefault();
+				addFeature(
+					projectIndex,
+					featureIndex,
+					featurenameInputValue,
+					beginInputValue,
+					endInputValue
+				);
+				setFeaturenameInputValue('');
+				setBeginInputValue('');
+				setEndInputValue('');
 			}}
 		>
 			<StyledSection variant="big-grey">
 				<div
 					onClick={() => {
 						editFeature(projectIndex, featureIndex);
-						console.log(feature);
 					}}
 				>
 					<MySVG
@@ -43,7 +57,11 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 					id="featurename"
 					name="featurename"
 					type="text"
+					value={featurenameInputValue}
 					placeholder={feature.name}
+					onChange={event => {
+						setFeaturenameInputValue(event.target.value);
+					}}
 				/>
 				<StyledLabel variant="default" htmlFor="begindate">
 					Startdatum:
@@ -54,7 +72,11 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 						id="begindate"
 						name="begindate"
 						type="date"
+						value={beginInputValue}
 						placeholder={feature.begin}
+						onChange={event => {
+							setBeginInputValue(event.target.value);
+						}}
 					/>
 					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>
@@ -67,7 +89,11 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 						id="enddate"
 						name="enddate"
 						type="date"
+						value={endInputValue}
 						placeholder={feature.end}
+						onChange={event => {
+							setEndInputValue(event.target.value);
+						}}
 					/>
 					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>

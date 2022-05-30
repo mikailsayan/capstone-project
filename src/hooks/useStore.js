@@ -262,19 +262,18 @@ const useStore = create(
 		},
 		//End Dropdown Functions
 		//AddFeature Project Functions
-		addFeature: (index, name, begin, end) => {
+		addFeature: (index, index2, name, begin, end) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].selected &&
-						draft.projectszustand[index].feature.push({
-							name,
-							begin,
-							end,
-							id: nanoid(),
-							isChecked: false,
-							edit: false,
-							selected: false,
-						});
+					draft.projectszustand[index].feature[index2].push({
+						name,
+						begin,
+						end,
+						id: nanoid(),
+						isChecked: false,
+						edit: false,
+						selected: false,
+					});
 				})
 			);
 		},
