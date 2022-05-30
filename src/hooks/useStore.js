@@ -178,6 +178,7 @@ const useStore = create(
 			},
 		],
 		dropdown: [{ isClicked: false }],
+		addFeatureState: false,
 		//appState Functions
 		appState: 'featurelist',
 		stateToFeatureList: () => {
@@ -262,21 +263,6 @@ const useStore = create(
 		},
 		//End Dropdown Functions
 		//EditFeature Project Functions
-		editFeature: (index, index2, name, begin, end) => {
-			set(
-				produce(draft => {
-					draft.projectszustand[index].feature[index2].push({
-						name,
-						begin,
-						end,
-						id: nanoid(),
-						isChecked: false,
-						edit: false,
-						selected: false,
-					});
-				})
-			);
-		},
 		controlFeature: (index, index2, value) => {
 			set(
 				produce(draft => {
@@ -299,6 +285,31 @@ const useStore = create(
 			);
 		},
 		//End EditFeatureProject Functions
+		//AddFeatureFunction
+		enableAdd: () => {
+			set(
+				produce(draft => {
+					draft.addFeatureState = !draft.addFeatureState;
+				})
+			);
+		},
+		addFeature: (index, name, begin, end) => {
+			set(
+				produce(draft => {
+					draft.projectszustand[index].feature.push({
+						name,
+						begin,
+						end,
+						id: nanoid(),
+						isChecked: false,
+						edit: false,
+						selected: false,
+						todo: [],
+					});
+				})
+			);
+		},
+		//End AddFeatureFunction
 		//AddTodoProject Functions
 		addTodo: (index, index2, name, note, complexity) => {
 			set(

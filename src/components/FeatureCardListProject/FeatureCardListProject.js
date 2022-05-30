@@ -9,6 +9,7 @@ import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import AddFeatureProject from '../AddFeatureProject/AddFeatureProject';
 
 export default function FeatureCardListProject() {
 	const projectszustand = useStore(state => state.projectszustand);
@@ -16,7 +17,8 @@ export default function FeatureCardListProject() {
 	const isClicked = useStore(state => state.isClicked);
 	const dropSelect = useStore(state => state.dropSelect);
 	const appState = useStore(state => state.appState);
-	const stateToAddFeature = useStore(state => state.stateToAddFeature);
+	const addFeatureState = useStore(state => state.addFeatureState);
+	const enableAdd = useStore(state => state.enableAdd);
 
 	return (
 		appState === 'featurelist' && (
@@ -68,6 +70,13 @@ export default function FeatureCardListProject() {
 							project.selected && (
 								<StyledSection key={project.id} variant="overflow">
 									<StyledUL>
+										{addFeatureState ? (
+											<li>
+												<AddFeatureProject projectIndex={projectIndex} />
+											</li>
+										) : (
+											''
+										)}
 										{project.feature.map(feature => {
 											const featureIndex = project.feature.findIndex(
 												featureIndex => featureIndex.id === feature.id
@@ -93,7 +102,8 @@ export default function FeatureCardListProject() {
 					variant="mainbutton"
 					type="submit"
 					onClick={() => {
-						stateToAddFeature();
+						enableAdd();
+						console.log(addFeatureState);
 					}}
 				>
 					Feature hinzufügen
