@@ -286,7 +286,7 @@ const useStore = create(
 		},
 		//End EditFeatureProject Functions
 		//AddFeatureFunction
-		enableAdd: () => {
+		toggleAdd: () => {
 			set(
 				produce(draft => {
 					draft.addFeatureState = !draft.addFeatureState;

@@ -18,7 +18,7 @@ export default function FeatureCardListProject() {
 	const dropSelect = useStore(state => state.dropSelect);
 	const appState = useStore(state => state.appState);
 	const addFeatureState = useStore(state => state.addFeatureState);
-	const enableAdd = useStore(state => state.enableAdd);
+	const toggleAdd = useStore(state => state.toggleAdd);
 
 	return (
 		appState === 'featurelist' && (
@@ -102,7 +102,7 @@ export default function FeatureCardListProject() {
 					variant="mainbutton"
 					type="submit"
 					onClick={() => {
-						enableAdd();
+						toggleAdd();
 						console.log(addFeatureState);
 					}}
 				>

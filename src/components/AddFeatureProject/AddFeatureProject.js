@@ -5,7 +5,6 @@ import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledButton from '../styled-components/StyledButton';
 import MySVG from '../MySVG';
-import Typography from '../styled-components/Typography';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
 
@@ -14,7 +13,7 @@ export default function AddFeatureProject({ projectIndex }) {
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
 	const addFeature = useStore(state => state.addFeature);
-	const enableAdd = useStore(state => state.enableAdd);
+	const toggleAdd = useStore(state => state.toggleAdd);
 
 	return (
 		<StyledForm
@@ -24,16 +23,13 @@ export default function AddFeatureProject({ projectIndex }) {
 				setFeaturenameInputValue('');
 				setBeginInputValue('');
 				setEndInputValue('');
-				enableAdd();
+				toggleAdd();
 			}}
 		>
 			<StyledSection variant="middle-grey">
-				<Typography variant="h2" component="h2">
-					Projektname
-				</Typography>
 				<div
 					onClick={() => {
-						enableAdd();
+						toggleAdd();
 					}}
 				>
 					<MySVG
