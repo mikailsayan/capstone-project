@@ -277,6 +277,27 @@ const useStore = create(
 				})
 			);
 		},
+		controlFeature: (index, index2, value) => {
+			set(
+				produce(draft => {
+					draft.projectszustand[index].feature[index2].name = value;
+				})
+			);
+		},
+		controlBegin: (index, index2, value) => {
+			set(
+				produce(draft => {
+					draft.projectszustand[index].feature[index2].begin = value;
+				})
+			);
+		},
+		controlEnd: (index, index2, value) => {
+			set(
+				produce(draft => {
+					draft.projectszustand[index].feature[index2].end = value;
+				})
+			);
+		},
 		//End EditFeatureProject Functions
 		//AddTodoProject Functions
 		addTodo: (index, index2, name, note, complexity) => {

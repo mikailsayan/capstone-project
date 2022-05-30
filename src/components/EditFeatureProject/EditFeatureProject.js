@@ -8,29 +8,17 @@ import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
-import { useState } from 'react';
 
 export default function EditFeatureProject({ projectIndex, featureIndex, feature }) {
-	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
-	const [beginInputValue, setBeginInputValue] = useState('');
-	const [endInputValue, setEndInputValue] = useState('');
 	const enableEdit = useStore(state => state.enableEdit);
-	const editFeature = useStore(state => state.editFeature);
+	const controlFeature = useStore(state => state.controlFeature);
+	const controlBegin = useStore(state => state.controlBegin);
+	const controlEnd = useStore(state => state.controlEnd);
 
 	return feature.edit ? (
 		<StyledForm
 			onSubmit={event => {
 				event.preventDefault();
-				editFeature(
-					projectIndex,
-					featureIndex,
-					featurenameInputValue,
-					beginInputValue,
-					endInputValue
-				);
-				setFeaturenameInputValue('');
-				setBeginInputValue('');
-				setEndInputValue('');
 			}}
 		>
 			<StyledSection variant="big-grey">
@@ -40,8 +28,9 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 					}}
 				>
 					<MySVG
-						variant="cancel"
+						variant="save2"
 						position="absolute"
+						color="#6ADD98"
 						size="2.6rem"
 						top="1.8rem"
 						right="2.5rem"
@@ -57,10 +46,9 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 					id="featurename"
 					name="featurename"
 					type="text"
-					value={featurenameInputValue}
-					placeholder={feature.name}
+					value={feature.name}
 					onChange={event => {
-						setFeaturenameInputValue(event.target.value);
+						controlFeature(projectIndex, featureIndex, event.target.value);
 					}}
 				/>
 				<StyledLabel variant="default" htmlFor="begindate">
@@ -72,10 +60,9 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 						id="begindate"
 						name="begindate"
 						type="date"
-						value={beginInputValue}
-						placeholder={feature.begin}
+						value={feature.begin}
 						onChange={event => {
-							setBeginInputValue(event.target.value);
+							controlBegin(projectIndex, featureIndex, event.target.value);
 						}}
 					/>
 					<MySVG variant="calender" size="2.9rem" />
@@ -89,10 +76,9 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 						id="enddate"
 						name="enddate"
 						type="date"
-						value={endInputValue}
-						placeholder={feature.end}
+						value={feature.end}
 						onChange={event => {
-							setEndInputValue(event.target.value);
+							controlEnd(projectIndex, featureIndex, event.target.value);
 						}}
 					/>
 					<MySVG variant="calender" size="2.9rem" />
@@ -131,7 +117,13 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 					</StyledUL>
 				</StyledDiv>
 			</StyledSection>
-			<StyledButton variant="donebutton" type="submit">
+			<StyledButton
+				variant="donebutton"
+				type="submit"
+				onClick={() => {
+					enableEdit(projectIndex, featureIndex);
+				}}
+			>
 				Speichern
 			</StyledButton>
 		</StyledForm>
