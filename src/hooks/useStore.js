@@ -236,7 +236,7 @@ const useStore = create(
 				})
 			);
 		},
-		editFeature: (index1, index2) => {
+		enableEdit: (index1, index2) => {
 			set(
 				produce(draft => {
 					draft.projectszustand[index1].feature[index2].edit =
@@ -261,8 +261,8 @@ const useStore = create(
 			);
 		},
 		//End Dropdown Functions
-		//AddFeature Project Functions
-		addFeature: (index, index2, name, begin, end) => {
+		//EditFeature Project Functions
+		editFeature: (index, index2, name, begin, end) => {
 			set(
 				produce(draft => {
 					draft.projectszustand[index].feature[index2].push({
@@ -277,7 +277,7 @@ const useStore = create(
 				})
 			);
 		},
-		//End AddFeatureProject Functions
+		//End EditFeatureProject Functions
 		//AddTodoProject Functions
 		addTodo: (index, index2, name, note, complexity) => {
 			set(

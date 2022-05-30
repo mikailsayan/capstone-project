@@ -14,14 +14,14 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
+	const enableEdit = useStore(state => state.enableEdit);
 	const editFeature = useStore(state => state.editFeature);
-	const addFeature = useStore(state => state.addFeature);
 
 	return feature.edit ? (
 		<StyledForm
 			onSubmit={event => {
 				event.preventDefault();
-				addFeature(
+				editFeature(
 					projectIndex,
 					featureIndex,
 					featurenameInputValue,
@@ -36,7 +36,7 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 			<StyledSection variant="big-grey">
 				<div
 					onClick={() => {
-						editFeature(projectIndex, featureIndex);
+						enableEdit(projectIndex, featureIndex);
 					}}
 				>
 					<MySVG

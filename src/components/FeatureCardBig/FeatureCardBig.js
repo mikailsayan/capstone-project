@@ -15,7 +15,7 @@ export default function FeatureCardBig({ projectIndex, featureIndex, feature }) 
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const checkTodo = useStore(state => state.checkTodo);
 	const openNote = useStore(state => state.openNote);
-	const editFeature = useStore(state => state.editFeature);
+	const enableEdit = useStore(state => state.enableEdit);
 
 	return feature.edit ? (
 		<EditFeatureProject
@@ -27,7 +27,7 @@ export default function FeatureCardBig({ projectIndex, featureIndex, feature }) 
 		<StyledSection variant="big-grey">
 			<div
 				onClick={() => {
-					editFeature(projectIndex, featureIndex);
+					enableEdit(projectIndex, featureIndex);
 				}}
 			>
 				<MySVG
