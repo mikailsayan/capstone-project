@@ -8,7 +8,7 @@ import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function EditFeatureProject({ projectIndex, featureIndex, feature }) {
-	const enableEdit = useStore(state => state.enableEdit);
+	const toggleEdit = useStore(state => state.toggleEdit);
 	const controlFeature = useStore(state => state.controlFeature);
 	const controlBegin = useStore(state => state.controlBegin);
 	const controlEnd = useStore(state => state.controlEnd);
@@ -17,7 +17,7 @@ export default function EditFeatureProject({ projectIndex, featureIndex, feature
 		<StyledSection variant="big-grey">
 			<div
 				onClick={() => {
-					enableEdit(projectIndex, featureIndex);
+					toggleEdit(projectIndex, featureIndex);
 				}}
 			>
 				<MySVG
