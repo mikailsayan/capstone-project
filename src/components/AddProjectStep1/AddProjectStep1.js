@@ -4,7 +4,6 @@ import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
-import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
 import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
@@ -29,11 +28,16 @@ export default function AddProjectStep1() {
 			}}
 		>
 			<StyledSection variant="big-grey">
-				<StyledDiv variant="stepbox">
-					<Typography variant="p" size="1.4rem">
-						1 / 2
-					</Typography>
-				</StyledDiv>
+				<StyledButton type="submit" variant="svgbutton">
+					<MySVG
+						variant="save2"
+						position="absolute"
+						color="var(--save-icon)"
+						size="2.6rem"
+						top="1.8rem"
+						right="2.5rem"
+					/>
+				</StyledButton>
 				<StyledLabel variant="toplabel" htmlFor="projectname">
 					Projektname
 				</StyledLabel>
@@ -96,9 +100,6 @@ export default function AddProjectStep1() {
 					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>
 			</StyledSection>
-			<StyledButton variant="mainbutton" type="submit">
-				Nächster Schritt
-			</StyledButton>
 		</StyledForm>
 	);
 }
