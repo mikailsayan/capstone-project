@@ -15,7 +15,7 @@ const StyledTextarea = styled.textarea`
 		variant === 'addtodonote' &&
 		`
         width: 29rem;
-		height: 23.4rem;
+		height: 18rem;
 		background-color: var(--todo-note);
 		border: none;
     `}

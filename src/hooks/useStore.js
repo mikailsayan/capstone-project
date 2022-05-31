@@ -24,6 +24,7 @@ const useStore = create(
 						end: '02/01/2001',
 						isChecked: false,
 						edit: false,
+						addtodo: false,
 						selected: false,
 						todo: [
 							{
@@ -65,6 +66,7 @@ const useStore = create(
 						end: '02/02/2001',
 						isChecked: false,
 						edit: false,
+						addtodo: false,
 						selected: false,
 						todo: [
 							{
@@ -109,6 +111,7 @@ const useStore = create(
 						end: '02/01/2001',
 						isChecked: false,
 						edit: false,
+						addtodo: false,
 						selected: false,
 						todo: [
 							{
@@ -150,6 +153,7 @@ const useStore = create(
 						end: '02/02/2001',
 						isChecked: false,
 						edit: false,
+						addtodo: false,
 						selected: false,
 						todo: [
 							{
@@ -198,11 +202,19 @@ const useStore = create(
 				})
 			);
 		},
-		enableEdit: (projectIndex, featureIndex) => {
+		toggleEdit: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
 					draft.projectszustand[projectIndex].feature[featureIndex].edit =
 						!draft.projectszustand[projectIndex].feature[featureIndex].edit;
+				})
+			);
+		},
+		toggleAddTodo: (projectIndex, featureIndex) => {
+			set(
+				produce(draft => {
+					draft.projectszustand[projectIndex].feature[featureIndex].addtodo =
+						!draft.projectszustand[projectIndex].feature[featureIndex].addtodo;
 				})
 			);
 		},

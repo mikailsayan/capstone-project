@@ -7,6 +7,7 @@ import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
 import EditFeatureProject from '../EditFeatureProject/EditFeatureProject';
+import AddTodoProject from '../AddTodoProject/AddTodoProject';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
@@ -14,7 +15,8 @@ export default function FeatureCardDetail({ projectIndex, featureIndex, feature 
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const checkTodo = useStore(state => state.checkTodo);
 	const openNote = useStore(state => state.openNote);
-	const enableEdit = useStore(state => state.enableEdit);
+	const toggleEdit = useStore(state => state.toggleEdit);
+	const toggleAddTodo = useStore(state => state.toggleAddTodo);
 
 	return feature.edit ? (
 		<EditFeatureProject
@@ -22,11 +24,13 @@ export default function FeatureCardDetail({ projectIndex, featureIndex, feature 
 			featureIndex={featureIndex}
 			projectIndex={projectIndex}
 		/>
+	) : feature.addtodo ? (
+		<AddTodoProject feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
 	) : (
 		<StyledSection variant="big-grey">
 			<div
 				onClick={() => {
-					enableEdit(projectIndex, featureIndex);
+					toggleEdit(projectIndex, featureIndex);
 				}}
 			>
 				<MySVG variant="edit" position="absolute" size="2.6rem" top="1.8rem" right="6rem" />
@@ -120,7 +124,12 @@ export default function FeatureCardDetail({ projectIndex, featureIndex, feature 
 						);
 					})}
 					<StyledList variant="addtodo">
-						<StyledDiv variant="center">
+						<StyledDiv
+							variant="center"
+							onClick={() => {
+								toggleAddTodo(projectIndex, featureIndex);
+							}}
+						>
 							<MySVG variant="addtodo" size="3rem" />
 						</StyledDiv>
 					</StyledList>
