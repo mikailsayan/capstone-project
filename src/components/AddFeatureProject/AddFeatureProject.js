@@ -44,7 +44,7 @@ export default function AddFeatureProject({ projectIndex }) {
 					<MySVG
 						variant="save2"
 						position="absolute"
-						color="#6ADD98"
+						color="var(--save-icon)"
 						size="2.6rem"
 						top="1.8rem"
 						right="6rem"

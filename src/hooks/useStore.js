@@ -181,74 +181,35 @@ const useStore = create(
 		addFeatureState: false,
 		//appState Functions
 		appState: 'featurelist',
-		stateToFeatureList: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'featurelist';
-				})
-			);
-		},
-		stateToEditFeature: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'editfeature';
-				})
-			);
-		},
-		stateToProjects: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'projects';
-				})
-			);
-		},
-		stateToAddTodo: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'addtodo';
-				})
-			);
-		},
-		stateToAddFeature: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'addfeature';
-				})
-			);
-		},
-		stateToFeatureView: () => {
-			set(
-				produce(draft => {
-					draft.appState = 'featureview';
-				})
-			);
+		setAppState: appState => {
+			set({ appState });
 		},
 		//End AppState Functions
 		//FeatureCardSmall Functions
-		selectFeature: (index1, index2) => {
+		selectFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index1].feature.forEach(element => {
+					draft.projectszustand[projectIndex].feature.forEach(element => {
 						element.selected = false;
 					});
 					console.log(draft.projectszustand);
-					draft.projectszustand[index1].feature[index2].selected =
-						!draft.projectszustand[index1].feature[index2].selected;
+					draft.projectszustand[projectIndex].feature[featureIndex].selected =
+						!draft.projectszustand[projectIndex].feature[featureIndex].selected;
 				})
 			);
 		},
-		enableEdit: (index1, index2) => {
+		enableEdit: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index1].feature[index2].edit =
-						!draft.projectszustand[index1].feature[index2].edit;
+					draft.projectszustand[projectIndex].feature[featureIndex].edit =
+						!draft.projectszustand[projectIndex].feature[featureIndex].edit;
 				})
 			);
 		},
-		closeFeatureView: (index1, index2) => {
+		closeFeatureView: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index1].feature[index2].selected = false;
+					draft.projectszustand[projectIndex].feature[featureIndex].selected = false;
 				})
 			);
 		},
@@ -263,24 +224,24 @@ const useStore = create(
 		},
 		//End Dropdown Functions
 		//EditFeature Project Functions
-		controlFeature: (index, index2, value) => {
+		controlFeature: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index2].name = value;
+					draft.projectszustand[projectIndex].feature[featureIndex].name = value;
 				})
 			);
 		},
-		controlBegin: (index, index2, value) => {
+		controlBegin: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index2].begin = value;
+					draft.projectszustand[projectIndex].feature[featureIndex].begin = value;
 				})
 			);
 		},
-		controlEnd: (index, index2, value) => {
+		controlEnd: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index2].end = value;
+					draft.projectszustand[projectIndex].feature[featureIndex].end = value;
 				})
 			);
 		},
@@ -293,10 +254,10 @@ const useStore = create(
 				})
 			);
 		},
-		addFeature: (index, name, begin, end) => {
+		addFeature: (projectIndex, name, begin, end) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.push({
+					draft.projectszustand[projectIndex].feature.push({
 						name,
 						begin,
 						end,
@@ -311,10 +272,10 @@ const useStore = create(
 		},
 		//End AddFeatureFunction
 		//AddTodoProject Functions
-		addTodo: (index, index2, name, note, complexity) => {
+		addTodo: (projectIndex, featureIndex, name, note, complexity) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index2].todo.push({
+					draft.projectszustand[projectIndex].feature[featureIndex].todo.push({
 						name,
 						note,
 						complexity,
@@ -346,48 +307,55 @@ const useStore = create(
 		},
 		//End AddProjectStep1 Functions
 		//FeatureCardSmall Functions
-		deleteFeature: (index, index2) => {
+		deleteFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature.splice(index2, 1);
+					draft.projectszustand[projectIndex].feature.splice(featureIndex, 1);
 				})
 			);
 		},
 		//End FeatureCardSmall Functions
 		//FeatureCardListProject Function
-		dropSelect: index => {
+		dropSelect: projectIndex => {
 			set(
 				produce(draft => {
 					draft.projectszustand.forEach(element => {
 						element.selected = false;
 					});
-					draft.projectszustand[index].selected = !draft.projectszustand[index].selected;
+					draft.projectszustand[projectIndex].selected =
+						!draft.projectszustand[projectIndex].selected;
 				})
 			);
 		},
 		//End FeatureCardListProject Function
 		//Feature View Functions
-		openNote: (index, index2, index3) => {
+		openNote: (projectIndex, featureIndex, todoIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index2].todo[index3].isOpen =
-						!draft.projectszustand[index].feature[index2].todo[index3].isOpen;
+					draft.projectszustand[projectIndex].feature[featureIndex].todo[
+						todoIndex
+					].isOpen =
+						!draft.projectszustand[projectIndex].feature[featureIndex].todo[todoIndex]
+							.isOpen;
 				})
 			);
 		},
-		checkFeature: index => {
+		checkFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index].isChecked =
-						!draft.projectszustand[index].feature[index].isChecked;
+					draft.projectszustand[projectIndex].feature[featureIndex].isChecked =
+						!draft.projectszustand[projectIndex].feature[featureIndex].isChecked;
 				})
 			);
 		},
-		checkTodo: (index, index2, index3) => {
+		checkTodo: (projectIndex, featureIndex, todoIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[index].feature[index2].todo[index3].isChecked =
-						!draft.projectszustand[index].feature[index2].todo[index3].isChecked;
+					draft.projectszustand[projectIndex].feature[featureIndex].todo[
+						todoIndex
+					].isChecked =
+						!draft.projectszustand[projectIndex].feature[featureIndex].todo[todoIndex]
+							.isChecked;
 				})
 			);
 		},

@@ -36,7 +36,7 @@ const StyledList = styled.li`
 		variant === 'todolist-small' &&
 		`
         position: relative;
-        width: 29rem;
+        width: 31rem;
         min-height: 3.6rem;
         background-color: var(--dark-grey);
         border: none;

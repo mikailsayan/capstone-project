@@ -11,7 +11,6 @@ import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function FeatureCardBig({ projectIndex, featureIndex, feature }) {
-	const stateToAddTodo = useStore(state => state.stateToAddTodo);
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const checkTodo = useStore(state => state.checkTodo);
 	const openNote = useStore(state => state.openNote);
@@ -30,26 +29,7 @@ export default function FeatureCardBig({ projectIndex, featureIndex, feature }) 
 					enableEdit(projectIndex, featureIndex);
 				}}
 			>
-				<MySVG
-					variant="edit"
-					position="absolute"
-					size="2.6rem"
-					top="1.8rem"
-					right="9.5rem"
-				/>
-			</div>
-			<div
-				onClick={() => {
-					stateToAddTodo();
-				}}
-			>
-				<MySVG
-					variant="addtodo"
-					position="absolute"
-					size="2.6rem"
-					top="1.8rem"
-					right="6rem"
-				/>
+				<MySVG variant="edit" position="absolute" size="2.6rem" top="1.8rem" right="6rem" />
 			</div>
 			<div
 				onClick={() => {

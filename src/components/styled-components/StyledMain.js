@@ -5,8 +5,8 @@ const StyledMain = styled.main`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 39rem;
-	height: 68.2rem;
+	width: 100vw;
+	height: 100vh;
 `;
 
 export default StyledMain;

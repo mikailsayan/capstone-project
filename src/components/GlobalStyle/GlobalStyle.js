@@ -35,6 +35,7 @@ html {
     --yellow-complex: #FFE247;
     --red-complex: #FF6464;
     --todo-note: #FFEDAC;
+    --save-icon: #6ADD98;
   }
 `;
 

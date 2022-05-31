@@ -16,7 +16,7 @@ export default function EditTodoProject() {
 	const [radio, setRadio] = useState('');
 	const addTodo = useStore(state => state.addTodo);
 	const appState = useStore(state => state.appState);
-	const stateToFeatureView = useStore(state => state.stateToFeatureView);
+	const setAppState = useStore(state => state.setAppState);
 
 	return (
 		appState === 'edittodo' && (
@@ -32,7 +32,7 @@ export default function EditTodoProject() {
 				<StyledSection variant="big-grey">
 					<div
 						onClick={() => {
-							stateToFeatureView();
+							setAppState('featurelist');
 						}}
 					>
 						<MySVG
@@ -118,7 +118,7 @@ export default function EditTodoProject() {
 					variant="donebutton"
 					type="submit"
 					onClick={() => {
-						stateToFeatureView();
+						setAppState('featurelist');
 					}}
 				>
 					Speichern

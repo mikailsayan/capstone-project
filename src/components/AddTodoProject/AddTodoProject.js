@@ -16,7 +16,7 @@ export default function AddTodoProject() {
 	const [radio, setRadio] = useState('');
 	const addTodo = useStore(state => state.addTodo);
 	const appState = useStore(state => state.appState);
-	const stateToFeatureList = useStore(state => state.stateToFeatureList);
+	const setAppState = useStore(state => state.setAppState);
 
 	return (
 		appState === 'addtodo' && (
@@ -32,7 +32,7 @@ export default function AddTodoProject() {
 				<StyledSection variant="big-grey">
 					<div
 						onClick={() => {
-							stateToFeatureList();
+							setAppState('featurelist');
 						}}
 					>
 						<MySVG
@@ -118,7 +118,7 @@ export default function AddTodoProject() {
 					variant="donebutton"
 					type="submit"
 					onClick={() => {
-						stateToFeatureList();
+						setAppState('featurelist');
 					}}
 				>
 					Speichern

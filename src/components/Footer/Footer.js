@@ -5,8 +5,7 @@ import useStore from '../../hooks/useStore';
 import Link from 'next/link';
 
 export default function Footer() {
-	const stateToProjects = useStore(state => state.stateToProjects);
-	const stateToFeatureList = useStore(state => state.stateToFeatureList);
+	const setAppState = useStore(state => state.setAppState);
 
 	return (
 		<StyledFooter>
@@ -20,7 +19,7 @@ export default function Footer() {
 							width={42}
 							height={42}
 							onClick={() => {
-								stateToProjects();
+								setAppState('projects');
 							}}
 						/>
 					</Link>
@@ -33,6 +32,9 @@ export default function Footer() {
 							alt="addproject-svg"
 							width={57}
 							height={57}
+							onClick={() => {
+								setAppState('addproject');
+							}}
 						/>
 					</Link>
 				</li>
@@ -45,7 +47,7 @@ export default function Footer() {
 							width={42}
 							height={42}
 							onClick={() => {
-								stateToFeatureList();
+								setAppState('featurelist');
 							}}
 						/>
 					</Link>
