@@ -10,7 +10,7 @@ import EditFeatureProject from '../EditFeatureProject/EditFeatureProject';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
-export default function FeatureCardBig({ projectIndex, featureIndex, feature }) {
+export default function FeatureCardDetail({ projectIndex, featureIndex, feature }) {
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const checkTodo = useStore(state => state.checkTodo);
 	const openNote = useStore(state => state.openNote);
@@ -119,6 +119,11 @@ export default function FeatureCardBig({ projectIndex, featureIndex, feature }) 
 							</section>
 						);
 					})}
+					<StyledList variant="addtodo">
+						<StyledDiv variant="center">
+							<MySVG variant="addtodo" size="3rem" />
+						</StyledDiv>
+					</StyledList>
 				</StyledUL>
 			</StyledSectionRaw>
 		</StyledSection>

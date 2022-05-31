@@ -6,14 +6,18 @@ import StyledInput from '../styled-components/StyledInput';
 import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
-import FeatureCardBig from '../FeatureCardBig/FeatureCardBig';
+import FeatureCardDetail from '../FeatureCardDetail/FeatureCardDetail';
 
 export default function FeatureCardSmall({ feature, featureIndex, projectIndex }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
 	const selectFeature = useStore(state => state.selectFeature);
 
 	return feature.selected ? (
-		<FeatureCardBig feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
+		<FeatureCardDetail
+			feature={feature}
+			featureIndex={featureIndex}
+			projectIndex={projectIndex}
+		/>
 	) : (
 		<StyledSection variant="small-grey">
 			<StyledDiv variant="cardtitle">

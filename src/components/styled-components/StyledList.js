@@ -47,6 +47,19 @@ const StyledList = styled.li`
         gap: 1.2rem;
         padding: 0 1rem 0 1rem;
 `}
+${({ variant }) =>
+		variant === 'addtodo' &&
+		`
+        width: 31rem;
+        min-height: 3.6rem;
+        background-color: var(--dark-grey);
+        border-radius: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        padding: 0.5rem 1rem 0rem 1rem;
+`}
 `;
 
 export default StyledList;
