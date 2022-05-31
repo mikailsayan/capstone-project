@@ -284,16 +284,17 @@ const useStore = create(
 		},
 		//End AddFeatureFunction
 		//AddTodoProject Functions
-		addTodo: (projectIndex, featureIndex, name, note, complexity) => {
+		addTodo: (projectIndex, featureIndex, name, node, complexity) => {
 			set(
 				produce(draft => {
 					draft.projectszustand[projectIndex].feature[featureIndex].todo.push({
 						name,
-						note,
+						node,
 						complexity,
 						id: nanoid(),
 						isChecked: false,
 						edit: false,
+						isOpen: false,
 						selected: false,
 					});
 				})

@@ -21,10 +21,11 @@ export default function AddTodoProject({ projectIndex, featureIndex }) {
 		<StyledForm
 			onSubmit={event => {
 				event.preventDefault();
-				addTodo(todonameValue, todonoteValue, radio);
+				addTodo(projectIndex, featureIndex, todonameValue, todonoteValue, radio);
 				setTodonameValue('');
 				setTodonoteValue('');
 				setRadio('');
+				toggleAddTodo(projectIndex, featureIndex);
 			}}
 		>
 			<StyledSection variant="big-grey">
