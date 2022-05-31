@@ -180,7 +180,7 @@ const useStore = create(
 		dropdown: [{ isClicked: false }],
 		addFeatureState: false,
 		//appState Functions
-		appState: 'featurelist',
+		appState: 'projects',
 		setAppState: appState => {
 			set({ appState });
 		},
