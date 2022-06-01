@@ -21,7 +21,8 @@ const StyledSectionRaw = styled.section`
 		variant === 'list' &&
 		`
 		position: relative;
-		width: 37rem;
+		display: flex;
+		flex-direction: column;
 		margin-top: 7rem;
         `}
 `;
