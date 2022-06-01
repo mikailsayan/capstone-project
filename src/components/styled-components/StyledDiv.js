@@ -51,7 +51,7 @@ const StyledDiv = styled.div`
 		width: 25rem;
 		min-height: 2rem;
 		box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
-		z-index: 15;
+		z-index: 10;
     `}
 
 	${({ variant }) =>
@@ -63,7 +63,6 @@ const StyledDiv = styled.div`
 		padding: 0.5rem 1rem 0.5rem 1rem;
 		width: 25rem;
 		height: 5rem;
-		z-index: 12;
 		background-color: #dedede;
 		border: 1px solid white;
 		margin: 0;
