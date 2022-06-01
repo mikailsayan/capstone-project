@@ -8,7 +8,6 @@ const StyledSection = styled.section`
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
 	padding: 1rem 1rem 1rem 0.5rem;
 	position: relative;
-	z-index: 9;
 
 	${({ variant }) =>
 		variant === 'overflow' &&
@@ -20,7 +19,6 @@ const StyledSection = styled.section`
         box-shadow: none;
         overflow: auto;
         margin: 0 0 1rem 0;
-        z-index: 9;
     `}
 
 	${({ variant }) =>
