@@ -12,14 +12,6 @@ const StyledUL = styled.ul`
         gap: 1rem;
         margin: 0rem 0 1rem 1rem;
     `}
-
-	${({ variant }) =>
-		variant === 'footer' &&
-		`
-        display: flex;
-        align-items: center;
-        gap: 6rem;
-    `}
 `;
 
 export default StyledUL;

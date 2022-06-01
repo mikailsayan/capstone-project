@@ -18,6 +18,15 @@ const StyledSectionRaw = styled.section`
         `}
 
 	${({ variant }) =>
+		variant === 'footer' &&
+		`
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+		width: 100vw;
+    `}
+
+	${({ variant }) =>
 		variant === 'list' &&
 		`
 		position: relative;

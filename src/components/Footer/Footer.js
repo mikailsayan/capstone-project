@@ -1,17 +1,17 @@
 import StyledFooter from '../styled-components/StyledFooter';
 import StyledImage from '../styled-components/StyledImage';
-import StyledUL from '../styled-components/StyledUL';
 import useStore from '../../hooks/useStore';
 import Link from 'next/link';
+import StyledSectionRaw from '../styled-components/StyledSectionRaw';
 
 export default function Footer() {
 	const setAppState = useStore(state => state.setAppState);
 
 	return (
 		<StyledFooter>
-			<StyledUL variant="footer">
-				<li>
-					<Link href="/">
+			<StyledSectionRaw variant="footer">
+				<article>
+					<Link passHref href="/">
 						<StyledImage
 							variant="footer"
 							src="/homepage.svg"
@@ -23,9 +23,9 @@ export default function Footer() {
 							}}
 						/>
 					</Link>
-				</li>
-				<li>
-					<Link href="/addproject">
+				</article>
+				<article>
+					<Link passHref href="/addproject">
 						<StyledImage
 							variant="footeradd"
 							src="/addproject.svg"
@@ -37,9 +37,9 @@ export default function Footer() {
 							}}
 						/>
 					</Link>
-				</li>
-				<li>
-					<Link href="/projects">
+				</article>
+				<article>
+					<Link passHref href="/projects">
 						<StyledImage
 							variant="footer"
 							src="/project.svg"
@@ -51,8 +51,8 @@ export default function Footer() {
 							}}
 						/>
 					</Link>
-				</li>
-			</StyledUL>
+				</article>
+			</StyledSectionRaw>
 		</StyledFooter>
 	);
 }
