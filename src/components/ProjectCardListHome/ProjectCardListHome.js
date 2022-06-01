@@ -4,6 +4,7 @@ import StyledButton from '../styled-components/StyledButton';
 import StyledUL from '../styled-components/StyledUL';
 import Link from 'next/link';
 import useStore from '../../hooks/useStore';
+import Typography from '../styled-components/Typography';
 
 export default function ProjectCardListHome() {
 	const projectszustand = useStore(state => state.projectszustand);
@@ -13,6 +14,7 @@ export default function ProjectCardListHome() {
 	return (
 		appState === 'projects' && (
 			<>
+				<Typography variant="h1">Meine Projekte</Typography>
 				<StyledSection variant="overflow">
 					<StyledUL>
 						{projectszustand.map(project => {

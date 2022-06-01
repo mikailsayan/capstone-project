@@ -38,6 +38,7 @@ const StyledDiv = styled.div`
 		variant === 'dropdown' &&
 		`
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		cursor: pointer;
     `}
@@ -45,9 +46,10 @@ const StyledDiv = styled.div`
 	${({ variant }) =>
 		variant === 'dropdown-menu' &&
 		`
+		position: absolute;
+		top: 4rem;
 		width: 25rem;
 		min-height: 2rem;
-		border-radius: 2rem;
 		box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
 		z-index: 15;
     `}

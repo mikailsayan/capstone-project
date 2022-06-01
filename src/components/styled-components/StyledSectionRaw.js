@@ -23,7 +23,12 @@ const StyledSectionRaw = styled.section`
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		margin-top: 7rem;
+        `}
+
+	${({ variant }) =>
+		variant === 'dropdown' &&
+		`
+		display: flex;
         `}
 `;
 
