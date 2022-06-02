@@ -17,6 +17,47 @@ const StyledArticle = styled.article`
 		gap: 1rem;
 		margin-bottom: 2rem;
     `}
+
+	${({ variant }) =>
+		variant === 'dropdown' &&
+		`
+		display: flex;
+        `}
+	
+	${({ variant }) =>
+		variant === 'list' &&
+		`
+		position: relative;
+		min-height: 40rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 2px solid black;
+        `}
+
+	${({ variant }) =>
+		variant === 'buttonarea' &&
+		`
+		position: fixed;
+		bottom: 8.1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 8rem;
+        `}
+
+	${({ variant }) =>
+		variant === 'overflow' &&
+		`
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100vw;
+			height: 53rem;
+            overflow: scroll;
+        `}
 `;
 
 export default StyledArticle;

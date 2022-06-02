@@ -1,5 +1,5 @@
 import FeatureCardSmall from '../FeatureCardSmall/FeatureCardSmall';
-import StyledSection from '../styled-components/StyledSection';
+import StyledArticle from '../styled-components/StyledArticle';
 import StyledUL from '../styled-components/StyledUL';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledParagraph from '../styled-components/StyledParagraph';
@@ -23,8 +23,8 @@ export default function FeatureCardListProject() {
 
 	return (
 		appState === 'featurelist' && (
-			<>
-				<StyledSectionRaw variant="dropdown">
+			<StyledSectionRaw variant="featurelist">
+				<StyledArticle variant="dropdown">
 					<Typography variant="h1" size="2rem">
 						Projekte
 					</Typography>
@@ -60,15 +60,15 @@ export default function FeatureCardListProject() {
 							''
 						)}
 					</StyledDiv>
-				</StyledSectionRaw>
-				<StyledSectionRaw variant="list">
+				</StyledArticle>
+				<StyledArticle variant="list">
 					{projectszustand.map(project => {
 						const projectIndex = projectszustand.findIndex(
 							projectIndex => projectIndex.id === project.id
 						);
 						return (
 							project.selected && (
-								<StyledSection key={project.id} variant="overflow">
+								<StyledArticle key={project.id} variant="overflow">
 									<StyledUL>
 										{addFeatureState ? (
 											<li>
@@ -96,12 +96,12 @@ export default function FeatureCardListProject() {
 											);
 										})}
 									</StyledUL>
-								</StyledSection>
+								</StyledArticle>
 							)
 						);
 					})}
-				</StyledSectionRaw>
-				<StyledSectionRaw variant="buttonarea">
+				</StyledArticle>
+				<StyledArticle variant="buttonarea">
 					{addFeatureState ? (
 						<StyledButton variant="donebutton" form={addfeatureform}>
 							Hinzufügen
@@ -117,8 +117,8 @@ export default function FeatureCardListProject() {
 							Feature hinzufügen
 						</StyledButton>
 					)}
-				</StyledSectionRaw>
-			</>
+				</StyledArticle>
+			</StyledSectionRaw>
 		)
 	);
 }

@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
 	width: 100vw;
 	height: 8.1rem;
 	background-color: var(--grey-color);
-	margin-top: 2rem;
+	z-index: 12;
 `;
 
 export default StyledFooter;

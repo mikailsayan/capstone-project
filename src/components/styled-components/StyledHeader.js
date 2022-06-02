@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
 	width: 100vw;
 	height: 8.1rem;
 	background-color: var(--grey-color);
-	margin-bottom: 3rem;
+	z-index: 12;
 `;
 
 export default StyledHeader;
