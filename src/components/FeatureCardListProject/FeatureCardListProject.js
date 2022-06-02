@@ -19,6 +19,8 @@ export default function FeatureCardListProject() {
 	const addFeatureState = useStore(state => state.addFeatureState);
 	const toggleAdd = useStore(state => state.toggleAdd);
 
+	const addfeatureform = 'addfeatureform';
+
 	return (
 		appState === 'featurelist' && (
 			<>
@@ -70,7 +72,10 @@ export default function FeatureCardListProject() {
 									<StyledUL>
 										{addFeatureState ? (
 											<li>
-												<AddFeatureProject projectIndex={projectIndex} />
+												<AddFeatureProject
+													projectIndex={projectIndex}
+													addfeatureform={addfeatureform}
+												/>
 											</li>
 										) : (
 											''
@@ -96,19 +101,23 @@ export default function FeatureCardListProject() {
 						);
 					})}
 				</StyledSectionRaw>
-				{addFeatureState ? (
-					''
-				) : (
-					<StyledButton
-						variant="mainbutton"
-						type="submit"
-						onClick={() => {
-							toggleAdd();
-						}}
-					>
-						Feature hinzufügen
-					</StyledButton>
-				)}
+				<StyledSectionRaw variant="buttonarea">
+					{addFeatureState ? (
+						<StyledButton variant="donebutton" form={addfeatureform}>
+							Hinzufügen
+						</StyledButton>
+					) : (
+						<StyledButton
+							variant="mainbutton"
+							type="submit"
+							onClick={() => {
+								toggleAdd();
+							}}
+						>
+							Feature hinzufügen
+						</StyledButton>
+					)}
+				</StyledSectionRaw>
 			</>
 		)
 	);

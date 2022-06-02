@@ -3,13 +3,12 @@ import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
-import StyledButton from '../styled-components/StyledButton';
 import { format } from 'date-fns';
 import MySVG from '../MySVG';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
 
-export default function AddFeatureProject({ projectIndex }) {
+export default function AddFeatureProject({ projectIndex, addfeatureform }) {
 	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
@@ -24,6 +23,7 @@ export default function AddFeatureProject({ projectIndex }) {
 
 	return (
 		<StyledForm
+			id={addfeatureform}
 			onSubmit={event => {
 				event.preventDefault();
 				addFeature(projectIndex, featurenameInputValue, beginInputValue, endInputValue);
@@ -47,16 +47,6 @@ export default function AddFeatureProject({ projectIndex }) {
 						right="2.5rem"
 					/>
 				</div>
-				<StyledButton type="submit" variant="svgbutton">
-					<MySVG
-						variant="save2"
-						position="absolute"
-						color="var(--save-icon)"
-						size="2.6rem"
-						top="1.8rem"
-						right="6rem"
-					/>
-				</StyledButton>
 
 				<StyledLabel variant="default" htmlFor="featurename">
 					Featurename

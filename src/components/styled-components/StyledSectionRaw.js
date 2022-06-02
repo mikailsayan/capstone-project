@@ -39,6 +39,17 @@ const StyledSectionRaw = styled.section`
 		`
 		display: flex;
         `}
+	
+	${({ variant }) =>
+		variant === 'buttonarea' &&
+		`
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 7.5rem;
+		margin-bottom: 3rem;
+        `}
 `;
 
 export default StyledSectionRaw;

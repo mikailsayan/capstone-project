@@ -20,7 +20,6 @@ const StyledButton = styled.button`
 		width: 34.5rem;
         height: 5.1rem;
         background: var(--purple-button);
-		margin: 2rem 0 8rem 0;
     `}
 
 	${({ variant }) =>
@@ -29,7 +28,6 @@ const StyledButton = styled.button`
 		width: 34.5rem;
         height: 5.1rem;
         background: var(--blue-button);
-		margin-top: 2rem;
     `}
 
 	${({ variant }) =>
