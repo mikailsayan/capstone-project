@@ -4,6 +4,7 @@ import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledButton from '../styled-components/StyledButton';
+import { format } from 'date-fns';
 import MySVG from '../MySVG';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
@@ -14,6 +15,12 @@ export default function AddFeatureProject({ projectIndex }) {
 	const [endInputValue, setEndInputValue] = useState('');
 	const addFeature = useStore(state => state.addFeature);
 	const toggleAdd = useStore(state => state.toggleAdd);
+
+	const today = new Date();
+	const date = format(
+		new Date(today.getFullYear(), today.getMonth(), today.getDate()),
+		'yyyy-MM-dd'
+	);
 
 	return (
 		<StyledForm
@@ -74,6 +81,7 @@ export default function AddFeatureProject({ projectIndex }) {
 						id="begindate"
 						name="begindate"
 						type="date"
+						min={date}
 						value={beginInputValue}
 						onChange={event => {
 							setBeginInputValue(event.target.value);
@@ -90,6 +98,7 @@ export default function AddFeatureProject({ projectIndex }) {
 						id="enddate"
 						name="enddate"
 						type="date"
+						min={date}
 						value={endInputValue}
 						onChange={event => {
 							setEndInputValue(event.target.value);

@@ -5,6 +5,7 @@ import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
 import MySVG from '../MySVG';
+import { format } from 'date-fns';
 import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
@@ -15,6 +16,12 @@ export default function AddProjectStep1() {
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
 	const addProject = useStore(state => state.addProject);
+
+	const today = new Date();
+	const date = format(
+		new Date(today.getFullYear(), today.getMonth(), today.getDate()),
+		'yyyy-MM-dd'
+	);
 
 	return (
 		<StyledForm
@@ -76,6 +83,7 @@ export default function AddProjectStep1() {
 						id="begindate"
 						name="begindate"
 						type="date"
+						min={date}
 						value={beginInputValue}
 						onChange={event => {
 							setBeginInputValue(event.target.value);
@@ -92,6 +100,7 @@ export default function AddProjectStep1() {
 						id="enddate"
 						name="enddate"
 						type="date"
+						min={date}
 						value={endInputValue}
 						onChange={event => {
 							setEndInputValue(event.target.value);
