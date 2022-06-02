@@ -9,11 +9,11 @@ import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 import StyledSectionRaw from '../styled-components/StyledSectionRaw';
 import AddFeature from '../AddFeature/AddFeature';
+import { useState } from 'react';
 
 export default function FeatureCardList() {
-	const projectszustand = useStore(state => state.projectszustand);
-	const dropdown = useStore(state => state.dropdown);
-	const isClicked = useStore(state => state.isClicked);
+	const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
+	const projects = useStore(state => state.projects);
 	const dropSelect = useStore(state => state.dropSelect);
 	const appState = useStore(state => state.appState);
 	const addFeatureState = useStore(state => state.addFeatureState);
@@ -30,14 +30,14 @@ export default function FeatureCardList() {
 					<StyledDiv
 						variant="dropdown"
 						onClick={() => {
-							isClicked();
+							setDropdownIsOpen(!dropdownIsOpen);
 						}}
 					>
 						<MySVG variant="dropdown" size="2.3rem" />
-						{dropdown[0].isClicked ? (
+						{dropdownIsOpen ? (
 							<StyledDiv variant="dropdown-menu">
-								{projectszustand.map(project => {
-									const index = projectszustand.findIndex(
+								{projects.map(project => {
+									const index = projects.findIndex(
 										projectIndex => projectIndex.id === project.id
 									);
 									return (
@@ -61,8 +61,8 @@ export default function FeatureCardList() {
 					</StyledDiv>
 				</StyledSectionRaw>
 				<StyledSectionRaw variant="list">
-					{projectszustand.map(project => {
-						const projectIndex = projectszustand.findIndex(
+					{projects.map(project => {
+						const projectIndex = projects.findIndex(
 							projectIndex => projectIndex.id === project.id
 						);
 						return (

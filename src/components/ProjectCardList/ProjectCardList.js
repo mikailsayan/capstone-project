@@ -8,7 +8,7 @@ import useStore from '../../hooks/useStore';
 import Typography from '../styled-components/Typography';
 
 export default function ProjectCardList() {
-	const projectszustand = useStore(state => state.projectszustand);
+	const projects = useStore(state => state.projects);
 	const appState = useStore(state => state.appState);
 	const setAppState = useStore(state => state.setAppState);
 
@@ -18,7 +18,7 @@ export default function ProjectCardList() {
 				<Typography variant="h1">Meine Projekte</Typography>
 				<StyledSection variant="overflow">
 					<StyledUL>
-						{projectszustand.map(project => {
+						{projects.map(project => {
 							return (
 								<li key={project.id}>
 									<ProjectCard project={project} />

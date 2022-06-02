@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 
 const useStore = create(
 	persist(set => ({
-		projectszustand: [
+		projects: [
 			{
 				id: nanoid(),
 				name: 'Projekt 1',
@@ -181,7 +181,6 @@ const useStore = create(
 				],
 			},
 		],
-		dropdown: [{ isClicked: false }],
 		addFeatureState: false,
 		//appState Functions
 		appState: 'projects',
@@ -193,67 +192,58 @@ const useStore = create(
 		selectFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature.forEach(element => {
+					draft.projects[projectIndex].feature.forEach(element => {
 						element.selected = false;
 					});
-					console.log(draft.projectszustand);
-					draft.projectszustand[projectIndex].feature[featureIndex].selected =
-						!draft.projectszustand[projectIndex].feature[featureIndex].selected;
+					console.log(draft.projects);
+					draft.projects[projectIndex].feature[featureIndex].selected =
+						!draft.projects[projectIndex].feature[featureIndex].selected;
 				})
 			);
 		},
 		toggleEdit: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].edit =
-						!draft.projectszustand[projectIndex].feature[featureIndex].edit;
+					draft.projects[projectIndex].feature[featureIndex].edit =
+						!draft.projects[projectIndex].feature[featureIndex].edit;
 				})
 			);
 		},
 		toggleAddTodo: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].addtodo =
-						!draft.projectszustand[projectIndex].feature[featureIndex].addtodo;
+					draft.projects[projectIndex].feature[featureIndex].addtodo =
+						!draft.projects[projectIndex].feature[featureIndex].addtodo;
 				})
 			);
 		},
 		closeFeatureView: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].selected = false;
+					draft.projects[projectIndex].feature[featureIndex].selected = false;
 				})
 			);
 		},
 		//End FeatureCard Functions
-		//Dropdown Functions
-		isClicked: () => {
-			set(
-				produce(draft => {
-					draft.dropdown[0].isClicked = !draft.dropdown[0].isClicked;
-				})
-			);
-		},
-		//End Dropdown Functions
 		//EditFeature Project Functions
 		controlFeature: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].name = value;
+					draft.projects[projectIndex].feature[featureIndex].name = value;
 				})
 			);
 		},
 		controlBegin: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].begin = value;
+					draft.projects[projectIndex].feature[featureIndex].begin = value;
 				})
 			);
 		},
 		controlEnd: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].end = value;
+					draft.projects[projectIndex].feature[featureIndex].end = value;
 				})
 			);
 		},
@@ -269,7 +259,7 @@ const useStore = create(
 		addFeature: (projectIndex, name, begin, end) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature.push({
+					draft.projects[projectIndex].feature.push({
 						name,
 						begin,
 						end,
@@ -287,7 +277,7 @@ const useStore = create(
 		addTodo: (projectIndex, featureIndex, name, note, complexity) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].todo.push({
+					draft.projects[projectIndex].feature[featureIndex].todo.push({
 						name,
 						note,
 						complexity,
@@ -305,7 +295,7 @@ const useStore = create(
 		addProject: (name, notes, begin, end) => {
 			set(
 				produce(draft => {
-					draft.projectszustand.push({
+					draft.projects.push({
 						name,
 						notes,
 						begin,
@@ -323,7 +313,7 @@ const useStore = create(
 		deleteFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature.splice(featureIndex, 1);
+					draft.projects[projectIndex].feature.splice(featureIndex, 1);
 				})
 			);
 		},
@@ -332,11 +322,10 @@ const useStore = create(
 		dropSelect: projectIndex => {
 			set(
 				produce(draft => {
-					draft.projectszustand.forEach(element => {
+					draft.projects.forEach(element => {
 						element.selected = false;
 					});
-					draft.projectszustand[projectIndex].selected =
-						!draft.projectszustand[projectIndex].selected;
+					draft.projects[projectIndex].selected = !draft.projects[projectIndex].selected;
 				})
 			);
 		},
@@ -345,29 +334,24 @@ const useStore = create(
 		openNote: (projectIndex, featureIndex, todoIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].todo[
-						todoIndex
-					].isOpen =
-						!draft.projectszustand[projectIndex].feature[featureIndex].todo[todoIndex]
-							.isOpen;
+					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].isOpen =
+						!draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].isOpen;
 				})
 			);
 		},
 		checkFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].isChecked =
-						!draft.projectszustand[projectIndex].feature[featureIndex].isChecked;
+					draft.projects[projectIndex].feature[featureIndex].isChecked =
+						!draft.projects[projectIndex].feature[featureIndex].isChecked;
 				})
 			);
 		},
 		checkTodo: (projectIndex, featureIndex, todoIndex) => {
 			set(
 				produce(draft => {
-					draft.projectszustand[projectIndex].feature[featureIndex].todo[
-						todoIndex
-					].isChecked =
-						!draft.projectszustand[projectIndex].feature[featureIndex].todo[todoIndex]
+					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].isChecked =
+						!draft.projects[projectIndex].feature[featureIndex].todo[todoIndex]
 							.isChecked;
 				})
 			);
