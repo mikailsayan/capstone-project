@@ -5,7 +5,7 @@ const StyledSection = styled.section`
 	flex-direction: column;
 	width: 34rem;
 	border-radius: 4rem;
-	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
 	padding: 1rem 1rem 1rem 0.5rem;
 	position: relative;
 
@@ -24,7 +24,7 @@ const StyledSection = styled.section`
 	${({ variant }) =>
 		variant === 'big-grey' &&
 		`
-        background-color: var(--grey-color);
+        background-color: var(--card-grey);
         min-height: 48rem;
         margin: 1rem 0 2rem 0;
     `}
@@ -32,7 +32,7 @@ const StyledSection = styled.section`
 	${({ variant }) =>
 		variant === 'middle-grey' &&
 		`
-        background-color: var(--grey-color);
+        background-color: var(--card-grey);
         height: 34.1rem;
         margin-bottom: 4rem;
     `}
@@ -40,7 +40,7 @@ const StyledSection = styled.section`
     ${({ variant }) =>
 		variant === 'small-grey' &&
 		`
-        background-color: var(--grey-color);
+        background-color: var(--card-grey);
         height: 23rem;
         margin: 1rem 0 3rem 0;
     `}
