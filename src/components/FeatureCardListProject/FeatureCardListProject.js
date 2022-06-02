@@ -23,35 +23,33 @@ export default function FeatureCardListProject() {
 						);
 						return (
 							project.selected && (
-								<StyledArticle key={project.id} variant="overflow">
-									<StyledUL>
-										{addFeatureState ? (
-											<li>
-												<AddFeatureProject
+								<StyledUL key={project.id}>
+									{addFeatureState ? (
+										<li>
+											<AddFeatureProject
+												projectIndex={projectIndex}
+												addfeatureform={addfeatureform}
+											/>
+										</li>
+									) : (
+										''
+									)}
+									{project.feature.map(feature => {
+										const featureIndex = project.feature.findIndex(
+											featureIndex => featureIndex.id === feature.id
+										);
+										return (
+											<li key={feature.id}>
+												<FeatureCardSmall
+													project={project}
+													feature={feature}
+													featureIndex={featureIndex}
 													projectIndex={projectIndex}
-													addfeatureform={addfeatureform}
 												/>
 											</li>
-										) : (
-											''
-										)}
-										{project.feature.map(feature => {
-											const featureIndex = project.feature.findIndex(
-												featureIndex => featureIndex.id === feature.id
-											);
-											return (
-												<li key={feature.id}>
-													<FeatureCardSmall
-														project={project}
-														feature={feature}
-														featureIndex={featureIndex}
-														projectIndex={projectIndex}
-													/>
-												</li>
-											);
-										})}
-									</StyledUL>
-								</StyledArticle>
+										);
+									})}
+								</StyledUL>
 							)
 						);
 					})}

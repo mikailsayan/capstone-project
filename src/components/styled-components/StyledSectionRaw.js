@@ -12,8 +12,10 @@ const StyledSectionRaw = styled.section`
 	${({ variant }) =>
 		variant === 'featurelist' &&
 		`
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100vw;
-		min-height: 53.7rem;
     `}
 
 	${({ variant }) =>
