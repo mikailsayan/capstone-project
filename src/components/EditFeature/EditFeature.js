@@ -6,6 +6,7 @@ import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
+import styled from 'styled-components';
 
 export default function EditFeature({ projectIndex, featureIndex, feature }) {
 	const toggleEdit = useStore(state => state.toggleEdit);
@@ -15,20 +16,13 @@ export default function EditFeature({ projectIndex, featureIndex, feature }) {
 
 	return feature.edit ? (
 		<StyledSection variant="big-grey">
-			<div
+			<StyledSaveButton
 				onClick={() => {
 					toggleEdit(projectIndex, featureIndex);
 				}}
 			>
-				<MySVG
-					variant="save2"
-					position="absolute"
-					color="var(--save-icon)"
-					size="2.6rem"
-					top="1.8rem"
-					right="2.5rem"
-				/>
-			</div>
+				<MySVG variant="save2" color="var(--save-icon)" size="2.6rem" />
+			</StyledSaveButton>
 
 			<StyledLabel variant="default" htmlFor="featurename">
 				Featurename
@@ -114,3 +108,11 @@ export default function EditFeature({ projectIndex, featureIndex, feature }) {
 		''
 	);
 }
+
+const StyledSaveButton = styled.button`
+	position: absolute;
+	top: 1.8rem;
+	right: 2.5rem;
+	border: none;
+	background: transparent;
+`;
