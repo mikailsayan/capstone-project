@@ -9,9 +9,9 @@ import useStore from '../../hooks/useStore';
 
 export default function EditFeature({ projectIndex, featureIndex, feature }) {
 	const toggleEdit = useStore(state => state.toggleEdit);
-	const controlFeature = useStore(state => state.controlFeature);
-	const controlBegin = useStore(state => state.controlBegin);
-	const controlEnd = useStore(state => state.controlEnd);
+	const saveFeatureName = useStore(state => state.saveFeatureName);
+	const saveFeatureBeginDate = useStore(state => state.saveFeatureBeginDate);
+	const controlFeatureEndDate = useStore(state => state.controlFeatureEndDate);
 
 	return feature.edit ? (
 		<StyledSection variant="big-grey">
@@ -41,7 +41,7 @@ export default function EditFeature({ projectIndex, featureIndex, feature }) {
 				type="text"
 				value={feature.name}
 				onChange={event => {
-					controlFeature(projectIndex, featureIndex, event.target.value);
+					saveFeatureName(projectIndex, featureIndex, event.target.value);
 				}}
 			/>
 			<StyledLabel variant="default" htmlFor="begindate">
@@ -55,7 +55,7 @@ export default function EditFeature({ projectIndex, featureIndex, feature }) {
 					type="date"
 					value={feature.begin}
 					onChange={event => {
-						controlBegin(projectIndex, featureIndex, event.target.value);
+						saveFeatureBeginDate(projectIndex, featureIndex, event.target.value);
 					}}
 				/>
 				<MySVG variant="calender" size="2.9rem" />
@@ -71,7 +71,7 @@ export default function EditFeature({ projectIndex, featureIndex, feature }) {
 					type="date"
 					value={feature.end}
 					onChange={event => {
-						controlEnd(projectIndex, featureIndex, event.target.value);
+						controlFeatureEndDate(projectIndex, featureIndex, event.target.value);
 					}}
 				/>
 				<MySVG variant="calender" size="2.9rem" />

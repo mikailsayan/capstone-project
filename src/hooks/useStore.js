@@ -217,7 +217,7 @@ const useStore = create(
 				})
 			);
 		},
-		closeFeatureView: (projectIndex, featureIndex) => {
+		closeFeatureCardDetailed: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
 					draft.projects[projectIndex].feature[featureIndex].selected = false;
@@ -226,21 +226,21 @@ const useStore = create(
 		},
 		//End FeatureCard Functions
 		//EditFeature Project Functions
-		controlFeature: (projectIndex, featureIndex, value) => {
+		saveFeatureName: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
 					draft.projects[projectIndex].feature[featureIndex].name = value;
 				})
 			);
 		},
-		controlBegin: (projectIndex, featureIndex, value) => {
+		saveFeatureBeginDate: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
 					draft.projects[projectIndex].feature[featureIndex].begin = value;
 				})
 			);
 		},
-		controlEnd: (projectIndex, featureIndex, value) => {
+		controlFeatureEndDate: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
 					draft.projects[projectIndex].feature[featureIndex].end = value;
@@ -319,7 +319,7 @@ const useStore = create(
 		},
 		//End FeatureCard Functions
 		//FeatureCardList Function
-		dropSelect: projectIndex => {
+		selectProject: projectIndex => {
 			set(
 				produce(draft => {
 					draft.projects.forEach(element => {
@@ -331,7 +331,7 @@ const useStore = create(
 		},
 		//End FeatureCardList Function
 		//Feature View Functions
-		openNote: (projectIndex, featureIndex, todoIndex) => {
+		toggleNote: (projectIndex, featureIndex, todoIndex) => {
 			set(
 				produce(draft => {
 					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].isOpen =

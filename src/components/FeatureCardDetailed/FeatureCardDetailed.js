@@ -12,9 +12,9 @@ import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function FeatureCardDetailed({ projectIndex, featureIndex, feature }) {
-	const closeFeatureView = useStore(state => state.closeFeatureView);
+	const closeFeatureCardDetailed = useStore(state => state.closeFeatureCardDetailed);
 	const checkTodo = useStore(state => state.checkTodo);
-	const openNote = useStore(state => state.openNote);
+	const toggleNote = useStore(state => state.toggleNote);
 	const toggleEdit = useStore(state => state.toggleEdit);
 	const toggleAddTodo = useStore(state => state.toggleAddTodo);
 
@@ -33,7 +33,7 @@ export default function FeatureCardDetailed({ projectIndex, featureIndex, featur
 			</div>
 			<div
 				onClick={() => {
-					closeFeatureView(projectIndex, featureIndex);
+					closeFeatureCardDetailed(projectIndex, featureIndex);
 				}}
 			>
 				<MySVG
@@ -86,7 +86,7 @@ export default function FeatureCardDetailed({ projectIndex, featureIndex, featur
 									<StyledDiv
 										variant="open-todonote"
 										onClick={() => {
-											openNote(projectIndex, featureIndex, index);
+											toggleNote(projectIndex, featureIndex, index);
 										}}
 									>
 										{todo.name}

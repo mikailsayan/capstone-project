@@ -14,7 +14,7 @@ import { useState } from 'react';
 export default function FeatureCardList() {
 	const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
 	const projects = useStore(state => state.projects);
-	const dropSelect = useStore(state => state.dropSelect);
+	const selectProject = useStore(state => state.selectProject);
 	const appState = useStore(state => state.appState);
 	const addFeatureState = useStore(state => state.addFeatureState);
 	const toggleAdd = useStore(state => state.toggleAdd);
@@ -45,7 +45,7 @@ export default function FeatureCardList() {
 											key={project.id}
 											variant="dropdown-content"
 											onClick={() => {
-												dropSelect(index);
+												selectProject(index);
 											}}
 										>
 											<StyledParagraph variant="dropdown-content">
