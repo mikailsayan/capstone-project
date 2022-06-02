@@ -21,17 +21,22 @@ const StyledArticle = styled.article`
 	${({ variant }) =>
 		variant === 'dropdown' &&
 		`
+		position: fixed;
+		background-color: white;
 		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 8.1rem;
+		width: 100vw;
+		height: 6rem;
+		z-index: 25;
         `}
 	
 	${({ variant }) =>
 		variant === 'list' &&
 		`
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		flex-direction: column;
-		margin: 2rem 0 0rem 0;
+		height: 50rem;
         `}
 
 	${({ variant }) =>

@@ -10,23 +10,11 @@ const StyledSection = styled.section`
 	position: relative;
 
 	${({ variant }) =>
-		variant === 'overflow' &&
-		` 
-        align-items: center;
-        width: 100vw;
-        height: 51.8rem;
-        border-radius: 0rem;
-        box-shadow: none;
-        overflow: auto;
-        margin: 0 0 1rem 0;
-    `}
-
-	${({ variant }) =>
 		variant === 'big-grey' &&
 		`
         background-color: var(--card-grey);
         min-height: 48rem;
-        margin: 1rem 0 2rem 0;
+        margin-bottom: 2rem;
     `}
 
 	${({ variant }) =>
@@ -34,7 +22,7 @@ const StyledSection = styled.section`
 		`
         background-color: var(--card-grey);
         height: 34.1rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     `}
 
     ${({ variant }) =>
@@ -42,7 +30,7 @@ const StyledSection = styled.section`
 		`
         background-color: var(--card-grey);
         height: 23rem;
-        margin: 1rem 0 3rem 0;
+        margin-bottom: 2rem;
     `}
 
     ${({ variant }) =>
