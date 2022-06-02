@@ -17,7 +17,7 @@ export default function Home() {
 	return (
 		<div>
 			<StyledMain>
-				<StyledArticle variant="dropdown">
+				<StyledArticle variant="headlinebox">
 					<Typography variant="h1" size="2rem">
 						Projekte
 					</Typography>

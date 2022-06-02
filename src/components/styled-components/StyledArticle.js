@@ -19,7 +19,7 @@ const StyledArticle = styled.article`
     `}
 
 	${({ variant }) =>
-		variant === 'dropdown' &&
+		variant === 'headlinebox' &&
 		`
 		position: fixed;
 		background-color: white;
@@ -57,9 +57,10 @@ const StyledArticle = styled.article`
 		` 
 		display: flex;
 		justify-content: center;
-        align-items: center;
-        width: 100vw;
-        margin: 0 0 1rem 0;
+		align-items: center;
+		width: 100vw;
+		height: 50rem;
+		margin-top: 13rem;
     `}
 `;
 
