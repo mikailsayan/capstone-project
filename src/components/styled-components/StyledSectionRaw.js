@@ -17,7 +17,7 @@ const StyledSectionRaw = styled.section`
 		align-items: center;
 		width: 100vw;
 		height: 50rem;
-		margin-top: 8rem;
+		margin-top: 13rem;
     `}
 
 	${({ variant }) =>
