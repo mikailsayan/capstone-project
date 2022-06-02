@@ -6,7 +6,7 @@ const StyledMain = styled.main`
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	min-height: 68.2rem;
+	height: 68.2rem;
 	margin: 8.1rem 0 8.1rem 0;
 `;
 

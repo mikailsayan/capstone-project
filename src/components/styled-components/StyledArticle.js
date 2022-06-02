@@ -27,13 +27,13 @@ const StyledArticle = styled.article`
 	${({ variant }) =>
 		variant === 'list' &&
 		`
-		position: relative;
-		min-height: 40rem;
+		height: 51rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		border: 2px solid black;
+		margin: 2rem 0 0rem 0;
         `}
 
 	${({ variant }) =>
@@ -50,14 +50,13 @@ const StyledArticle = styled.article`
 
 	${({ variant }) =>
 		variant === 'overflow' &&
-		`
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100vw;
-			height: 53rem;
-            overflow: scroll;
-        `}
+		` 
+        align-items: center;
+        width: 100vw;
+        height: 53.7rem;
+        overflow: auto;
+        margin: 0 0 1rem 0;
+    `}
 `;
 
 export default StyledArticle;

@@ -6,14 +6,14 @@ const StyledSectionRaw = styled.section`
 		`
 			width: 32rem;
 			height: 37rem;
-            overflow: scroll;
+            overflow: auto;
         `}
 
 	${({ variant }) =>
 		variant === 'featurelist' &&
 		`
 		width: 100vw;
-		min-height: 68.2rem;
+		min-height: 53.7rem;
     `}
 
 	${({ variant }) =>
