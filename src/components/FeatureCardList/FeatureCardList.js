@@ -18,7 +18,6 @@ export default function FeatureCardList() {
 	const appState = useStore(state => state.appState);
 	const addFeatureState = useStore(state => state.addFeatureState);
 	const toggleAdd = useStore(state => state.toggleAdd);
-
 	const addfeatureform = 'addfeatureform';
 
 	return (
