@@ -1,4 +1,4 @@
-//import AddProjectStep1 from '../../src/components/AddProjectStep1/AddProjectStep1';
+//import AddProject from '../../src/components/AddProject/AddProject';
 import StyledMain from '../../src/components/styled-components/StyledMain';
 
 export default function Home() {

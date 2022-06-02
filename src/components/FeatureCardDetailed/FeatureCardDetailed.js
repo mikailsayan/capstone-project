@@ -6,12 +6,12 @@ import StyledSectionRaw from '../styled-components/StyledSectionRaw';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
-import EditFeatureProject from '../EditFeatureProject/EditFeatureProject';
-import AddTodoProject from '../AddTodoProject/AddTodoProject';
+import EditFeature from '../EditFeature/EditFeature';
+import AddTodo from '../AddTodo/AddTodo';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
-export default function FeatureCardDetail({ projectIndex, featureIndex, feature }) {
+export default function FeatureCardDetailed({ projectIndex, featureIndex, feature }) {
 	const closeFeatureView = useStore(state => state.closeFeatureView);
 	const checkTodo = useStore(state => state.checkTodo);
 	const openNote = useStore(state => state.openNote);
@@ -19,13 +19,9 @@ export default function FeatureCardDetail({ projectIndex, featureIndex, feature 
 	const toggleAddTodo = useStore(state => state.toggleAddTodo);
 
 	return feature.edit ? (
-		<EditFeatureProject
-			feature={feature}
-			featureIndex={featureIndex}
-			projectIndex={projectIndex}
-		/>
+		<EditFeature feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
 	) : feature.addtodo ? (
-		<AddTodoProject feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
+		<AddTodo feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
 	) : (
 		<StyledSection variant="big-grey">
 			<div

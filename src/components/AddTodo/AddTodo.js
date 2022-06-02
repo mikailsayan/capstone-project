@@ -10,7 +10,7 @@ import MySVG from '../MySVG';
 import { useState } from 'react';
 import useStore from '../../hooks/useStore';
 
-export default function AddTodoProject({ projectIndex, featureIndex }) {
+export default function AddTodo({ projectIndex, featureIndex }) {
 	const [todonameValue, setTodonameValue] = useState('');
 	const [todonoteValue, setTodonoteValue] = useState('');
 	const [radio, setRadio] = useState('');

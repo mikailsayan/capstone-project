@@ -2,20 +2,18 @@ import StyledSection from '../styled-components/StyledSection';
 import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
-import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
-import MySVG from '../MySVG';
 import { format } from 'date-fns';
-import StyledButton from '../styled-components/StyledButton';
+import MySVG from '../MySVG';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
 
-export default function AddProjectStep1() {
-	const [projectnameInputValue, setProjectnameInputValue] = useState('');
-	const [notesInputValue, setNotesInputValue] = useState('');
+export default function AddFeature({ projectIndex, addfeatureform }) {
+	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
-	const addProject = useStore(state => state.addProject);
+	const addFeature = useStore(state => state.addFeature);
+	const toggleAdd = useStore(state => state.toggleAdd);
 
 	const today = new Date();
 	const date = format(
@@ -25,53 +23,43 @@ export default function AddProjectStep1() {
 
 	return (
 		<StyledForm
+			id={addfeatureform}
 			onSubmit={event => {
 				event.preventDefault();
-				addProject(projectnameInputValue, notesInputValue, beginInputValue, endInputValue);
-				setProjectnameInputValue('');
-				setNotesInputValue('');
+				addFeature(projectIndex, featurenameInputValue, beginInputValue, endInputValue);
+				setFeaturenameInputValue('');
 				setBeginInputValue('');
 				setEndInputValue('');
+				toggleAdd();
 			}}
 		>
-			<StyledSection variant="big-grey">
-				<StyledButton type="submit" variant="svgbutton">
+			<StyledSection variant="middle-grey">
+				<div
+					onClick={() => {
+						toggleAdd();
+					}}
+				>
 					<MySVG
-						variant="save2"
+						variant="cancel"
 						position="absolute"
-						color="var(--save-icon)"
 						size="2.6rem"
 						top="1.8rem"
 						right="2.5rem"
 					/>
-				</StyledButton>
-				<StyledLabel variant="toplabel" htmlFor="projectname">
-					Projektname
+				</div>
+
+				<StyledLabel variant="default" htmlFor="featurename">
+					Featurename
 				</StyledLabel>
 				<StyledInput
 					required
 					variant="full"
-					id="projectname"
-					name="projectname"
+					id="featurename"
+					name="featurename"
 					type="text"
-					value={projectnameInputValue}
+					value={featurenameInputValue}
 					onChange={event => {
-						setProjectnameInputValue(event.target.value);
-					}}
-				/>
-				<StyledLabel variant="default" htmlFor="notes">
-					Notizen
-				</StyledLabel>
-				<StyledTextarea
-					required
-					variant="addproject"
-					id="notes"
-					name="notes"
-					rows="5"
-					cols="33"
-					value={notesInputValue}
-					onChange={event => {
-						setNotesInputValue(event.target.value);
+						setFeaturenameInputValue(event.target.value);
 					}}
 				/>
 				<StyledLabel variant="default" htmlFor="begindate">

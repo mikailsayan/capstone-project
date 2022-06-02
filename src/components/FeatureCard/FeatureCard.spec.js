@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FeatureCardSmall from './FeatureCardSmall';
+import FeatureCard from './FeatureCard';
 
 describe('feature card', () => {
 	it('renders the feature card', () => {
-		render(<FeatureCardSmall />);
+		render(<FeatureCard />);
 
 		//Wir testen, ob drei Listenelemente gerendert werden
 		const listitems = screen.getAllByRole('listitem');

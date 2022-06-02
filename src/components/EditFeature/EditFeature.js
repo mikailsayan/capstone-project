@@ -7,7 +7,7 @@ import StyledList from '../styled-components/StyledList';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
-export default function EditFeatureProject({ projectIndex, featureIndex, feature }) {
+export default function EditFeature({ projectIndex, featureIndex, feature }) {
 	const toggleEdit = useStore(state => state.toggleEdit);
 	const controlFeature = useStore(state => state.controlFeature);
 	const controlBegin = useStore(state => state.controlBegin);

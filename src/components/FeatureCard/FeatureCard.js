@@ -6,14 +6,14 @@ import StyledInput from '../styled-components/StyledInput';
 import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
-import FeatureCardDetail from '../FeatureCardDetail/FeatureCardDetail';
+import FeatureCardDetailed from '../FeatureCardDetailed/FeatureCardDetailed';
 
-export default function FeatureCardSmall({ feature, featureIndex, projectIndex }) {
+export default function FeatureCard({ feature, featureIndex, projectIndex }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
 	const selectFeature = useStore(state => state.selectFeature);
 
 	return feature.selected ? (
-		<FeatureCardDetail
+		<FeatureCardDetailed
 			feature={feature}
 			featureIndex={featureIndex}
 			projectIndex={projectIndex}

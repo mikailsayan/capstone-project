@@ -7,7 +7,7 @@ import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 
-export default function ProjectCardHome({ project }) {
+export default function ProjectCard({ project }) {
 	const appState = useStore(state => state.appState);
 
 	return (

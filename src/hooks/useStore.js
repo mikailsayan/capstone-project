@@ -189,7 +189,7 @@ const useStore = create(
 			set({ appState });
 		},
 		//End AppState Functions
-		//FeatureCardSmall Functions
+		//FeatureCard Functions
 		selectFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
@@ -225,7 +225,7 @@ const useStore = create(
 				})
 			);
 		},
-		//End FeatureCardSmall Functions
+		//End FeatureCard Functions
 		//Dropdown Functions
 		isClicked: () => {
 			set(
@@ -257,7 +257,7 @@ const useStore = create(
 				})
 			);
 		},
-		//End EditFeatureProject Functions
+		//End EditFeature Functions
 		//AddFeatureFunction
 		toggleAdd: () => {
 			set(
@@ -283,7 +283,7 @@ const useStore = create(
 			);
 		},
 		//End AddFeatureFunction
-		//AddTodoProject Functions
+		//AddTodo Functions
 		addTodo: (projectIndex, featureIndex, name, note, complexity) => {
 			set(
 				produce(draft => {
@@ -300,8 +300,8 @@ const useStore = create(
 				})
 			);
 		},
-		//End AddTodoProject Functions
-		//AddProjectStep1 Functions
+		//End AddTodo Functions
+		//AddProject Functions
 		addProject: (name, notes, begin, end) => {
 			set(
 				produce(draft => {
@@ -318,8 +318,8 @@ const useStore = create(
 				})
 			);
 		},
-		//End AddProjectStep1 Functions
-		//FeatureCardSmall Functions
+		//End AddProject Functions
+		//FeatureCard Functions
 		deleteFeature: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
@@ -327,8 +327,8 @@ const useStore = create(
 				})
 			);
 		},
-		//End FeatureCardSmall Functions
-		//FeatureCardListProject Function
+		//End FeatureCard Functions
+		//FeatureCardList Function
 		dropSelect: projectIndex => {
 			set(
 				produce(draft => {
@@ -340,7 +340,7 @@ const useStore = create(
 				})
 			);
 		},
-		//End FeatureCardListProject Function
+		//End FeatureCardList Function
 		//Feature View Functions
 		openNote: (projectIndex, featureIndex, todoIndex) => {
 			set(

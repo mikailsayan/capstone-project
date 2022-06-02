@@ -1,4 +1,4 @@
-import FeatureCardSmall from '../FeatureCardSmall/FeatureCardSmall';
+import FeatureCard from '../FeatureCard/FeatureCard';
 import StyledSection from '../styled-components/StyledSection';
 import StyledUL from '../styled-components/StyledUL';
 import StyledDiv from '../styled-components/StyledDiv';
@@ -8,9 +8,9 @@ import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
 import MySVG from '../MySVG';
 import StyledSectionRaw from '../styled-components/StyledSectionRaw';
-import AddFeatureProject from '../AddFeatureProject/AddFeatureProject';
+import AddFeature from '../AddFeature/AddFeature';
 
-export default function FeatureCardListProject() {
+export default function FeatureCardList() {
 	const projectszustand = useStore(state => state.projectszustand);
 	const dropdown = useStore(state => state.dropdown);
 	const isClicked = useStore(state => state.isClicked);
@@ -72,7 +72,7 @@ export default function FeatureCardListProject() {
 									<StyledUL>
 										{addFeatureState ? (
 											<li>
-												<AddFeatureProject
+												<AddFeature
 													projectIndex={projectIndex}
 													addfeatureform={addfeatureform}
 												/>
@@ -86,7 +86,7 @@ export default function FeatureCardListProject() {
 											);
 											return (
 												<li key={feature.id}>
-													<FeatureCardSmall
+													<FeatureCard
 														project={project}
 														feature={feature}
 														featureIndex={featureIndex}
