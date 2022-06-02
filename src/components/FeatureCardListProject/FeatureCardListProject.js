@@ -96,16 +96,19 @@ export default function FeatureCardListProject() {
 						);
 					})}
 				</StyledSectionRaw>
-				<StyledButton
-					variant="mainbutton"
-					type="submit"
-					onClick={() => {
-						toggleAdd();
-						console.log(addFeatureState);
-					}}
-				>
-					Feature hinzufügen
-				</StyledButton>
+				{addFeatureState ? (
+					''
+				) : (
+					<StyledButton
+						variant="mainbutton"
+						type="submit"
+						onClick={() => {
+							toggleAdd();
+						}}
+					>
+						Feature hinzufügen
+					</StyledButton>
+				)}
 			</>
 		)
 	);
