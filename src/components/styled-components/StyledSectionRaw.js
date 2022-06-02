@@ -47,8 +47,8 @@ const StyledSectionRaw = styled.section`
 		justify-content: center;
 		align-items: center;
 		width: 100vw;
-		height: 7.5rem;
-		margin-bottom: 3rem;
+		height: 7rem;
+		margin-bottom: 4rem;
         `}
 `;
 
