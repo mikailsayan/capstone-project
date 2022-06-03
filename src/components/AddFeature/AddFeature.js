@@ -62,14 +62,14 @@ export default function AddFeature({ projectIndex, addfeatureform }) {
 						setFeaturenameInputValue(event.target.value);
 					}}
 				/>
-				<StyledLabel variant="default" htmlFor="begindate">
-					Startdatum:
+				<StyledLabel variant="default" htmlFor="date">
+					Zeitraum
 				</StyledLabel>
-				<StyledDiv variant="center">
+				<StyledDiv variant="date">
 					<StyledInput
 						variant="date"
 						id="begindate"
-						name="begindate"
+						name="date"
 						type="date"
 						min={date}
 						value={beginInputValue}
@@ -77,16 +77,11 @@ export default function AddFeature({ projectIndex, addfeatureform }) {
 							setBeginInputValue(event.target.value);
 						}}
 					/>
-					<MySVG variant="calender" size="2.9rem" />
-				</StyledDiv>
-				<StyledLabel variant="default" htmlFor="enddate">
-					Enddatum:
-				</StyledLabel>
-				<StyledDiv variant="center">
+					<p>-</p>
 					<StyledInput
 						variant="date"
 						id="enddate"
-						name="enddate"
+						name="date"
 						type="date"
 						min={date}
 						value={endInputValue}
@@ -94,7 +89,6 @@ export default function AddFeature({ projectIndex, addfeatureform }) {
 							setEndInputValue(event.target.value);
 						}}
 					/>
-					<MySVG variant="calender" size="2.9rem" />
 				</StyledDiv>
 			</StyledSection>
 		</StyledForm>

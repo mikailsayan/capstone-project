@@ -10,6 +10,7 @@ import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
 import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import { useRouter } from 'next/router';
 
 export default function AddProject() {
 	const [projectnameInputValue, setProjectnameInputValue] = useState('');
@@ -20,6 +21,7 @@ export default function AddProject() {
 	const setAppState = useStore(state => state.setAppState);
 	const [radio, setRadio] = useState('grey');
 
+	const router = useRouter();
 	const today = new Date();
 	const date = format(
 		new Date(today.getFullYear(), today.getMonth(), today.getDate()),
@@ -45,6 +47,7 @@ export default function AddProject() {
 					setEndInputValue('');
 					setRadio('');
 					setAppState('projects');
+					router.push('/');
 				}}
 			>
 				<StyledSection variant="big-grey">
@@ -78,7 +81,7 @@ export default function AddProject() {
 						}}
 					/>
 					<StyledLabel variant="default" htmlFor="date">
-						Startdatum:
+						Zeitraum
 					</StyledLabel>
 					<StyledDiv variant="date">
 						<StyledInput

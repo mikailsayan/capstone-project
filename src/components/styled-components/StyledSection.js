@@ -21,7 +21,7 @@ const StyledSection = styled.section`
 		variant === 'middle-grey' &&
 		`
         background-color: var(--card-grey);
-        height: 34.1rem;
+        height: 22rem;
         margin-bottom: 2rem;
     `}
 
@@ -44,7 +44,7 @@ const StyledSection = styled.section`
 		variant === 'middle-blue' &&
 		`
         background-color: var(--blue-project);
-        height: 34.1rem;
+        height: 22rem;
 		`}
 
     ${({ variant }) =>
@@ -65,7 +65,7 @@ const StyledSection = styled.section`
 		variant === 'middle-purple' &&
 		`
         background-color: var(--purple-project);
-        height: 34.1rem;
+        height: 22rem;
 		`}
 
     ${({ variant }) =>
@@ -86,7 +86,7 @@ const StyledSection = styled.section`
 		variant === 'middle-yellow' &&
 		`
         background-color: var(--yellow-project);
-        height: 34.1rem;
+        height: 22rem;
 		`}
 
     ${({ variant }) =>
@@ -106,7 +106,7 @@ const StyledSection = styled.section`
 		variant === 'middle-red' &&
 		`
         background-color: var(--red-project);
-        height: 34.1rem;
+        height: 22rem;
 		`}
 
     ${({ variant }) =>
@@ -127,7 +127,7 @@ const StyledSection = styled.section`
 		variant === 'middle-green' &&
 		`
         background-color: var(--green-project);
-        height: 34.1rem;
+        height: 22rem;
 		    `}
 
     ${({ variant }) =>

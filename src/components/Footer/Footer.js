@@ -17,7 +17,7 @@ export default function Footer() {
 							<StyledImage
 								variant="footer"
 								src="/footerhomeclicked.svg"
-								alt="footerhomeclicked-svg"
+								alt="footerhomeclickedsvg"
 								width={42}
 								height={42}
 								onClick={() => {
@@ -28,7 +28,7 @@ export default function Footer() {
 							<StyledImage
 								variant="footer"
 								src="/homepage.svg"
-								alt="homepage-svg"
+								alt="homepagesvg"
 								width={42}
 								height={42}
 								onClick={() => {
@@ -44,7 +44,7 @@ export default function Footer() {
 							<StyledImage
 								variant="footeradd"
 								src="/footeraddclicked.svg"
-								alt="footeraddclicked-svg"
+								alt="footeraddclickedsvg"
 								width={57}
 								height={57}
 								onClick={() => {
@@ -55,7 +55,7 @@ export default function Footer() {
 							<StyledImage
 								variant="footeradd"
 								src="/addproject.svg"
-								alt="addproject-svg"
+								alt="addprojectsvg"
 								width={57}
 								height={57}
 								onClick={() => {
@@ -71,7 +71,7 @@ export default function Footer() {
 							<StyledImage
 								variant="footer"
 								src="/footerprojectsclicked.svg"
-								alt="footerprojectsclicked-svg"
+								alt="footerprojectsclickedsvg"
 								width={42}
 								height={42}
 								onClick={() => {
@@ -82,7 +82,7 @@ export default function Footer() {
 							<StyledImage
 								variant="footer"
 								src="/project.svg"
-								alt="project-svg"
+								alt="projectsvg"
 								width={42}
 								height={42}
 								onClick={() => {

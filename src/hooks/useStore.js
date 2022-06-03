@@ -184,6 +184,7 @@ const useStore = create(
 		appState: 'projects',
 		setAppState: appState => {
 			set({ appState });
+			console.log(appState);
 		},
 		//End AppState Functions
 		//FeatureCard Functions

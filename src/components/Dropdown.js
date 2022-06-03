@@ -13,7 +13,7 @@ export default function Dropdown() {
 		<StyledDiv
 			variant="dropdown"
 			onClick={() => {
-				setDropdownIsOpen(true);
+				setDropdownIsOpen(!dropdownIsOpen);
 			}}
 		>
 			<MySVG variant="dropdown" size="2.3rem" />
