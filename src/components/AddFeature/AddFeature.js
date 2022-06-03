@@ -8,7 +8,7 @@ import MySVG from '../MySVG';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
 
-export default function AddFeature({ projectIndex, addfeatureform }) {
+export default function AddFeature({ project, projectIndex, addfeatureform }) {
 	const [featurenameInputValue, setFeaturenameInputValue] = useState('');
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
@@ -33,7 +33,25 @@ export default function AddFeature({ projectIndex, addfeatureform }) {
 				toggleAdd();
 			}}
 		>
-			<StyledSection variant="middle-grey">
+			<StyledSection
+				variant="middle-grey"
+				style={{
+					background:
+						project.color === 'blue'
+							? 'var(--blue-project)'
+							: project.color === 'purple'
+							? 'var(--purple-project)'
+							: project.color === 'yellow'
+							? 'var(--yellow-project)'
+							: project.color === 'red'
+							? 'var(--red-project)'
+							: project.color === 'green'
+							? 'var(--green-project)'
+							: project.color === ''
+							? 'var(--card-grey)'
+							: '',
+				}}
+			>
 				<div
 					onClick={() => {
 						toggleAdd();

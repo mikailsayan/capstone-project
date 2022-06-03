@@ -25,6 +25,7 @@ export default function FeatureCardList() {
 								{addFeatureState ? (
 									<li>
 										<AddFeature
+											project={project}
 											projectIndex={projectIndex}
 											addfeatureform={addfeatureform}
 										/>

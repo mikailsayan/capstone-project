@@ -123,7 +123,7 @@ export default function AddProject() {
 								setRadio(event.target.value);
 							}}
 						/>
-						<StyledLabel variant="complexity" htmlFor="easy">
+						<StyledLabel variant="projectcolor" htmlFor="blue">
 							<StyledDiv variant="projectcolor-blue" />
 						</StyledLabel>
 						<StyledInput
@@ -137,7 +137,7 @@ export default function AddProject() {
 								setRadio(event.target.value);
 							}}
 						/>
-						<StyledLabel variant="complexity" htmlFor="middle">
+						<StyledLabel variant="projectcolor" htmlFor="purple">
 							<StyledDiv variant="projectcolor-purple" />
 						</StyledLabel>
 						<StyledInput
@@ -151,7 +151,7 @@ export default function AddProject() {
 								setRadio(event.target.value);
 							}}
 						/>
-						<StyledLabel variant="complexity" htmlFor="hard">
+						<StyledLabel variant="projectcolor" htmlFor="yellow">
 							<StyledDiv variant="projectcolor-yellow" />
 						</StyledLabel>
 						<StyledInput
@@ -165,7 +165,7 @@ export default function AddProject() {
 								setRadio(event.target.value);
 							}}
 						/>
-						<StyledLabel variant="complexity" htmlFor="hard">
+						<StyledLabel variant="projectcolor" htmlFor="red">
 							<StyledDiv variant="projectcolor-red" />
 						</StyledLabel>
 						<StyledInput
@@ -179,7 +179,7 @@ export default function AddProject() {
 								setRadio(event.target.value);
 							}}
 						/>
-						<StyledLabel variant="complexity" htmlFor="hard">
+						<StyledLabel variant="projectcolor" htmlFor="green">
 							<StyledDiv variant="projectcolor-green" />
 						</StyledLabel>
 					</StyledArticle>
