@@ -47,7 +47,9 @@ const StyledDiv = styled.div`
 		variant === 'dropdown-menu' &&
 		`
 		position: absolute;
-		top: 8.5rem;
+		top: 1rem;
+		right: 50%;
+		transform: translate(50%, 50%);
 		width: 25rem;
 		min-height: 2rem;
 		box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);

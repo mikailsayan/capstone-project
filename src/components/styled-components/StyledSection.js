@@ -5,44 +5,32 @@ const StyledSection = styled.section`
 	flex-direction: column;
 	width: 34rem;
 	border-radius: 4rem;
-	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
 	padding: 1rem 1rem 1rem 0.5rem;
 	position: relative;
 
 	${({ variant }) =>
-		variant === 'overflow' &&
-		` 
-        align-items: center;
-        width: 100vw;
-        height: 51.8rem;
-        border-radius: 0rem;
-        box-shadow: none;
-        overflow: auto;
-        margin: 0 0 1rem 0;
-    `}
-
-	${({ variant }) =>
 		variant === 'big-grey' &&
 		`
-        background-color: var(--grey-color);
+        background-color: var(--card-grey);
         min-height: 48rem;
-        margin: 1rem 0 2rem 0;
+        margin-bottom: 2rem;
     `}
 
 	${({ variant }) =>
 		variant === 'middle-grey' &&
 		`
-        background-color: var(--grey-color);
+        background-color: var(--card-grey);
         height: 34.1rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     `}
 
     ${({ variant }) =>
 		variant === 'small-grey' &&
 		`
-        background-color: var(--grey-color);
+        background-color: var(--card-grey);
         height: 23rem;
-        margin: 1rem 0 3rem 0;
+        margin-bottom: 2rem;
     `}
 
     ${({ variant }) =>

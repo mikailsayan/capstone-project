@@ -5,7 +5,6 @@ import StyledImage from '../styled-components/StyledImage';
 import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
-import MySVG from '../MySVG';
 
 export default function ProjectCard({ project }) {
 	const appState = useStore(state => state.appState);
@@ -14,7 +13,12 @@ export default function ProjectCard({ project }) {
 		appState === 'projects' && (
 			<StyledSection variant="small-grey">
 				<StyledDiv variant="cardtitle">
-					<MySVG variant="projecticon" size="3.6rem" />
+					<StyledImage
+						src="/singleprojecticon.svg"
+						alt="singleprojecticon-svg"
+						width={30}
+						height={30}
+					/>
 					<Typography variant="h3" component="h3" size="1.7rem">
 						{project.name}
 					</Typography>

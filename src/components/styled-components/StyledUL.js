@@ -12,6 +12,14 @@ const StyledUL = styled.ul`
         gap: 1rem;
         margin: 0rem 0 1rem 1rem;
     `}
+
+	${({ variant }) =>
+		variant === 'center' &&
+		`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `}
 `;
 
 export default StyledUL;

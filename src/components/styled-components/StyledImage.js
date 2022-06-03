@@ -11,6 +11,13 @@ const StyledImage = styled(Image)`
     `}
 
 	${({ variant }) =>
+		variant === 'promalogo' &&
+		`
+		width: 18.6rem;
+		height: 4.1rem;
+    `}
+
+	${({ variant }) =>
 		variant === 'projecticon' &&
 		`
 		width: 3.6rem;

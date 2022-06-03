@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const StyledFooter = styled.footer`
+const StyledHeader = styled.header`
 	position: fixed;
-	bottom: 0;
+	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,4 +12,4 @@ const StyledFooter = styled.footer`
 	z-index: 12;
 `;
 
-export default StyledFooter;
+export default StyledHeader;
