@@ -7,8 +7,8 @@ const StyledMain = styled.main`
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	height: 68.2rem;
-	padding: 10rem 0 8rem 0;
+	margin: 14.1rem 0 16.1rem 0;
+	padding: 4rem 0 2rem 0;
 `;
 
 export default StyledMain;
