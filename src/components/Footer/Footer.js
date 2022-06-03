@@ -3,10 +3,13 @@ import StyledImage from '../styled-components/StyledImage';
 import useStore from '../../hooks/useStore';
 import Link from 'next/link';
 import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import { useRouter } from 'next/router';
 
 export default function Footer() {
 	const setAppState = useStore(state => state.setAppState);
 	const appState = useStore(state => state.appState);
+
+	const router = useRouter();
 
 	return (
 		<StyledFooter>
@@ -22,6 +25,7 @@ export default function Footer() {
 								height={42}
 								onClick={() => {
 									setAppState('projects');
+									router.push('/');
 								}}
 							/>
 						) : (
@@ -33,6 +37,7 @@ export default function Footer() {
 								height={42}
 								onClick={() => {
 									setAppState('projects');
+									router.push('/');
 								}}
 							/>
 						)}
@@ -49,6 +54,7 @@ export default function Footer() {
 								height={57}
 								onClick={() => {
 									setAppState('addproject');
+									router.push('/addproject');
 								}}
 							/>
 						) : (
@@ -60,6 +66,7 @@ export default function Footer() {
 								height={57}
 								onClick={() => {
 									setAppState('addproject');
+									router.push('/addproject');
 								}}
 							/>
 						)}
@@ -76,6 +83,7 @@ export default function Footer() {
 								height={42}
 								onClick={() => {
 									setAppState('featurelist');
+									router.push('/featurelist');
 								}}
 							/>
 						) : (
@@ -87,6 +95,7 @@ export default function Footer() {
 								height={42}
 								onClick={() => {
 									setAppState('featurelist');
+									router.push('/featurelist');
 								}}
 							/>
 						)}
