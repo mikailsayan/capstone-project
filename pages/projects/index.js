@@ -11,8 +11,8 @@ import { useState } from 'react';
 
 export default function Home() {
 	const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
-	const projectszustand = useStore(state => state.projectszustand);
-	const dropSelect = useStore(state => state.dropSelect);
+	const projects = useStore(state => state.projects);
+	const selectProject = useStore(state => state.selectProject);
 
 	return (
 		<div>
@@ -30,8 +30,8 @@ export default function Home() {
 						<MySVG variant="dropdown" size="2.3rem" />
 						{dropdownIsOpen ? (
 							<StyledDiv variant="dropdown-menu">
-								{projectszustand.map(project => {
-									const index = projectszustand.findIndex(
+								{projects.map(project => {
+									const index = projects.findIndex(
 										projectIndex => projectIndex.id === project.id
 									);
 									return (
@@ -39,7 +39,8 @@ export default function Home() {
 											key={project.id}
 											variant="dropdown-content"
 											onClick={() => {
-												dropSelect(index);
+												selectProject(index);
+												setDropdownIsOpen(false);
 											}}
 										>
 											<StyledParagraph variant="dropdown-content">

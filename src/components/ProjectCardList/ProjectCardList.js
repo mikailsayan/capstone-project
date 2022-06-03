@@ -1,5 +1,4 @@
 import ProjectCard from '../ProjectCard/ProjectCard';
-import StyledSection from '../styled-components/StyledSection';
 import StyledButton from '../styled-components/StyledButton';
 import StyledUL from '../styled-components/StyledUL';
 import Link from 'next/link';
@@ -7,16 +6,16 @@ import useStore from '../../hooks/useStore';
 import StyledArticle from '../styled-components/StyledArticle';
 
 export default function ProjectCardList() {
-	const projectszustand = useStore(state => state.projectszustand);
+	const projects = useStore(state => state.projects);
 	const appState = useStore(state => state.appState);
 	const setAppState = useStore(state => state.setAppState);
 
 	return (
 		appState === 'projects' && (
-			<StyledSection>
+			<section>
 				<StyledArticle variant="overflow">
 					<StyledUL>
-						{projectszustand.map(project => {
+						{projects.map(project => {
 							return (
 								<li key={project.id}>
 									<ProjectCard project={project} />
@@ -38,7 +37,7 @@ export default function ProjectCardList() {
 						</StyledButton>
 					</StyledArticle>
 				</Link>
-			</StyledSection>
+			</section>
 		)
 	);
 }

@@ -7,7 +7,7 @@ import StyledSectionRaw from '../styled-components/StyledSectionRaw';
 import AddFeature from '../AddFeature/AddFeature';
 
 export default function FeatureCardList() {
-	const projectszustand = useStore(state => state.projectszustand);
+	const projects = useStore(state => state.projects);
 	const appState = useStore(state => state.appState);
 	const addFeatureState = useStore(state => state.addFeatureState);
 	const toggleAdd = useStore(state => state.toggleAdd);
@@ -17,8 +17,8 @@ export default function FeatureCardList() {
 		appState === 'featurelist' && (
 			<StyledSectionRaw variant="featurelist">
 				<StyledArticle variant="list">
-					{projectszustand.map(project => {
-						const projectIndex = projectszustand.findIndex(
+					{projects.map(project => {
+						const projectIndex = projects.findIndex(
 							projectIndex => projectIndex.id === project.id
 						);
 						return (
