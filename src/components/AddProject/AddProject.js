@@ -5,7 +5,6 @@ import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledArticle from '../styled-components/StyledArticle';
-import Link from 'next/link';
 import { format } from 'date-fns';
 import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
@@ -18,6 +17,7 @@ export default function AddProject() {
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
 	const addProject = useStore(state => state.addProject);
+	const setAppState = useStore(state => state.setAppState);
 	const [radio, setRadio] = useState('grey');
 
 	const today = new Date();
@@ -44,6 +44,7 @@ export default function AddProject() {
 					setBeginInputValue('');
 					setEndInputValue('');
 					setRadio('');
+					setAppState('projects');
 				}}
 			>
 				<StyledSection variant="big-grey">
@@ -182,11 +183,9 @@ export default function AddProject() {
 				</StyledSection>
 			</StyledForm>
 			<StyledArticle variant="buttonarea">
-				<Link passHref href="/">
-					<StyledButton variant="donebutton" type="submit" form="addproject">
-						Hinzufügen
-					</StyledButton>
-				</Link>
+				<StyledButton variant="donebutton" type="submit" form="addproject">
+					Hinzufügen
+				</StyledButton>
 			</StyledArticle>
 		</StyledSectionRaw>
 	);
