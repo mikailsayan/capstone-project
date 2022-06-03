@@ -31,13 +31,7 @@ const StyledArticle = styled.article`
 		height: 6rem;
 		z-index: 25;
         `}
-	
-	${({ variant }) =>
-		variant === 'list' &&
-		`
-		flex-direction: column;
-		height: 50rem;
-        `}
+
 
 	${({ variant }) =>
 		variant === 'buttonarea' &&

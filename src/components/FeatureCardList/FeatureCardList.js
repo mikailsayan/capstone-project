@@ -16,7 +16,7 @@ export default function FeatureCardList() {
 	return (
 		appState === 'featurelist' && (
 			<StyledSectionRaw variant="featurelist">
-				<StyledArticle variant="list">
+				<StyledArticle>
 					{projects.map(project => {
 						const projectIndex = projects.findIndex(
 							projectIndex => projectIndex.id === project.id

@@ -10,22 +10,13 @@ const StyledSectionRaw = styled.section`
         `}
 
 	${({ variant }) =>
-		variant === 'list' &&
-		`
-		display: flex;
-		flex-direction: column;
-		height: 50rem;
-        `}
-
-	${({ variant }) =>
 		variant === 'featurelist' &&
 		`
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100vw;
-		height: 50rem;
-		margin-top: 13rem;
+		margin-top: 39rem;
     `}
 
 	${({ variant }) =>
