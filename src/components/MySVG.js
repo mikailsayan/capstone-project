@@ -25,7 +25,7 @@ const SVGObject = {
 function MySVG({
 	variant = 'calender',
 	size = '2.4rem',
-	color = 'var(--icon-default',
+	color = 'var(--icon-default)',
 	position,
 	top,
 	right,
