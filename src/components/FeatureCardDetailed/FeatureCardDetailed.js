@@ -11,7 +11,7 @@ import AddTodo from '../AddTodo/AddTodo';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
-export default function FeatureCardDetailed({ projectIndex, featureIndex, feature }) {
+export default function FeatureCardDetailed({ project, feature, projectIndex, featureIndex }) {
 	const closeFeatureCardDetailed = useStore(state => state.closeFeatureCardDetailed);
 	const checkTodo = useStore(state => state.checkTodo);
 	const toggleNote = useStore(state => state.toggleNote);
@@ -19,11 +19,39 @@ export default function FeatureCardDetailed({ projectIndex, featureIndex, featur
 	const toggleAddTodo = useStore(state => state.toggleAddTodo);
 
 	return feature.edit ? (
-		<EditFeature feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
+		<EditFeature
+			project={project}
+			feature={feature}
+			featureIndex={featureIndex}
+			projectIndex={projectIndex}
+		/>
 	) : feature.addtodo ? (
-		<AddTodo feature={feature} featureIndex={featureIndex} projectIndex={projectIndex} />
+		<AddTodo
+			project={project}
+			feature={feature}
+			featureIndex={featureIndex}
+			projectIndex={projectIndex}
+		/>
 	) : (
-		<StyledSection variant="big-grey">
+		<StyledSection
+			variant="big-grey"
+			style={{
+				background:
+					project.color === 'blue'
+						? 'var(--blue-project)'
+						: project.color === 'purple'
+						? 'var(--purple-project)'
+						: project.color === 'yellow'
+						? 'var(--yellow-project)'
+						: project.color === 'red'
+						? 'var(--red-project)'
+						: project.color === 'green'
+						? 'var(--green-project)'
+						: project.color === ''
+						? 'var(--card-grey)'
+						: '',
+			}}
+		>
 			<div
 				onClick={() => {
 					toggleEdit(projectIndex, featureIndex);

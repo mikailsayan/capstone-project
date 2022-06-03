@@ -10,7 +10,7 @@ import MySVG from '../MySVG';
 import { useState } from 'react';
 import useStore from '../../hooks/useStore';
 
-export default function AddTodo({ projectIndex, featureIndex }) {
+export default function AddTodo({ project, projectIndex, featureIndex }) {
 	const [todonameValue, setTodonameValue] = useState('');
 	const [todonoteValue, setTodonoteValue] = useState('');
 	const [radio, setRadio] = useState('');
@@ -28,7 +28,25 @@ export default function AddTodo({ projectIndex, featureIndex }) {
 				toggleAddTodo(projectIndex, featureIndex);
 			}}
 		>
-			<StyledSection variant="big-grey">
+			<StyledSection
+				variant="big-grey"
+				style={{
+					background:
+						project.color === 'blue'
+							? 'var(--blue-project)'
+							: project.color === 'purple'
+							? 'var(--purple-project)'
+							: project.color === 'yellow'
+							? 'var(--yellow-project)'
+							: project.color === 'red'
+							? 'var(--red-project)'
+							: project.color === 'green'
+							? 'var(--green-project)'
+							: project.color === ''
+							? 'var(--card-grey)'
+							: '',
+				}}
+			>
 				<StyledButton type="submit" variant="svgbutton">
 					<MySVG
 						variant="save2"

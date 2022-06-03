@@ -7,12 +7,30 @@ import Typography from '../styled-components/Typography';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
-export default function FeatureCardBrief({ feature, projectIndex, featureIndex }) {
+export default function FeatureCardBrief({ project, feature, projectIndex, featureIndex }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
 	const selectFeature = useStore(state => state.selectFeature);
 
 	return (
-		<StyledSection variant="small-grey">
+		<StyledSection
+			variant="small-grey"
+			style={{
+				background:
+					project.color === 'blue'
+						? 'var(--blue-project)'
+						: project.color === 'purple'
+						? 'var(--purple-project)'
+						: project.color === 'yellow'
+						? 'var(--yellow-project)'
+						: project.color === 'red'
+						? 'var(--red-project)'
+						: project.color === 'green'
+						? 'var(--green-project)'
+						: project.color === ''
+						? 'var(--card-grey)'
+						: '',
+			}}
+		>
 			<StyledDiv variant="cardtitle">
 				<StyledInput
 					variant="featurecheckbox"

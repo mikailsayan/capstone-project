@@ -8,14 +8,32 @@ import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 import styled from 'styled-components';
 
-export default function EditFeature({ projectIndex, featureIndex, feature }) {
+export default function EditFeature({ project, feature, projectIndex, featureIndex }) {
 	const toggleEdit = useStore(state => state.toggleEdit);
 	const saveFeatureName = useStore(state => state.saveFeatureName);
 	const saveFeatureBeginDate = useStore(state => state.saveFeatureBeginDate);
 	const controlFeatureEndDate = useStore(state => state.controlFeatureEndDate);
 
 	return feature.edit ? (
-		<StyledSection variant="big-grey">
+		<StyledSection
+			variant="big-grey"
+			style={{
+				background:
+					project.color === 'blue'
+						? 'var(--blue-project)'
+						: project.color === 'purple'
+						? 'var(--purple-project)'
+						: project.color === 'yellow'
+						? 'var(--yellow-project)'
+						: project.color === 'red'
+						? 'var(--red-project)'
+						: project.color === 'green'
+						? 'var(--green-project)'
+						: project.color === ''
+						? 'var(--card-grey)'
+						: '',
+			}}
+		>
 			<StyledSaveButton
 				onClick={() => {
 					toggleEdit(projectIndex, featureIndex);
