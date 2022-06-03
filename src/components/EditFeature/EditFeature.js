@@ -103,15 +103,9 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 								{todo.name}
 								{todo.complexity === 'easy' ? (
 									<StyledDiv variant="complexity-easy"> </StyledDiv>
-								) : (
-									''
-								)}
-								{todo.complexity === 'middle' ? (
+								) : todo.complexity === 'middle' ? (
 									<StyledDiv variant="complexity-middle"> </StyledDiv>
-								) : (
-									''
-								)}
-								{todo.complexity === 'hard' ? (
+								) : todo.complexity === 'hard' ? (
 									<StyledDiv variant="complexity-hard"> </StyledDiv>
 								) : (
 									''
