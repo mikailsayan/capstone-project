@@ -13,7 +13,7 @@ const StyledSection = styled.section`
 		variant === 'big-grey' &&
 		`
         background-color: var(--card-grey);
-        min-height: 48rem;
+        min-height: 47rem;
         margin-bottom: 2rem;
     `}
 
@@ -37,7 +37,7 @@ const StyledSection = styled.section`
 		variant === 'big-blue' &&
 		`
         background-color: var(--blue-project);
-        height: 50.5rem;
+        min-height: 47rem;
     `}
 
 	${({ variant }) =>
@@ -58,7 +58,7 @@ const StyledSection = styled.section`
 		variant === 'big-purple' &&
 		`
         background-color: var(--purple-project);
-        height: 50.5rem;
+        min-height: 47rem;
         `}
 
 	${({ variant }) =>
@@ -79,7 +79,7 @@ const StyledSection = styled.section`
 		variant === 'big-yellow' &&
 		`
         background-color: var(--yellow-project);
-        height: 50.5rem;
+        min-height: 47rem;
         `}
 
 	${({ variant }) =>
@@ -99,27 +99,7 @@ const StyledSection = styled.section`
 		variant === 'big-red' &&
 		`
         background-color: var(--red-project);
-        height: 50.5rem;
-        `}
-
-	${({ variant }) =>
-		variant === 'middle-red' &&
-		`
-        background-color: var(--red-project);
-        height: 34.1rem;
-		`}
-
-    ${({ variant }) =>
-		variant === 'small-red' &&
-		`
-        background-color: var(--red-project);
-        height: 24.6rem;
-        `}
-    ${({ variant }) =>
-		variant === 'big-red' &&
-		`
-        background-color: var(--red-project);
-        height: 50.5rem;
+        min-height: 47rem;
         `}
 
 	${({ variant }) =>
@@ -140,7 +120,7 @@ const StyledSection = styled.section`
 		variant === 'big-green' &&
 		`
         background-color: var(--green-project);
-        height: 50.5rem;
+        min-height: 47rem;
         `}
 
 	  ${({ variant }) =>

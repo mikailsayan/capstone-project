@@ -12,7 +12,6 @@ const useStore = create(
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01/01/2001',
 				end: '02-01-2001',
-				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
 				color: 'blue',
 				edit: false,
 				selected: true,
@@ -99,7 +98,6 @@ const useStore = create(
 				notes: 'Hier sind ein paar Notizen',
 				begin: '01-02-2001',
 				end: '02-02-2001',
-				icon: 'https://www.skopos.de/wp-content/uploads/2021/04/Element-5.svg',
 				color: 'green',
 				edit: false,
 				selected: false,
@@ -292,7 +290,7 @@ const useStore = create(
 		},
 		//End AddTodo Functions
 		//AddProject Functions
-		addProject: (name, notes, begin, end) => {
+		addProject: (name, notes, begin, end, color) => {
 			set(
 				produce(draft => {
 					draft.projects.push({
@@ -300,10 +298,12 @@ const useStore = create(
 						notes,
 						begin,
 						end,
+						color,
 						id: nanoid(),
 						selected: false,
 						isChecked: false,
 						edit: false,
+						feature: [],
 					});
 				})
 			);

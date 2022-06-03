@@ -5,7 +5,7 @@ const StyledTextarea = styled.textarea`
 		variant === 'addproject' &&
 		`
         width: 29rem;
-		height: 10.9rem;
+		height: 7rem;
 		border-radius: 1.5rem;
 		border: 0.3rem solid var(--input-border);
 		margin: 0 2.1rem 1rem 2.1rem;

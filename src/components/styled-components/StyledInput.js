@@ -15,8 +15,7 @@ const StyledInput = styled.input`
 	${({ variant }) =>
 		variant === 'date' &&
 		`
-        width: 24.9rem;
-		margin: 0 2.1rem 1rem 2.1rem;
+        width: 13rem;
 		height: 4.1rem;
         
     `}
@@ -58,6 +57,21 @@ const StyledInput = styled.input`
 			border: 0.4rem solid white;
 			border-radius: 50%;
 			z-index: 10;
+		}}}
+	
+	`}
+
+	${({ variant }) =>
+		variant === 'projectcolor' &&
+		`
+		display: none;
+
+		&:checked + label {
+			width: 4.5rem;
+			height: 4.5rem;
+			border: 0.4rem solid white;
+			border-radius: 50%;
+			z-index: 30;
 		}}}
 	
 	`}

@@ -54,6 +54,16 @@ const StyledArticle = styled.article`
 		align-items: center;
 		width: 100vw;
     `}
+
+	${({ variant }) =>
+		variant === 'projectcolor-choice' &&
+		` 
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 30rem;
+		margin: 0 2rem 0 2rem;	
+    `}
 `;
 
 export default StyledArticle;

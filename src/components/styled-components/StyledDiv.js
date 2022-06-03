@@ -96,7 +96,15 @@ const StyledDiv = styled.div`
 		overflow: auto;
    `}
    
-   
+   ${({ variant }) =>
+		variant === 'date' &&
+		`
+		display: flex;
+		align-items: center;
+		width: 30rem;
+		margin: 0 2rem 1rem 2rem;
+		justify-content: space-around;
+    `}
 
 	${({ variant }) =>
 		variant === 'center' &&
@@ -163,6 +171,56 @@ const StyledDiv = styled.div`
 		border: 0.2rem solid white;
 		border-radius: 50%;
 		background-color: var(--red-complex);
+	`}
+
+	${({ variant }) =>
+		variant === 'projectcolor-blue' &&
+		`
+		display: flex;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+		background-color: var(--blue-project);
+	`}
+
+	${({ variant }) =>
+		variant === 'projectcolor-purple' &&
+		`
+		display: flex;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+		background-color: var(--purple-project);
+	`}
+
+	${({ variant }) =>
+		variant === 'projectcolor-yellow' &&
+		`
+		display: flex;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+		background-color: var(--yellow-project);
+	`}
+
+	${({ variant }) =>
+		variant === 'projectcolor-red' &&
+		`
+		display: flex;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+		background-color: var(--red-project);
+	`}
+
+	${({ variant }) =>
+		variant === 'projectcolor-green' &&
+		`
+		display: flex;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+		background-color: var(--green-project);
 	`}
 
 	${({ variant }) =>

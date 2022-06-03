@@ -66,7 +66,7 @@ export default function Footer() {
 					</Link>
 				</article>
 				<article>
-					<Link passHref href="/projects">
+					<Link passHref href="/featurelist">
 						{appState === 'featurelist' ? (
 							<StyledImage
 								variant="footer"
