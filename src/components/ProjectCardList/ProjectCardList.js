@@ -13,7 +13,7 @@ export default function ProjectCardList() {
 	return (
 		appState === 'projects' && (
 			<section>
-				<StyledArticle variant="overflow">
+				<StyledArticle variant="projectlist">
 					<StyledUL>
 						{projects.map(project => {
 							return (

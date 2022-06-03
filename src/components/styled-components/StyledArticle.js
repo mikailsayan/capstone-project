@@ -47,14 +47,12 @@ const StyledArticle = styled.article`
         `}
 
 	${({ variant }) =>
-		variant === 'overflow' &&
+		variant === 'projectlist' &&
 		` 
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100vw;
-		height: 50rem;
-		margin-top: 13rem;
     `}
 `;
 
