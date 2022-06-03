@@ -5,10 +5,13 @@ import Link from 'next/link';
 import useStore from '../../hooks/useStore';
 import StyledArticle from '../styled-components/StyledArticle';
 import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import { useRouter } from 'next/router';
 
 export default function ProjectCardList() {
 	const projects = useStore(state => state.projects);
 	const setAppState = useStore(state => state.setAppState);
+
+	const router = useRouter();
 
 	return (
 		<StyledSectionRaw variant="featurelist">
@@ -30,6 +33,7 @@ export default function ProjectCardList() {
 						type="submit"
 						onClick={() => {
 							setAppState('addproject');
+							router.push('/addproject');
 						}}
 					>
 						Projekt hinzufügen

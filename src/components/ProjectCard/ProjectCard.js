@@ -11,7 +11,25 @@ export default function ProjectCard({ project }) {
 
 	return (
 		appState === 'projects' && (
-			<StyledSection variant="small-grey">
+			<StyledSection
+				variant="small-grey"
+				style={{
+					background:
+						project.color === 'blue'
+							? 'var(--blue-project)'
+							: project.color === 'purple'
+							? 'var(--purple-project)'
+							: project.color === 'yellow'
+							? 'var(--yellow-project)'
+							: project.color === 'red'
+							? 'var(--red-project)'
+							: project.color === 'green'
+							? 'var(--green-project)'
+							: project.color === ''
+							? 'var(--card-grey)'
+							: '',
+				}}
+			>
 				<StyledDiv variant="cardtitle">
 					<StyledImage
 						src="/singleprojecticon.svg"
@@ -19,7 +37,7 @@ export default function ProjectCard({ project }) {
 						width={30}
 						height={30}
 					/>
-					<Typography variant="h3" component="h3" size="1.7rem">
+					<Typography variant="h3" component="h3" size="1.9rem">
 						{project.name}
 					</Typography>
 				</StyledDiv>

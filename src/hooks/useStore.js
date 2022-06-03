@@ -10,7 +10,7 @@ const useStore = create(
 				id: nanoid(),
 				name: 'Projekt 1',
 				notes: 'Hier sind ein paar Notizen',
-				begin: '01/01/2001',
+				begin: '01-01-2001',
 				end: '02-01-2001',
 				color: 'blue',
 				edit: false,
@@ -19,7 +19,7 @@ const useStore = create(
 					{
 						id: nanoid(),
 						name: 'Feature 1',
-						begin: '01/01/2001',
+						begin: '01-01-2001',
 						end: '02-01-2001',
 						isChecked: false,
 						edit: false,

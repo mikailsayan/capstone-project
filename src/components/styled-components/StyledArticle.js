@@ -6,7 +6,7 @@ const StyledArticle = styled.article`
 		`
         display: flex;
         gap: 2rem;
-        margin: 1.8rem 0 0 2rem;
+        margin: 1rem 0 0 2rem;
     `}
 
 	${({ variant }) =>
