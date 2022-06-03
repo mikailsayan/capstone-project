@@ -4,6 +4,7 @@ import StyledUL from '../styled-components/StyledUL';
 import Link from 'next/link';
 import useStore from '../../hooks/useStore';
 import StyledArticle from '../styled-components/StyledArticle';
+import StyledSectionRaw from '../styled-components/StyledSectionRaw';
 
 export default function ProjectCardList() {
 	const projects = useStore(state => state.projects);
@@ -12,8 +13,8 @@ export default function ProjectCardList() {
 
 	return (
 		appState === 'projects' && (
-			<section>
-				<StyledArticle variant="projectlist">
+			<StyledSectionRaw variant="featurelist">
+				<StyledArticle>
 					<StyledUL>
 						{projects.map(project => {
 							return (
@@ -37,7 +38,7 @@ export default function ProjectCardList() {
 						</StyledButton>
 					</StyledArticle>
 				</Link>
-			</section>
+			</StyledSectionRaw>
 		)
 	);
 }
