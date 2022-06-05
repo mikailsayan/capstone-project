@@ -64,6 +64,18 @@ const StyledArticle = styled.article`
 		width: 30rem;
 		margin: 0 2rem 0 2rem;	
     `}
+
+	${({ variant }) =>
+		variant === 'cardbuttonarea' &&
+		` 
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 30rem;
+		bottom: 2rem;	
+		right: 2rem;
+    `}
 `;
 
 export default StyledArticle;

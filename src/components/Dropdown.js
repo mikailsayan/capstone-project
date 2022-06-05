@@ -1,4 +1,4 @@
-import StyledDiv from '../../src/components/styled-components/StyledDiv';
+import StyledDivDropdown from '../../src/components/styled-components/StyledDivDropdown';
 import StyledParagraph from '../../src/components/styled-components/StyledParagraph';
 import MySVG from '../../src/components/MySVG';
 import useStore from '../../src/hooks/useStore';
@@ -10,7 +10,7 @@ export default function Dropdown() {
 	const selectProject = useStore(state => state.selectProject);
 
 	return (
-		<StyledDiv
+		<StyledDivDropdown
 			variant="dropdown"
 			onClick={() => {
 				setDropdownIsOpen(!dropdownIsOpen);
@@ -18,13 +18,13 @@ export default function Dropdown() {
 		>
 			<MySVG variant="dropdown" size="2.3rem" />
 			{dropdownIsOpen ? (
-				<StyledDiv variant="dropdown-menu">
+				<StyledDivDropdown variant="dropdown-menu">
 					{projects.map(project => {
 						const index = projects.findIndex(
 							projectIndex => projectIndex.id === project.id
 						);
 						return (
-							<StyledDiv
+							<StyledDivDropdown
 								key={project.id}
 								variant="dropdown-content"
 								onClick={() => {
@@ -35,13 +35,13 @@ export default function Dropdown() {
 								<StyledParagraph variant="dropdown-content">
 									{project.name}
 								</StyledParagraph>
-							</StyledDiv>
+							</StyledDivDropdown>
 						);
 					})}
-				</StyledDiv>
+				</StyledDivDropdown>
 			) : (
 				''
 			)}
-		</StyledDiv>
+		</StyledDivDropdown>
 	);
 }

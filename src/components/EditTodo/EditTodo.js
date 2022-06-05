@@ -1,14 +1,14 @@
 import StyledForm from '../styled-components/StyledForm';
-import StyledSection from '../styled-components/StyledSection';
+import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledButton from '../styled-components/StyledButton';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledArticle from '../styled-components/StyledArticle';
-import StyledDiv from '../styled-components/StyledDiv';
 import MySVG from '../MySVG';
 import { useState } from 'react';
 import useStore from '../../hooks/useStore';
+import StyledDivRadio from '../styled-components/StyledDivRadio';
 
 export default function EditTodo() {
 	const [todonameValue, setTodonameValue] = useState('');
@@ -29,7 +29,7 @@ export default function EditTodo() {
 					setRadio('');
 				}}
 			>
-				<StyledSection variant="big-grey">
+				<StyledSectionCard variant="big-grey">
 					<div
 						onClick={() => {
 							setAppState('featurelist');
@@ -82,7 +82,7 @@ export default function EditTodo() {
 							}}
 						/>
 						<StyledLabel variant="complexity" htmlFor="easy">
-							<StyledDiv variant="green-complex" />
+							<StyledDivRadio variant="green-complex-radio" />
 						</StyledLabel>
 						<StyledInput
 							variant="complexity"
@@ -96,7 +96,7 @@ export default function EditTodo() {
 							}}
 						/>
 						<StyledLabel variant="complexity" htmlFor="middle">
-							<StyledDiv variant="yellow-complex" />
+							<StyledDivRadio variant="yellow-complex-radio" />
 						</StyledLabel>
 						<StyledInput
 							variant="complexity"
@@ -110,10 +110,10 @@ export default function EditTodo() {
 							}}
 						/>
 						<StyledLabel variant="complexity" htmlFor="hard">
-							<StyledDiv variant="red-complex" />
+							<StyledDivRadio variant="red-complex-radio" />
 						</StyledLabel>
 					</StyledArticle>
-				</StyledSection>
+				</StyledSectionCard>
 				<StyledButton
 					variant="donebutton"
 					type="submit"

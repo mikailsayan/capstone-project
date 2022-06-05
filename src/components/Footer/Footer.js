@@ -2,7 +2,7 @@ import StyledFooter from '../styled-components/StyledFooter';
 import StyledImage from '../styled-components/StyledImage';
 import useStore from '../../hooks/useStore';
 import Link from 'next/link';
-import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import { useRouter } from 'next/router';
 
 export default function Footer() {
@@ -13,7 +13,7 @@ export default function Footer() {
 
 	return (
 		<StyledFooter>
-			<StyledSectionRaw variant="footer">
+			<StyledSectionCardRaw variant="footer">
 				<article>
 					<Link passHref href="/">
 						{appState === 'projects' ? (
@@ -101,7 +101,7 @@ export default function Footer() {
 						)}
 					</Link>
 				</article>
-			</StyledSectionRaw>
+			</StyledSectionCardRaw>
 		</StyledFooter>
 	);
 }

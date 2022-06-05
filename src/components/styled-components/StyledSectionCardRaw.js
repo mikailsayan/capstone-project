@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledSectionRaw = styled.section`
+const StyledSectionCardRaw = styled.section`
 	${({ variant }) =>
 		variant === 'overflow-todolist' &&
 		`
@@ -28,4 +28,4 @@ const StyledSectionRaw = styled.section`
     `}
 `;
 
-export default StyledSectionRaw;
+export default StyledSectionCardRaw;

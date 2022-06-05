@@ -3,7 +3,7 @@ import StyledArticle from '../styled-components/StyledArticle';
 import StyledUL from '../styled-components/StyledUL';
 import StyledButton from '../styled-components/StyledButton';
 import useStore from '../../hooks/useStore';
-import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import AddFeature from '../AddFeature/AddFeature';
 
 export default function FeatureCardList() {
@@ -13,7 +13,7 @@ export default function FeatureCardList() {
 	const addfeatureform = 'addfeatureform';
 
 	return (
-		<StyledSectionRaw variant="featurelist">
+		<StyledSectionCardRaw variant="featurelist">
 			<StyledArticle>
 				{projects.map(project => {
 					const projectIndex = projects.findIndex(
@@ -70,6 +70,6 @@ export default function FeatureCardList() {
 					</StyledButton>
 				)}
 			</StyledArticle>
-		</StyledSectionRaw>
+		</StyledSectionCardRaw>
 	);
 }

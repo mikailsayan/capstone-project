@@ -1,8 +1,8 @@
-import StyledSection from '../styled-components/StyledSection';
+import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledInput from '../styled-components/StyledInput';
 import StyledParagraph from '../styled-components/StyledParagraph';
 import StyledDiv from '../styled-components/StyledDiv';
-import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import Typography from '../styled-components/Typography';
@@ -33,7 +33,7 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 			projectIndex={projectIndex}
 		/>
 	) : (
-		<StyledSection
+		<StyledSectionCard
 			variant="big-grey"
 			style={{
 				background:
@@ -89,7 +89,7 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 					{feature.selected && feature.begin} - {feature.selected && feature.end}
 				</p>
 			</StyledDiv>
-			<StyledSectionRaw variant="overflow-todolist">
+			<StyledSectionCardRaw variant="overflow-todolist">
 				<StyledUL variant="list-in-card">
 					{feature.todo.map(todo => {
 						const index = feature.todo.findIndex(todoIndex => todoIndex.id === todo.id);
@@ -158,7 +158,7 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 						</StyledDiv>
 					</StyledList>
 				</StyledUL>
-			</StyledSectionRaw>
-		</StyledSection>
+			</StyledSectionCardRaw>
+		</StyledSectionCard>
 	);
 }

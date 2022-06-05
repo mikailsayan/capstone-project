@@ -1,4 +1,4 @@
-import StyledSection from '../styled-components/StyledSection';
+import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
@@ -12,7 +12,7 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 	const selectFeature = useStore(state => state.selectFeature);
 
 	return (
-		<StyledSection
+		<StyledSectionCard
 			variant="small-grey"
 			style={{
 				background:
@@ -77,6 +77,6 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 					);
 				})}
 			</StyledUL>
-		</StyledSection>
+		</StyledSectionCard>
 	);
 }

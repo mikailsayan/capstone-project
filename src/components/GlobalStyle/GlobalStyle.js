@@ -31,7 +31,13 @@ html {
     --purple-project: #ECA0FF;
     --yellow-project: #FFE486;
     --red-project: #FFA6A6;
-    --green-project: #B6FFD3;
+    --green-project: #c3f6c3;
+    --blue-button: #70cbff;
+    --purple-button: #e270ff;
+    --yellow-button: #ffd02c;
+    --red-button: #ff6f6f;
+    --green-button: #91eb91;
+    --grey-button: #c2c2c2;
     --green-complex: #5EDC5C;
     --yellow-complex: #FFE247;
     --red-complex: #FF6464;

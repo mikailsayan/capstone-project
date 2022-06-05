@@ -1,4 +1,4 @@
-import StyledSection from '../styled-components/StyledSection';
+import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
@@ -33,7 +33,7 @@ export default function AddFeature({ project, projectIndex, addfeatureform }) {
 				toggleAdd();
 			}}
 		>
-			<StyledSection
+			<StyledSectionCard
 				variant="middle-grey"
 				style={{
 					background:
@@ -108,7 +108,7 @@ export default function AddFeature({ project, projectIndex, addfeatureform }) {
 						}}
 					/>
 				</StyledDiv>
-			</StyledSection>
+			</StyledSectionCard>
 		</StyledForm>
 	);
 }

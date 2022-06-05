@@ -4,7 +4,7 @@ import StyledUL from '../styled-components/StyledUL';
 import Link from 'next/link';
 import useStore from '../../hooks/useStore';
 import StyledArticle from '../styled-components/StyledArticle';
-import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import { useRouter } from 'next/router';
 
 export default function ProjectCardList() {
@@ -14,13 +14,16 @@ export default function ProjectCardList() {
 	const router = useRouter();
 
 	return (
-		<StyledSectionRaw variant="featurelist">
+		<StyledSectionCardRaw variant="featurelist">
 			<StyledArticle>
 				<StyledUL>
 					{projects.map(project => {
+						const projectIndex = projects.findIndex(
+							projectIndex => projectIndex.id === project.id
+						);
 						return (
 							<li key={project.id}>
-								<ProjectCard project={project} />
+								<ProjectCard project={project} projectIndex={projectIndex} />
 							</li>
 						);
 					})}
@@ -40,6 +43,6 @@ export default function ProjectCardList() {
 					</StyledButton>
 				</StyledArticle>
 			</Link>
-		</StyledSectionRaw>
+		</StyledSectionCardRaw>
 	);
 }

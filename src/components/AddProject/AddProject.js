@@ -1,15 +1,16 @@
-import StyledSection from '../styled-components/StyledSection';
+import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
+import StyledDivProjectColor from '../styled-components/StyledDivProjectColor';
 import StyledArticle from '../styled-components/StyledArticle';
 import { format } from 'date-fns';
 import StyledButton from '../styled-components/StyledButton';
 import { useState, React } from 'react';
 import useStore from '../../hooks/useStore';
-import StyledSectionRaw from '../styled-components/StyledSectionRaw';
+import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import { useRouter } from 'next/router';
 
 export default function AddProject() {
@@ -29,7 +30,7 @@ export default function AddProject() {
 	);
 
 	return (
-		<StyledSectionRaw variant="featurelist">
+		<StyledSectionCardRaw variant="featurelist">
 			<StyledForm
 				id="addproject"
 				onSubmit={event => {
@@ -50,7 +51,7 @@ export default function AddProject() {
 					router.push('/');
 				}}
 			>
-				<StyledSection variant="big-grey">
+				<StyledSectionCard variant="big-grey">
 					<StyledLabel variant="toplabel" htmlFor="projectname">
 						Projektname
 					</StyledLabel>
@@ -124,7 +125,7 @@ export default function AddProject() {
 							}}
 						/>
 						<StyledLabel variant="projectcolor" htmlFor="blue">
-							<StyledDiv variant="projectcolor-blue" />
+							<StyledDivProjectColor variant="projectcolor-blue" />
 						</StyledLabel>
 						<StyledInput
 							variant="projectcolor"
@@ -138,7 +139,7 @@ export default function AddProject() {
 							}}
 						/>
 						<StyledLabel variant="projectcolor" htmlFor="purple">
-							<StyledDiv variant="projectcolor-purple" />
+							<StyledDivProjectColor variant="projectcolor-purple" />
 						</StyledLabel>
 						<StyledInput
 							variant="projectcolor"
@@ -152,7 +153,7 @@ export default function AddProject() {
 							}}
 						/>
 						<StyledLabel variant="projectcolor" htmlFor="yellow">
-							<StyledDiv variant="projectcolor-yellow" />
+							<StyledDivProjectColor variant="projectcolor-yellow" />
 						</StyledLabel>
 						<StyledInput
 							variant="projectcolor"
@@ -166,7 +167,7 @@ export default function AddProject() {
 							}}
 						/>
 						<StyledLabel variant="projectcolor" htmlFor="red">
-							<StyledDiv variant="projectcolor-red" />
+							<StyledDivProjectColor variant="projectcolor-red" />
 						</StyledLabel>
 						<StyledInput
 							variant="projectcolor"
@@ -180,16 +181,16 @@ export default function AddProject() {
 							}}
 						/>
 						<StyledLabel variant="projectcolor" htmlFor="green">
-							<StyledDiv variant="projectcolor-green" />
+							<StyledDivProjectColor variant="projectcolor-green" />
 						</StyledLabel>
 					</StyledArticle>
-				</StyledSection>
+				</StyledSectionCard>
 			</StyledForm>
 			<StyledArticle variant="buttonarea">
 				<StyledButton variant="donebutton" type="submit" form="addproject">
 					Hinzufügen
 				</StyledButton>
 			</StyledArticle>
-		</StyledSectionRaw>
+		</StyledSectionCardRaw>
 	);
 }

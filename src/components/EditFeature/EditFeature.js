@@ -1,7 +1,8 @@
-import StyledSection from '../styled-components/StyledSection';
+import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
 import StyledDiv from '../styled-components/StyledDiv';
+import StyledDivComplex from '../styled-components/StyledDivComplex';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import MySVG from '../MySVG';
@@ -15,7 +16,7 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 	const controlFeatureEndDate = useStore(state => state.controlFeatureEndDate);
 
 	return feature.edit ? (
-		<StyledSection
+		<StyledSectionCard
 			variant="big-grey"
 			style={{
 				background:
@@ -56,10 +57,11 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 					saveFeatureName(projectIndex, featureIndex, event.target.value);
 				}}
 			/>
-			<StyledLabel variant="default" htmlFor="begindate">
-				Startdatum:
+
+			<StyledLabel variant="default" htmlFor="date">
+				Zeitraum
 			</StyledLabel>
-			<StyledDiv variant="center">
+			<StyledDiv variant="date">
 				<StyledInput
 					variant="date"
 					id="begindate"
@@ -70,12 +72,7 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 						saveFeatureBeginDate(projectIndex, featureIndex, event.target.value);
 					}}
 				/>
-				<MySVG variant="calender" size="2.9rem" />
-			</StyledDiv>
-			<StyledLabel variant="default" htmlFor="enddate">
-				Enddatum:
-			</StyledLabel>
-			<StyledDiv variant="center">
+				<p>-</p>
 				<StyledInput
 					variant="date"
 					id="enddate"
@@ -86,7 +83,6 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 						controlFeatureEndDate(projectIndex, featureIndex, event.target.value);
 					}}
 				/>
-				<MySVG variant="calender" size="2.9rem" />
 			</StyledDiv>
 			<StyledDiv variant="overflow">
 				<StyledUL variant="list-in-card">
@@ -102,11 +98,13 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 								/>
 								{todo.name}
 								{todo.complexity === 'easy' ? (
-									<StyledDiv variant="complexity-easy"> </StyledDiv>
+									<StyledDivComplex variant="complexity-easy"> </StyledDivComplex>
 								) : todo.complexity === 'middle' ? (
-									<StyledDiv variant="complexity-middle"> </StyledDiv>
+									<StyledDivComplex variant="complexity-middle">
+										{' '}
+									</StyledDivComplex>
 								) : todo.complexity === 'hard' ? (
-									<StyledDiv variant="complexity-hard"> </StyledDiv>
+									<StyledDivComplex variant="complexity-hard"> </StyledDivComplex>
 								) : (
 									''
 								)}
@@ -115,7 +113,7 @@ export default function EditFeature({ project, feature, projectIndex, featureInd
 					})}
 				</StyledUL>
 			</StyledDiv>
-		</StyledSection>
+		</StyledSectionCard>
 	) : (
 		''
 	);
