@@ -2,6 +2,7 @@ import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledInput from '../styled-components/StyledInput';
 import StyledParagraph from '../styled-components/StyledParagraph';
 import StyledDiv from '../styled-components/StyledDiv';
+import StyledDivComplex from '../styled-components/StyledDivComplex';
 import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
@@ -95,11 +96,24 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 						const index = feature.todo.findIndex(todoIndex => todoIndex.id === todo.id);
 
 						return (
-							<section key={todo.id}>
+							<StyledSectionCardRaw key={todo.id} variant="todolist">
 								<StyledList
 									variant="todolist-small"
 									style={{
-										border: todo.isChecked && '2px solid #5EDC5C',
+										background:
+											project.color === 'blue'
+												? 'var(--blue-button)'
+												: project.color === 'purple'
+												? 'var(--purple-button)'
+												: project.color === 'yellow'
+												? 'var(--yellow-button)'
+												: project.color === 'red'
+												? 'var(--red-button)'
+												: project.color === 'green'
+												? 'var(--green-button)'
+												: project.color === 'grey'
+												? 'var(--grey-button)'
+												: '',
 									}}
 								>
 									<input
@@ -120,17 +134,23 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 										{todo.name}
 									</StyledDiv>
 									{todo.complexity === 'easy' ? (
-										<StyledDiv variant="complexity-easy"> </StyledDiv>
+										<StyledDivComplex variant="complexity-easy">
+											{' '}
+										</StyledDivComplex>
 									) : (
 										''
 									)}
 									{todo.complexity === 'middle' ? (
-										<StyledDiv variant="complexity-middle"> </StyledDiv>
+										<StyledDivComplex variant="complexity-middle">
+											{' '}
+										</StyledDivComplex>
 									) : (
 										''
 									)}
 									{todo.complexity === 'hard' ? (
-										<StyledDiv variant="complexity-hard"> </StyledDiv>
+										<StyledDivComplex variant="complexity-hard">
+											{' '}
+										</StyledDivComplex>
 									) : (
 										''
 									)}
@@ -144,21 +164,21 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 								) : (
 									''
 								)}
-							</section>
+							</StyledSectionCardRaw>
 						);
 					})}
-					<StyledList variant="addtodo">
-						<StyledDiv
-							variant="center"
-							onClick={() => {
-								toggleAddTodo(projectIndex, featureIndex);
-							}}
-						>
-							<MySVG variant="addtodo" size="3rem" />
-						</StyledDiv>
-					</StyledList>
 				</StyledUL>
 			</StyledSectionCardRaw>
+			<StyledList variant="addtodo">
+				<StyledDiv
+					variant="center"
+					onClick={() => {
+						toggleAddTodo(projectIndex, featureIndex);
+					}}
+				>
+					<MySVG variant="addtodo" size="3rem" />
+				</StyledDiv>
+			</StyledList>
 		</StyledSectionCard>
 	);
 }

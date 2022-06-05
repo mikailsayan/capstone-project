@@ -13,6 +13,7 @@ export default function ProjectCard({ project, projectIndex }) {
 	const appState = useStore(state => state.appState);
 	const selectProject = useStore(state => state.selectProject);
 	const setAppState = useStore(state => state.setAppState);
+	const toggleAdd = useStore(state => state.toggleAdd);
 
 	const router = useRouter();
 
@@ -51,7 +52,26 @@ export default function ProjectCard({ project, projectIndex }) {
 				<StyledUL variant="list-in-card">
 					{project.feature.slice(0, 3).map(feature => {
 						return (
-							<StyledList key={feature.id} variant="featurelist-small">
+							<StyledList
+								key={feature.id}
+								variant="featurelist-small"
+								style={{
+									background:
+										project.color === 'blue'
+											? 'var(--blue-button)'
+											: project.color === 'purple'
+											? 'var(--purple-button)'
+											: project.color === 'yellow'
+											? 'var(--yellow-button)'
+											: project.color === 'red'
+											? 'var(--red-button)'
+											: project.color === 'green'
+											? 'var(--green-button)'
+											: project.color === 'grey'
+											? 'var(--grey-button)'
+											: '',
+								}}
+							>
 								<StyledImage
 									variant="bulletpoint"
 									src="/bulletpoint.svg"
@@ -108,6 +128,12 @@ export default function ProjectCard({ project, projectIndex }) {
 									: project.color === 'grey'
 									? 'var(--grey-button)'
 									: '',
+						}}
+						onClick={() => {
+							selectProject(projectIndex);
+							toggleAdd();
+							setAppState('featurelist');
+							router.push('/featurelist');
 						}}
 					>
 						Feature hinzufügen

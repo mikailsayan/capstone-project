@@ -29,7 +29,7 @@ const StyledSectionCard = styled.section`
 		variant === 'small-grey' &&
 		`
         background-color: var(--card-grey);
-        height: 27rem;
+        height: 29rem;
     `}
 `;
 

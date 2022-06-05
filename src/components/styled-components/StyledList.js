@@ -6,14 +6,13 @@ const StyledList = styled.li`
 		variant === 'featurelist-small' &&
 		`
         width: 30.3rem;
-        height: 3.6rem;
-        background-color: var(--dark-grey);
-        border: none;
+        height: 4.2rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
         border-radius: 4rem;
         display: flex;
         align-items: center;
-        font-size: 1.6rem;
-        gap: 1.2rem;
+        font-size: 1.5rem;
+        gap: 1rem;
         padding: 0 1rem 0 1rem;
     `}
 
@@ -36,22 +35,24 @@ const StyledList = styled.li`
 		variant === 'todolist-small' &&
 		`
         position: relative;
-        width: 31rem;
-        min-height: 3.6rem;
-        background-color: var(--dark-grey);
-        border: none;
+        width: 30.3rem;
+        height: 4rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
         border-radius: 4rem;
+        border: 0.2rem solid white;
         display: flex;
         align-items: center;
-        font-size: 1.6rem;
-        gap: 1.2rem;
+        font-size: 1.5rem;
         padding: 0 1rem 0 1rem;
 `}
 ${({ variant }) =>
 		variant === 'addtodo' &&
 		`
+        position: absolute;
+        bottom: 2rem;
+        right: 1.8rem;
         width: 31rem;
-        min-height: 3.6rem;
+        height: 3.6rem;
         background-color: var(--dark-grey);
         border-radius: 4rem;
         display: flex;

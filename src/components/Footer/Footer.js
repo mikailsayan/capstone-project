@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 export default function Footer() {
 	const setAppState = useStore(state => state.setAppState);
 	const appState = useStore(state => state.appState);
+	//const toggleAdd = useStore(state => state.toggleAdd);
 
 	const router = useRouter();
 

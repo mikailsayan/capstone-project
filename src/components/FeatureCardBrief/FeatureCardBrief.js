@@ -65,7 +65,26 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 			<StyledUL variant="list-in-card">
 				{feature.todo.slice(0, 3).map(todo => {
 					return (
-						<StyledList key={todo.id} variant="featurelist-small">
+						<StyledList
+							key={todo.id}
+							variant="featurelist-small"
+							style={{
+								background:
+									project.color === 'blue'
+										? 'var(--blue-button)'
+										: project.color === 'purple'
+										? 'var(--purple-button)'
+										: project.color === 'yellow'
+										? 'var(--yellow-button)'
+										: project.color === 'red'
+										? 'var(--red-button)'
+										: project.color === 'green'
+										? 'var(--green-button)'
+										: project.color === 'grey'
+										? 'var(--grey-button)'
+										: '',
+							}}
+						>
 							<StyledInput
 								variant="todocheckbox"
 								id="todocheckbox"

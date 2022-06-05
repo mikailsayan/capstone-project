@@ -5,8 +5,14 @@ const StyledSectionCardRaw = styled.section`
 		variant === 'overflow-todolist' &&
 		`
 			width: 32rem;
-			height: 37rem;
+			height: 30rem;
             overflow: auto;
+        `}
+
+	${({ variant }) =>
+		variant === 'todolist' &&
+		`
+			margin-top: 0.5rem;
         `}
 
 	${({ variant }) =>
