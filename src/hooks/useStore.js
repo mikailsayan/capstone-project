@@ -9,7 +9,6 @@ const useStore = create(
 			{
 				id: nanoid(),
 				name: 'Projekt 1',
-				notes: 'Hier sind ein paar Notizen',
 				begin: '01-01-2001',
 				end: '02-01-2001',
 				color: 'blue',
@@ -95,7 +94,6 @@ const useStore = create(
 			{
 				id: nanoid(),
 				name: 'Projekt 2',
-				notes: 'Hier sind ein paar Notizen',
 				begin: '01-02-2001',
 				end: '02-02-2001',
 				color: 'green',
@@ -291,12 +289,11 @@ const useStore = create(
 		},
 		//End AddTodo Functions
 		//AddProject Functions
-		addProject: (name, notes, begin, end, color) => {
+		addProject: (name, begin, end, color) => {
 			set(
 				produce(draft => {
 					draft.projects.push({
 						name,
-						notes,
 						begin,
 						end,
 						color,

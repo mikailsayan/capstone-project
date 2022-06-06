@@ -2,7 +2,6 @@ import StyledSectionCard from '../styled-components/StyledSectionCard';
 import StyledForm from '../styled-components/StyledForm';
 import StyledLabel from '../styled-components/StyledLabel';
 import StyledInput from '../styled-components/StyledInput';
-import StyledTextarea from '../styled-components/StyledTextarea';
 import StyledDiv from '../styled-components/StyledDiv';
 import StyledDivProjectColor from '../styled-components/StyledDivProjectColor';
 import StyledArticle from '../styled-components/StyledArticle';
@@ -15,7 +14,6 @@ import { useRouter } from 'next/router';
 
 export default function AddProject() {
 	const [projectnameInputValue, setProjectnameInputValue] = useState('');
-	const [notesInputValue, setNotesInputValue] = useState('');
 	const [beginInputValue, setBeginInputValue] = useState('');
 	const [endInputValue, setEndInputValue] = useState('');
 	const addProject = useStore(state => state.addProject);
@@ -35,15 +33,8 @@ export default function AddProject() {
 				id="addproject"
 				onSubmit={event => {
 					event.preventDefault();
-					addProject(
-						projectnameInputValue,
-						notesInputValue,
-						beginInputValue,
-						endInputValue,
-						radio
-					);
+					addProject(projectnameInputValue, beginInputValue, endInputValue, radio);
 					setProjectnameInputValue('');
-					setNotesInputValue('');
 					setBeginInputValue('');
 					setEndInputValue('');
 					setRadio('');
@@ -64,21 +55,6 @@ export default function AddProject() {
 						value={projectnameInputValue}
 						onChange={event => {
 							setProjectnameInputValue(event.target.value);
-						}}
-					/>
-					<StyledLabel variant="default" htmlFor="notes">
-						Notizen
-					</StyledLabel>
-					<StyledTextarea
-						required
-						variant="addproject"
-						id="notes"
-						name="notes"
-						rows="5"
-						cols="33"
-						value={notesInputValue}
-						onChange={event => {
-							setNotesInputValue(event.target.value);
 						}}
 					/>
 					<StyledLabel variant="default" htmlFor="date">
