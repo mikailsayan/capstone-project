@@ -3,15 +3,26 @@ import StyledDiv from '../styled-components/StyledDiv';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
 import StyledInput from '../styled-components/StyledInput';
+import StyledArticle from '../styled-components/StyledArticle';
+import StyledCardButton from '../styled-components/StyledCardButton';
 import Typography from '../styled-components/Typography';
+import AddTodo from '../AddTodo/AddTodo';
 import MySVG from '../MySVG';
 import useStore from '../../hooks/useStore';
 
 export default function FeatureCardBrief({ project, feature, projectIndex, featureIndex }) {
 	const deleteFeature = useStore(state => state.deleteFeature);
 	const selectFeature = useStore(state => state.selectFeature);
+	const toggleAddTodo = useStore(state => state.toggleAddTodo);
 
-	return (
+	return feature.addtodo ? (
+		<AddTodo
+			project={project}
+			feature={feature}
+			featureIndex={featureIndex}
+			projectIndex={projectIndex}
+		/>
+	) : (
 		<StyledSectionCard
 			variant="small-grey"
 			style={{
@@ -38,14 +49,7 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 					name="featurecheckbox"
 					type="checkbox"
 				/>
-				<Typography
-					variant="h3"
-					component="h3"
-					size="1.7rem"
-					onClick={() => {
-						selectFeature(projectIndex, featureIndex);
-					}}
-				>
+				<Typography variant="h3" component="h3" size="1.7rem">
 					{feature.name}
 				</Typography>
 				<div
@@ -96,6 +100,56 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 					);
 				})}
 			</StyledUL>
+			<StyledArticle variant="cardbuttonarea">
+				<StyledCardButton
+					type="button"
+					style={{
+						background:
+							project.color === 'blue'
+								? 'var(--blue-button)'
+								: project.color === 'purple'
+								? 'var(--purple-button)'
+								: project.color === 'yellow'
+								? 'var(--yellow-button)'
+								: project.color === 'red'
+								? 'var(--red-button)'
+								: project.color === 'green'
+								? 'var(--green-button)'
+								: project.color === 'grey'
+								? 'var(--grey-button)'
+								: '',
+					}}
+					onClick={() => {
+						selectFeature(projectIndex, featureIndex);
+					}}
+				>
+					Alle Informationen
+				</StyledCardButton>
+				<StyledCardButton
+					type="button"
+					style={{
+						background:
+							project.color === 'blue'
+								? 'var(--blue-button)'
+								: project.color === 'purple'
+								? 'var(--purple-button)'
+								: project.color === 'yellow'
+								? 'var(--yellow-button)'
+								: project.color === 'red'
+								? 'var(--red-button)'
+								: project.color === 'green'
+								? 'var(--green-button)'
+								: project.color === 'grey'
+								? 'var(--grey-button)'
+								: '',
+					}}
+					onClick={() => {
+						toggleAddTodo(projectIndex, featureIndex);
+					}}
+				>
+					Todo hinzufügen
+				</StyledCardButton>
+			</StyledArticle>
 		</StyledSectionCard>
 	);
 }
