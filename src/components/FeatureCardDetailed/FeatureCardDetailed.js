@@ -6,6 +6,7 @@ import StyledDivComplex from '../styled-components/StyledDivComplex';
 import StyledSectionCardRaw from '../styled-components/StyledSectionCardRaw';
 import StyledUL from '../styled-components/StyledUL';
 import StyledList from '../styled-components/StyledList';
+import StyledImage from '../styled-components/StyledImage';
 import Typography from '../styled-components/Typography';
 import EditFeature from '../EditFeature/EditFeature';
 import AddTodo from '../AddTodo/AddTodo';
@@ -125,13 +126,17 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 											checkTodo(projectIndex, featureIndex, index);
 										}}
 									/>
-									<StyledDiv
-										variant="open-todonote"
-										onClick={() => {
-											toggleNote(projectIndex, featureIndex, index);
-										}}
-									>
-										{todo.name}
+									<StyledDiv variant="open-todonote">{todo.name}</StyledDiv>
+									<StyledDiv variant="notesicon">
+										<StyledImage
+											src="/notes.svg"
+											alt="notes"
+											width={18}
+											height={18}
+											onClick={() => {
+												toggleNote(projectIndex, featureIndex, index);
+											}}
+										/>
 									</StyledDiv>
 									{todo.complexity === 'easy' ? (
 										<StyledDivComplex variant="complexity-easy">

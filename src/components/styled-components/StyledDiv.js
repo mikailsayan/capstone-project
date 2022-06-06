@@ -96,6 +96,15 @@ const StyledDiv = styled.div`
 	`}
 
 	${({ variant }) =>
+		variant === 'notesicon' &&
+		`
+		position: absolute;
+		width: 1.8rem;
+		height: 1.8rem;
+		right: 4rem;
+    `}
+
+	${({ variant }) =>
 		variant === 'projectcolor-red' &&
 		`
 		display: flex;
