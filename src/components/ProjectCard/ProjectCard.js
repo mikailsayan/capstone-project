@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 export default function ProjectCard({ project, projectIndex }) {
 	const appState = useStore(state => state.appState);
 	const selectProject = useStore(state => state.selectProject);
+	const selectFeature = useStore(state => state.selectFeature);
 	const setAppState = useStore(state => state.setAppState);
 	const toggleAdd = useStore(state => state.toggleAdd);
 
@@ -51,6 +52,9 @@ export default function ProjectCard({ project, projectIndex }) {
 				</StyledDiv>
 				<StyledUL variant="list-in-card">
 					{project.feature.slice(0, 3).map(feature => {
+						const featureIndex = project.feature.findIndex(
+							featureIndex => featureIndex.id === feature.id
+						);
 						return (
 							<StyledList
 								key={feature.id}
@@ -70,6 +74,11 @@ export default function ProjectCard({ project, projectIndex }) {
 											: project.color === 'grey'
 											? 'var(--grey-button)'
 											: '',
+								}}
+								onClick={() => {
+									selectFeature(projectIndex, featureIndex);
+									setAppState('featurelist');
+									router.push('/featurelist');
 								}}
 							>
 								<StyledImage
