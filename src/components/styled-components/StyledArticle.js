@@ -5,7 +5,7 @@ const StyledArticle = styled.article`
 		variant === 'flexcenter' &&
 		`
         display: flex;
-        gap: 2rem;
+        gap: 1.7rem;
         margin: 1rem 0 0 2rem;
     `}
 

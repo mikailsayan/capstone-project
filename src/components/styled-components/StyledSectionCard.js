@@ -31,6 +31,13 @@ const StyledSectionCard = styled.section`
         background-color: var(--card-grey);
         height: 29rem;
     `}
+
+	${({ variant }) =>
+		variant === 'add-project' &&
+		`
+		background-color: var(--card-grey);
+		height: 34rem;
+`}
 `;
 
 export default StyledSectionCard;

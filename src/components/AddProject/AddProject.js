@@ -42,7 +42,7 @@ export default function AddProject() {
 					router.push('/');
 				}}
 			>
-				<StyledSectionCard variant="big-grey">
+				<StyledSectionCard variant="add-project">
 					<StyledLabel variant="toplabel" htmlFor="projectname">
 						Projektname
 					</StyledLabel>
