@@ -37,6 +37,7 @@ export default function FeatureCardList() {
 									const featureIndex = project.feature.findIndex(
 										featureIndex => featureIndex.id === feature.id
 									);
+
 									return (
 										<li key={feature.id}>
 											<FeatureCard

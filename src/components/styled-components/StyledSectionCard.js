@@ -8,7 +8,6 @@ const StyledSectionCard = styled.section`
 	border-radius: 4rem;
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
 	padding: 1rem 1rem 1rem 0.5rem;
-	position: relative;
 	margin-bottom: 2rem;
 
 	${({ variant }) =>

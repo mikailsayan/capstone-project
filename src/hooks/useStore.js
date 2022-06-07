@@ -198,14 +198,7 @@ const useStore = create(
 				})
 			);
 		},
-		toggleEdit: (projectIndex, featureIndex) => {
-			set(
-				produce(draft => {
-					draft.projects[projectIndex].feature[featureIndex].edit =
-						!draft.projects[projectIndex].feature[featureIndex].edit;
-				})
-			);
-		},
+
 		toggleAddTodo: (projectIndex, featureIndex) => {
 			set(
 				produce(draft => {
@@ -222,7 +215,15 @@ const useStore = create(
 			);
 		},
 		//End FeatureCard Functions
-		//EditFeature Project Functions
+		//EditFeature Project Function
+		toggleEdit: (projectIndex, featureIndex) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].feature[featureIndex].edit =
+						!draft.projects[projectIndex].feature[featureIndex].edit;
+				})
+			);
+		},
 		saveFeatureName: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
@@ -237,7 +238,7 @@ const useStore = create(
 				})
 			);
 		},
-		controlFeatureEndDate: (projectIndex, featureIndex, value) => {
+		saveFeatureEndDate: (projectIndex, featureIndex, value) => {
 			set(
 				produce(draft => {
 					draft.projects[projectIndex].feature[featureIndex].end = value;
@@ -245,6 +246,38 @@ const useStore = create(
 			);
 		},
 		//End EditFeature Functions
+		//Edit Todo Project Functions
+		toggleEditTodo: (projectIndex, featureIndex, todoIndex) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].edit =
+						!draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].edit;
+				})
+			);
+		},
+		saveTodoName: (projectIndex, featureIndex, todoIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].name = value;
+				})
+			);
+		},
+		saveTodoNote: (projectIndex, featureIndex, todoIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].note = value;
+				})
+			);
+		},
+		saveTodoComplex: (projectIndex, featureIndex, todoIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].feature[featureIndex].todo[todoIndex].complexity =
+						value;
+				})
+			);
+		},
+		//End Edit Todo Functions
 		//AddFeatureFunction
 		toggleAdd: () => {
 			set(

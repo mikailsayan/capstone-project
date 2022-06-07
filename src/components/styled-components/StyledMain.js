@@ -7,7 +7,7 @@ const StyledMain = styled.main`
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	margin: 14.1rem 0 16.1rem 0;
+	margin: 12.6rem 0 16.1rem 0;
 	padding: 4rem 0 2rem 0;
 `;
 
