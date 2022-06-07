@@ -2,25 +2,24 @@
 // die Daten aus der Mongodatenbank holt
 
 import { dbConnect } from '../lib/database';
-import Feature from '../components/models/FeatureModel';
+import Project from '../components/models/ProjectModel';
 
-export async function getFeatures() {
+export async function getProjects() {
 	// Wir warten auf die Datenbank und schmeißen alles in "data"
 	await dbConnect();
-	const data = await Feature.find().populate('todo');
+	const data = await Project.find().populate('feature');
 
 	console.log(data);
 
 	// Welche Daten aus der Datenbank möchtest du?
-	return data.map(({ id, name, begin, end, isChecked, edit, addtodo, selected, todo }) => ({
+	return data.map(({ id, name, begin, end, color, edit, selected, feature }) => ({
 		id,
 		name,
 		begin,
 		end,
-		isChecked,
+		color,
 		edit,
-		addtodo,
 		selected,
-		todo,
+		feature,
 	}));
 }

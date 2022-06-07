@@ -4,7 +4,6 @@ const featureSchema = new mongoose.Schema({
 	name: String,
 	begin: String,
 	end: String,
-	color: String,
 	isChecked: Boolean,
 	edit: Boolean,
 	addtodo: Boolean,
