@@ -14,6 +14,8 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 	const deleteFeature = useStore(state => state.deleteFeature);
 	const selectFeature = useStore(state => state.selectFeature);
 	const toggleAddTodo = useStore(state => state.toggleAddTodo);
+	const checkTodo = useStore(state => state.checkTodo);
+	const checkFeature = useStore(state => state.checkFeature);
 
 	return feature.addtodo ? (
 		<AddTodo
@@ -48,6 +50,10 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 					id="featurecheckbox"
 					name="featurecheckbox"
 					type="checkbox"
+					checked={feature.isChecked}
+					onChange={() => {
+						checkFeature(projectIndex, featureIndex);
+					}}
 				/>
 				<Typography variant="h3" component="h3" size="1.7rem">
 					{feature.name}
@@ -68,6 +74,7 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 			</StyledDiv>
 			<StyledUL variant="list-in-card">
 				{feature.todo.slice(0, 3).map(todo => {
+					const todoIndex = feature.todo.findIndex(todoIndex => todoIndex.id === todo.id);
 					return (
 						<StyledList
 							key={todo.id}
@@ -94,6 +101,10 @@ export default function FeatureCardBrief({ project, feature, projectIndex, featu
 								id="todocheckbox"
 								name="todocheckbox"
 								type="checkbox"
+								checked={todo.isChecked}
+								onChange={() => {
+									checkTodo(projectIndex, featureIndex, todoIndex);
+								}}
 							/>
 							{todo.name}
 						</StyledList>

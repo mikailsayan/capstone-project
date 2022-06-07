@@ -3,11 +3,12 @@
 
 import { dbConnect } from '../lib/database';
 import Project from '../components/models/ProjectModel';
+import projectSchema from '../components/models/ProjectModel';
 
 export async function getProjects() {
 	// Wir warten auf die Datenbank und schmeißen alles in "data"
 	await dbConnect();
-	const data = await Project.find().populate('feature');
+	const data = await Project.find().populate({ type: projectSchema.Types.ObjectId });
 
 	console.log(data);
 

@@ -94,7 +94,9 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 			<StyledSectionCardRaw variant="overflow-todolist">
 				<StyledUL variant="list-in-card">
 					{feature.todo.map(todo => {
-						const index = feature.todo.findIndex(todoIndex => todoIndex.id === todo.id);
+						const todoIndex = feature.todo.findIndex(
+							todoIndex => todoIndex.id === todo.id
+						);
 
 						return (
 							<StyledSectionCardRaw key={todo.id} variant="todolist">
@@ -123,7 +125,7 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 										type="checkbox"
 										checked={todo.isChecked}
 										onChange={() => {
-											checkTodo(projectIndex, featureIndex, index);
+											checkTodo(projectIndex, featureIndex, todoIndex);
 										}}
 									/>
 									<StyledDiv variant="open-todonote">{todo.name}</StyledDiv>
@@ -134,7 +136,7 @@ export default function FeatureCardDetailed({ project, feature, projectIndex, fe
 											width={18}
 											height={18}
 											onClick={() => {
-												toggleNote(projectIndex, featureIndex, index);
+												toggleNote(projectIndex, featureIndex, todoIndex);
 											}}
 										/>
 									</StyledDiv>
