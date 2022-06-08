@@ -20,6 +20,11 @@ const StyledSectionCard = styled.section`
 		`
         background-color: var(--card-grey);
         height: 47rem;
+
+		@media (min-width: 70rem) {
+			display: flex;
+			align-items: center;
+		}
     `}
 
 	${({ variant }) =>

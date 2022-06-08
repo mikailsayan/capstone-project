@@ -35,6 +35,10 @@ const StyledList = styled.li`
         font-size: 1.6rem;
         gap: 1.2rem;
         padding: 0 1rem 0 4.3rem;
+
+        @media (min-width: 70rem) {
+            width: 45rem;
+        }
     `}
 	${({ variant }) =>
 		variant === 'todolist-small' &&
@@ -49,6 +53,10 @@ const StyledList = styled.li`
         align-items: center;
         font-size: 1.5rem;
         padding: 0 1rem 0 1rem;
+
+        @media (min-width: 70rem) {
+            width: 46.6rem;
+        }
 `}
 ${({ variant }) =>
 		variant === 'addtodo' &&
@@ -65,6 +73,10 @@ ${({ variant }) =>
         justify-content: center;
         font-size: 1.6rem;
         padding: 0.5rem 1rem 0rem 1rem;
+
+        @media (min-width: 70rem) {
+            width: 45rem;
+        }
 `}
 `;
 

@@ -7,6 +7,10 @@ const StyledSectionCardRaw = styled.section`
 			width: 32rem;
 			height: 30rem;
             overflow: auto;
+
+			@media (min-width: 70rem) {
+				width: 48rem;
+			}
         `}
 
 	${({ variant }) =>

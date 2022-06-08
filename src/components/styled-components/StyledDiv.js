@@ -25,6 +25,10 @@ const StyledDiv = styled.div`
 		max-height: 15rem;
 		margin: 1rem 1rem 0 1rem;
 		overflow: auto;
+
+		@media (min-width: 70rem) {
+			width: 48rem;
+		}
    `}
    
    ${({ variant }) =>
