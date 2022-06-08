@@ -12,12 +12,12 @@ import { useRouter } from 'next/router';
 import EditProject from '../EditProject/EditProject';
 
 export default function ProjectCard({ project, projectIndex }) {
-	//const appState = useStore(state => state.appState);
 	const selectProject = useStore(state => state.selectProject);
 	const selectFeature = useStore(state => state.selectFeature);
 	const setAppState = useStore(state => state.setAppState);
+	const setModalState = useStore(state => state.setModalState);
 	const toggleAdd = useStore(state => state.toggleAdd);
-	const deleteProject = useStore(state => state.deleteProject);
+	//const deleteProject = useStore(state => state.deleteProject);
 	const toggleEditProject = useStore(state => state.toggleEditProject);
 
 	const router = useRouter();
@@ -56,7 +56,7 @@ export default function ProjectCard({ project, projectIndex }) {
 				</Typography>
 				<div
 					onClick={() => {
-						deleteProject(projectIndex);
+						setModalState('modal');
 					}}
 				>
 					<MySVG
