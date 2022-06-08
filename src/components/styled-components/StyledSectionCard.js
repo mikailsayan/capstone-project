@@ -32,6 +32,11 @@ const StyledSectionCard = styled.section`
 		`
         background-color: var(--card-grey);
         height: 22rem;
+
+		@media (min-width: 70rem) {
+			display: flex;
+			align-items: center;
+		}
     `}
 
     ${({ variant }) =>
@@ -39,6 +44,8 @@ const StyledSectionCard = styled.section`
 		`
         background-color: var(--card-grey);
         height: 29rem;
+
+	
     `}
 
 	${({ variant }) =>
