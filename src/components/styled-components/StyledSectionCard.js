@@ -46,6 +46,11 @@ const StyledSectionCard = styled.section`
 		`
 		background-color: var(--card-grey);
 		height: 34rem;
+
+		@media (min-width: 70rem) {
+			display: flex;
+			align-items: center;
+		}
 `}
 `;
 
