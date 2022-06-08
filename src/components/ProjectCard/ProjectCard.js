@@ -7,6 +7,7 @@ import Typography from '../styled-components/Typography';
 import useStore from '../../hooks/useStore';
 import StyledArticle from '../styled-components/StyledArticle';
 import StyledCardButton from '../styled-components/StyledCardButton';
+import MySVG from '../MySVG';
 import { useRouter } from 'next/router';
 
 export default function ProjectCard({ project, projectIndex }) {
@@ -15,6 +16,7 @@ export default function ProjectCard({ project, projectIndex }) {
 	const selectFeature = useStore(state => state.selectFeature);
 	const setAppState = useStore(state => state.setAppState);
 	const toggleAdd = useStore(state => state.toggleAdd);
+	const deleteProject = useStore(state => state.deleteProject);
 
 	const router = useRouter();
 
@@ -49,6 +51,19 @@ export default function ProjectCard({ project, projectIndex }) {
 					<Typography variant="h3" component="h3" size="1.9rem">
 						{project.name}
 					</Typography>
+					<div
+						onClick={() => {
+							deleteProject(projectIndex);
+						}}
+					>
+						<MySVG
+							variant="cancel"
+							position="absolute"
+							size="2.6rem"
+							top="2.1rem"
+							right="2rem"
+						/>
+					</div>
 				</StyledDiv>
 				<StyledUL variant="list-in-card">
 					{project.feature.slice(0, 3).map(feature => {

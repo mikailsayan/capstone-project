@@ -339,6 +339,13 @@ const useStore = create(
 				})
 			);
 		},
+		deleteProject: projectIndex => {
+			set(
+				produce(draft => {
+					draft.projects.splice(projectIndex, 1);
+				})
+			);
+		},
 		//End AddProject Functions
 		//FeatureCard Functions
 		deleteFeature: (projectIndex, featureIndex) => {
