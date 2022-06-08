@@ -14,6 +14,11 @@ const StyledList = styled.li`
         font-size: 1.5rem;
         gap: 1rem;
         padding: 0 1rem 0 1rem;
+        transition: 200ms;
+
+        @media (min-width: 70rem) {
+            width: 46.6rem;
+        }
     `}
 
 	${({ variant }) =>

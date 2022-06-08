@@ -75,6 +75,11 @@ const StyledArticle = styled.article`
 		width: 30rem;
 		bottom: 2rem;	
 		right: 2rem;
+		transition: 200ms;
+
+		@media (min-width: 70rem) {
+			right: 10.2rem;
+		}
     `}
 `;
 

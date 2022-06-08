@@ -9,6 +9,11 @@ const StyledSectionCard = styled.section`
 	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
 	padding: 1rem 1rem 1rem 0.5rem;
 	margin-bottom: 2rem;
+	transition: 200ms;
+
+	@media (min-width: 70rem) {
+		width: 50rem;
+	}
 
 	${({ variant }) =>
 		variant === 'big-grey' &&
