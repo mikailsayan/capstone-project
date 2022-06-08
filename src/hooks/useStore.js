@@ -183,9 +183,14 @@ const useStore = create(
 		setAppState: appState => {
 			set({ appState });
 		},
-		modalState: 'default',
-		setModalState: modalState => {
-			set({ modalState });
+		modalState: false,
+		setModalState: () => {
+			set(
+				produce(draft => {
+					draft.modalState = !draft.modalState;
+					console.log(draft.modalState);
+				})
+			);
 		},
 		//End AppState Functions
 		//FeatureCard Functions

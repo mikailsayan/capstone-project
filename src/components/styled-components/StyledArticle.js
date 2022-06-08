@@ -81,6 +81,28 @@ const StyledArticle = styled.article`
 			right: 10.2rem;
 		}
     `}
+
+	${({ variant }) =>
+		variant === 'deletemodal' &&
+		` 
+		position: absolute;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%, -50%);
+		align-items: center;
+		width: 50rem;
+		height: 40rem;
+		z-index: 25;
+		border: 1rem solid var(--card-grey);
+
+		@media (min-width: 70rem) {
+			width: 60rem;
+		}
+    `}
 `;
 
 export default StyledArticle;

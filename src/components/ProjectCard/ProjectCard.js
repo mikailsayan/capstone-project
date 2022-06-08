@@ -17,7 +17,7 @@ export default function ProjectCard({ project, projectIndex }) {
 	const setAppState = useStore(state => state.setAppState);
 	const setModalState = useStore(state => state.setModalState);
 	const toggleAdd = useStore(state => state.toggleAdd);
-	//const deleteProject = useStore(state => state.deleteProject);
+
 	const toggleEditProject = useStore(state => state.toggleEditProject);
 
 	const router = useRouter();
@@ -56,7 +56,7 @@ export default function ProjectCard({ project, projectIndex }) {
 				</Typography>
 				<div
 					onClick={() => {
-						setModalState('modal');
+						setModalState();
 					}}
 				>
 					<MySVG
