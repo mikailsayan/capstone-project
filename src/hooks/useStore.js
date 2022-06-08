@@ -246,6 +246,43 @@ const useStore = create(
 			);
 		},
 		//End EditFeature Functions
+		//EditProject Function
+		toggleEditProject: projectIndex => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].edit = !draft.projects[projectIndex].edit;
+				})
+			);
+		},
+		saveProjectName: (projectIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].name = value;
+				})
+			);
+		},
+		saveProjectBeginDate: (projectIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].begin = value;
+				})
+			);
+		},
+		saveProjectEndDate: (projectIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].end = value;
+				})
+			);
+		},
+		saveProjectColor: (projectIndex, value) => {
+			set(
+				produce(draft => {
+					draft.projects[projectIndex].color = value;
+				})
+			);
+		},
+		//End Edit Project Functions
 		//Edit Todo Project Functions
 		toggleEditTodo: (projectIndex, featureIndex, todoIndex) => {
 			set(
