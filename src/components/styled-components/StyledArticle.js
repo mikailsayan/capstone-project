@@ -85,22 +85,24 @@ const StyledArticle = styled.article`
 	${({ variant }) =>
 		variant === 'deletemodal' &&
 		` 
-		position: absolute;
+		position: fixed;
 		background-color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		top: 50%;
+		top: 40%;
 		right: 50%;
 		transform: translate(50%, -50%);
 		align-items: center;
-		width: 50rem;
-		height: 40rem;
+		width: 30rem;
+		height: 16rem;
 		z-index: 25;
-		border: 1rem solid var(--card-grey);
+		border: 0.5rem solid var(--card-grey);
+		border-radius: 2rem;
 
 		@media (min-width: 70rem) {
-			width: 60rem;
+			width: 40rem;
+			height: 16rem;
 		}
     `}
 `;

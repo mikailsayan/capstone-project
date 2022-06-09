@@ -1,7 +1,7 @@
-//import Modal from 'react-modal';
 import useStore from '../../hooks/useStore';
-
 import StyledArticle from '../styled-components/StyledArticle';
+import StyledButtonModal from '../styled-components/StyledButtonModal';
+import StyledDiv from '../styled-components/StyledDiv';
 
 export default function DeleteModal() {
 	//const modalState = useStore(state => state.modalState);
@@ -10,20 +10,23 @@ export default function DeleteModal() {
 	return (
 		<section>
 			<StyledArticle variant="deletemodal">
-				<div>
-					<h2>Möchtest du das wirklich löschen?</h2>
-				</div>
-				<div>
-					<button type="button">Löschen</button>
-					<button
+				<StyledDiv variant="deletemodal">
+					<h2>Projekt wirklich löschen?</h2>
+				</StyledDiv>
+				<StyledDiv variant="deletemodalbuttons">
+					<StyledButtonModal type="button" variant="deletemodal">
+						Löschen
+					</StyledButtonModal>
+					<StyledButtonModal
 						type="button"
+						variant="modalbutton"
 						onClick={() => {
 							setModalState();
 						}}
 					>
 						Abbrechen
-					</button>
-				</div>
+					</StyledButtonModal>
+				</StyledDiv>
 			</StyledArticle>
 		</section>
 	);

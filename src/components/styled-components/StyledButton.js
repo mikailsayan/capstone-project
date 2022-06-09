@@ -30,6 +30,8 @@ const StyledButton = styled.button`
         background: var(--blue-button);
     `}
 
+	
+
 	${({ variant }) =>
 		variant === 'svgbutton' &&
 		`

@@ -139,6 +139,19 @@ const StyledDiv = styled.div`
 		margin: 1rem 0.5rem 1rem 0.5rem;
 		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 	`}
+
+	${({ variant }) =>
+		variant === 'deletemodal' &&
+		`
+		margin: 1rem 1rem 4rem 1rem;
+	`}
+
+	${({ variant }) =>
+		variant === 'deletemodalbuttons' &&
+		`
+		display: flex;
+		gap: 2rem;
+	`}
 `;
 
 export default StyledDiv;
