@@ -5,10 +5,12 @@ const StyledDivDropdown = styled.div`
 		variant === 'dropdown' &&
 		`
 		width: 20rem;
+		height: 4rem;
 		border-radius: 10px;
 		box-shadow: 0 10px 25px rgba(0,0,0,.1);
 		background-color: white;
 		margin-top: 2rem;
+		margin-bottom: 1rem;
     `}
 
 	${({ variant }) =>
@@ -34,6 +36,7 @@ const StyledDivDropdown = styled.div`
 		`
 		padding: 5px;
 		border-top: 1px solid #E5E8EC;
+		background: white;
 		display: block;
     `}
 

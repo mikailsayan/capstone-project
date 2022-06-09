@@ -28,7 +28,7 @@ const StyledArticle = styled.article`
 		align-items: center;
 		top: 8.1rem;
 		width: 100vw;
-		height: 4.5rem;
+		height: 6.5rem;
 		z-index: 25;
         `}
 
