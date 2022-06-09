@@ -90,7 +90,7 @@ const StyledArticle = styled.article`
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		top: 40%;
+		top: 50%;
 		right: 50%;
 		transform: translate(50%, -50%);
 		align-items: center;
