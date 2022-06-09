@@ -109,6 +109,7 @@ export default function ProjectCard({ project, projectIndex }) {
 										: '',
 							}}
 							onClick={() => {
+								selectProject(projectIndex);
 								selectFeature(projectIndex, featureIndex);
 								setAppState('featurelist');
 								router.push('/featurelist');

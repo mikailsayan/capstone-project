@@ -63,22 +63,23 @@ const StyledArticle = styled.article`
 		align-items: center;
 		width: 30rem;
 		margin: 0 2rem 0 2rem;	
+
+		
     `}
 
 	${({ variant }) =>
 		variant === 'cardbuttonarea' &&
 		` 
-		position: absolute;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;;
 		align-items: center;
-		width: 30rem;
-		bottom: 2rem;	
-		right: 2rem;
+		width: 33rem;
+		margin: 1.2rem 0 0 0;
 		transition: 200ms;
+		gap: 1.7rem;
 
 		@media (min-width: 70rem) {
-			right: 10.2rem;
+			width: 49rem;
 		}
     `}
 

@@ -138,6 +138,10 @@ const StyledDiv = styled.div`
 		padding: 0.3rem 2rem 0.3rem 2rem;
 		margin: 1rem 0.5rem 1rem 0.5rem;
 		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+
+		@media (min-width: 70rem) {
+			width: 45.4rem;
+		}
 	`}
 
 	${({ variant }) =>

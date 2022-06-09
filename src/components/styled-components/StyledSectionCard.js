@@ -31,7 +31,7 @@ const StyledSectionCard = styled.section`
 		variant === 'middle-grey' &&
 		`
         background-color: var(--card-grey);
-        height: 22rem;
+        max-height: 22rem;
 
 		@media (min-width: 70rem) {
 			display: flex;
@@ -43,7 +43,7 @@ const StyledSectionCard = styled.section`
 		variant === 'small-grey' &&
 		`
         background-color: var(--card-grey);
-        height: 29rem;
+        max-height: 29rem;
 
 	
     `}
