@@ -74,7 +74,7 @@ const StyledArticle = styled.article`
 		justify-content: center;;
 		align-items: center;
 		width: 33rem;
-		margin: 1.2rem 0 0 0;
+		margin: 0.8rem 0 0.8rem 0;
 		transition: 200ms;
 		gap: 1.7rem;
 
