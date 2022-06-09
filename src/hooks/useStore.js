@@ -192,6 +192,10 @@ const useStore = create(
 				})
 			);
 		},
+		indexState: [],
+		setIndexState: indexState => {
+			set({ indexState });
+		},
 		//End AppState Functions
 		//FeatureCard Functions
 		selectFeature: (projectIndex, featureIndex) => {

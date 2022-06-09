@@ -16,6 +16,7 @@ export default function ProjectCard({ project, projectIndex }) {
 	const selectFeature = useStore(state => state.selectFeature);
 	const setAppState = useStore(state => state.setAppState);
 	const setModalState = useStore(state => state.setModalState);
+	const setIndexState = useStore(state => state.setIndexState);
 	const toggleAdd = useStore(state => state.toggleAdd);
 
 	const toggleEditProject = useStore(state => state.toggleEditProject);
@@ -57,6 +58,7 @@ export default function ProjectCard({ project, projectIndex }) {
 				<div
 					onClick={() => {
 						setModalState();
+						setIndexState(projectIndex);
 					}}
 				>
 					<MySVG
